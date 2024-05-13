@@ -8,6 +8,13 @@ import { MatDialog } from '@angular/material/dialog';
 export class UnifiedFormComponent {
 errorMessage: any;
 successMessage: any;
+items:any[] = [
+  { label: 'Make a new sale', route: '/salescontract' }, 
+  { label: 'Move pack here', route: '/incidentfile' }, 
+  { label: 'Trash pack', route: 'accueil' } ,
+  { label: 'Tool history', route: 'accueil' },
+  { label: 'Add a new incident', route: '/incidentfile' } ,
+];
   CustomerSelected(CustomerSelected: any, arg1: string) {
     throw new Error('Method not implemented.');
   }

@@ -1,5 +1,15 @@
 <h2 class="customer-file">Customer file:</h2>
 
+
+<p-tabMenu [model]="items">
+  <ng-template pTemplate="item" let-item>
+    <a [routerLink]="item.route" routerLinkActive="active" class="p-menuitem-link">
+      <span [class]="item.icon"></span>
+      <span class="ml-2">{{ item.label }}</span>
+    </a>
+  </ng-template>
+</p-tabMenu>
+
 <div id="formAjout" class="form-container">
   <form *ngIf="isAddingCustomer || isEditingCustomer">
     <div
@@ -398,4 +408,39 @@ class="form-control"
 
 <div class="alert" *ngIf="successMessage">
   {{ successMessage }}
+</div>
+<div class="container">
+  <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
+    <table class="table striped-table" style="width: 100%; table-layout: auto;">
+      <thead>
+        <tr class="first-line-background">
+          <th>Product name</th>
+          <th></th>
+          <th>Serial number</th>
+          <th></th>
+          <th>Date code</th>
+          <th>VCI serial number</th>
+          <th>Under warranty</th>
+        </tr>
+        <tr class="second-line-background">
+          <th></th>
+          <th>Material Component</th>
+          <th>Product name</th>
+          <th>Serial number</th>
+          <th></th>
+          <th>Date code</th>
+          <th>Warranty end date</th>
+        </tr>
+        <tr class="third-line-background">
+          <th></th>
+          <th>Licence</th>
+          <th>Product name</th>
+          <th>Invoice ID</th>
+          <th>Activated [MANUAL]</th>
+          <th>Subscription Duration [End date]</th>
+          <th>Major Version</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
 </div>

@@ -41,6 +41,10 @@ import { UserlistComponent } from './pages/Users/userlist/userlist.component';
 import { ChangerMotpasseComponent } from './pages/profil/changer-motpasse/changer-motpasse.component';
 import { ProfilUserComponent } from './pages/profil/profil-user/profil-user.component';
 import { MaterialcomponentfileComponent } from './pages/unified-search folder/materialcomponentfile/materialcomponentfile.component';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { SalescontractComponent } from './salescontract/salescontract.component';
+import { IncidentfileComponent } from './incidentfile/incidentfile.component';
+
 
 
 
@@ -63,10 +67,14 @@ import { MaterialcomponentfileComponent } from './pages/unified-search folder/ma
     UnifiedSearchComponent,
     SearchDoublesComponent,
     UnifiedFormComponent,
-    MaterialcomponentfileComponent, ],
+    MaterialcomponentfileComponent,
+    SalescontractComponent,
+    IncidentfileComponent,
+    ],
     
   imports: [
     BrowserModule,
+    TabMenuModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

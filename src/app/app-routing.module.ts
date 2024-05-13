@@ -8,6 +8,8 @@ import { ChangerMotpasseComponent } from './pages/profil/changer-motpasse/change
 import { ManagementUserComponent } from './pages/Users/management-user/management-user.component';
 
 import { UnifiedHomeComponent } from './pages/unified-search folder/unified-home/unified-home.component';
+import { SalescontractComponent } from './salescontract/salescontract.component';
+import { IncidentfileComponent } from './incidentfile/incidentfile.component';
 
 
 
@@ -54,6 +56,16 @@ const routes: Routes = [
   {
     path: 'unifiedsearch',
     component: UnifiedHomeComponent,
+  },
+
+  {
+    path: 'salescontract',
+    component: SalescontractComponent,
+  },
+
+  {
+    path: 'incidentfile',
+   component:IncidentfileComponent,
   },
 
 

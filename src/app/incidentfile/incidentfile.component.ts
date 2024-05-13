@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './incidentfile.component.scss'
 })
 export class IncidentfileComponent {
+problem: any;
+incident: any;
+ecu: any;
+tool: any;
+customer: any;
+vehicle: any;
 
 }

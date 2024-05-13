@@ -35,10 +35,9 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "angular-font-awesome": "^3.1.2",
     "express": "^4.18.2",
-  
     "font-awesome": "^4.7.0",
     "ngx-bootstrap": "^12.0.0",
-    "primeng": "^17.10.0",
+    "primeng": "^17.16.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

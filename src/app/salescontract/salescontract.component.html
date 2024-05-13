@@ -1,0 +1,97 @@
+<app-navbar> </app-navbar>
+<h3 class="sales-contract">Sale's Contract</h3>
+<div class="container">
+  <div class="form-group">
+    <div class="left-section">
+      <label for="CreationDate" class="form-label inline">Creation Date:</label>
+      <input
+        type="text"
+        id="CreationDate"
+        name="CreationDate"
+        [(ngModel)]="formData.CreationDate"
+        [disabled]="!isEditable"
+        class="form-control inline"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="right-section">
+      <label for="Username" class="form-label inline">Username :</label>
+      <p id="Username" class="form-text inline">
+      </p>
+    </div>
+  </div>
+  <div class="left-panel">
+    <div class="button-container" style="font-size: 0;">
+      <button class="btn btn-besoin" (click)="addUser()" style="font-size: 13px;">VALIDATE</button>
+      <button class="btn btn-besoin" (click)="cancelCreation()" style="font-size: 13px;">ANNULER</button>
+    </div>
+  </div>
+  </div>
+  <h3 class="Customer-information">Customer information</h3>
+  <div class="container1">
+    <div class="form-row">
+      <label for="Company name" class="form-label inline"> Company name :</label>
+      <p id="Username" class="form-text inline">
+      </p>
+      <label for="Zip-code" class="form-label inline">Zip code :</label>
+      <p id="Zip-code" class="form-text inline">
+      </p>
+      <label for="Country" class="form-label inline">Country :</label>
+      <p id="Country" class="form-text inline">
+      </p>
+    </div>
+    <div class="form-row">
+      <label for="Contact-name" class="form-label inline">Contact name :</label>
+      <p id="Contact-name" class="form-text inline">
+      </p>
+      <label for="Phone-number" class="form-label inline">Phone number :</label>
+      <p id="Phone-number" class="form-text inline">
+      </p>
+      <label for="E-mail" class="form-label inline">E-mail :</label>
+      <p id="E-mail" class="form-text inline">
+      </p>
+    </div>
+  </div>
+  <p-tabMenu [model]="items">
+    <ng-template pTemplate="item" let-item>
+      <a [routerLink]="item.route" routerLinkActive="active" class="p-menuitem-link">
+        <span [class]="item.icon"></span>
+        <span class="ml-2">{{ item.label }}</span>
+      </a>
+    </ng-template>
+  </p-tabMenu>
+  <div class="container2">
+    <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
+      <table class="table striped-table" style="width: 100%; table-layout: auto;">
+        <thead>
+          <tr class="first-line-background">
+            <th>Existing Commercial Pack</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr class="second-line-background">
+            <th>Material Component</th>
+            <th>Product name</th>
+            <th>Serial number</th>
+            <th></th>
+            <th>Date code</th>
+            <th>Warranty end date</th>
+          </tr>
+          <tr class="second-line-background">
+            <th>Licence</th>
+            <th>Product name</th>
+            <th>Invoice ID</th>
+            <th>Activated [MANUAL]</th>
+            <th>Subscription Duration [End date]</th>
+            <th>Major Version</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+
+
