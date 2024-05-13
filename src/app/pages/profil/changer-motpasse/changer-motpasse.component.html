@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+
+<div class="d-flex justify-content-center align-items-center" style="height: 60vh;">
+  <div class="form-container">
+    <h3>Veuillez choisir un nouveau mot de passe</h3>
+
+    <div *ngIf="passwordChangeSuccess === false" class="alert alert-danger" >
+      Votre mot de passe n'a pas pu être modifié
+    </div>
+
+    <div *ngIf="passwordsDoNotMatch" class="alert alert-danger"  >
+      Les mots de passe ne correspondent pas!
+    </div>
+
+    <div *ngIf="passwordChangeSuccess" class="alert alert-success" >
+      <strong>Le mot de passe a été modifié!</strong> <strong>Votre mot de passe a bien été réinitialisé.</strong>
+    </div>
+
+    <form (ngSubmit)="changePassword()">
+      <div class="form-group">
+        <label for="password">Nouveau mot de passe</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="newPassword" name="password"
+        placeholder="Nouveau mot de passe" required minlength="4" maxlength="50"
+        [ngClass]="{
+            'is-valid': (newPasswordIsValid() && !passwordsDoNotMatch && newPassword !== ''),
+            'is-invalid': (!newPasswordIsValid() || passwordsDoNotMatch || newPassword === '')
+        }">
+        <app-password-strength-bar [passwordToCheck]="newPassword"></app-password-strength-bar>
+         <!-- Affichage des erreurs -->
+         <small *ngIf="!newPasswordIsValid()" class="form-text text-danger">
+          Le mot de passe doit avoir entre 4 et 50 caractères.
+        </small>
+        <small *ngIf="!passwordIsStrongEnough()" class="form-text text-danger">
+          Le mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule et un chiffre.     </small>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirmation de mot de passe"</label>
+        <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword"
+               placeholder="Confirmation de mot de passe" required minlength="4" maxlength="50"
+               [ngClass]="{
+                   'is-valid': (!passwordsDoNotMatch && confirmPassword !== '' && newPassword === confirmPassword),
+                   'is-invalid': (passwordsDoNotMatch || confirmPassword === '' || (newPassword !== '' && newPassword !== confirmPassword))
+               }">
+        <small class="form-text text-danger" *ngIf="passwordsDoNotMatch">
+          Les mots de passe ne correspondent pas!
+        </small>
+      </div>
+
+      <div style="text-align: right;">
+        <button type="submit" class="btn btn-success" style="background-color: #bdd248; font-size: smaller;">SAUVER</button>
+    </div>
+
+    </form>
+  </div>
+</div>

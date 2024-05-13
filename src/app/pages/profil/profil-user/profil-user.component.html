@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div class="d-flex flex-column align-items-center pt-3">
+    <div class="col-md-4 card card-z1 p-5">
+  
+
+  
+      <form name="form" role="form" #userForm="ngForm" >
+        <div class="form-group">
+          <label class="form-control-label" for="firstName">First name </label>
+          <input type="text" class="form-control" id="firstName" name="firstName"
+                 [value]="user?.prenom"  minlength="1" maxlength="50" [disabled]="true">
+         
+        </div>
+  
+        <div class="form-group">
+          <label class="form-control-label" for="lastName">Last name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" #lastName=""
+                 [value]="user?.nom"   minlength="1" maxlength="50"  [disabled]="true">
+      
+        </div>
+  
+        <div class="form-group">
+          <label class="form-control-label" for="email">Email</label>
+          <input type="text" class="form-control" id="email" name="email"
+                 [value]="user?.email"    pattern="[a-zA-Z0-9.\-_]{1,}@[a-zA-Z.\-]{2,}[.]{1}[a-zA-Z]{2,}" required [disabled]="true">
+       
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="agence">agence</label>
+          <input type="text" class="form-control" id="agence" name="agence"
+                 [value]="user?.agence.nom"   required [disabled]="true">
+       
+        </div>
+
+
+        <div class="form-group">
+          <label class="form-control-label" for="ssProfil">role</label>
+          <input type="text" class="form-control" id="ssProfil" name="role"
+                 [value]="user?.ssProfil"    [disabled]="true">
+       
+        </div>
+  
+  
+  
+
+
+        
+      <div class="form-group">
+        <label class="form-control-label" for="lang">lang</label>
+        <select class="custom-select" [(ngModel)]="user.langKey" id="lang" name="lang" #lang="ngModel" required>
+          <option></option>
+        </select>
+       
+        </div>
+
+        <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-success pull-right" style="background-color: #bdd248; font-size: smaller;">
+          SAUVER
+        </button>
+      </form>
+    </div>
+  </div>

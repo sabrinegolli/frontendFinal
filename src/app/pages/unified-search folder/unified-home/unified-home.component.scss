@@ -1,0 +1,85 @@
+.page__content {
+  display: flex;
+  padding: 1rem;
+  height: 96vh;
+}
+.left-panel,
+.right-panel {
+  flex: 1;
+  padding: 1rem;
+  overflow: auto;
+  border: 3px solid #F8FBFF;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.left-panel {
+  margin-right: 30px; 
+}
+  
+  h1{
+
+    color: #686a6d;
+    font-weight: normal;
+    font-size: 1.6rem;
+  } 
+  :host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    gap: 10px;
+   
+  }
+  
+  .material-symbols-outlined {
+    font-family: 'Material Icons Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  
+  .btn-besoin {
+    background-color: #546472;
+    color: white;
+    font-size: 13px;
+    padding: 6px 12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-besoin:hover{
+    background-color: #dfd3d3; 
+  }
+
+  .btn-save {
+    background-color: #bdd248;
+    color: white;
+    font-size: 13px;
+    padding: 6px 12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-save:hover  {
+    background-color: #dfd3d3; 
+  }
+  
+  .mat-icon {
+    font-size: 18px; 
+  }
+  
+  
+  

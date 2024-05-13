@@ -1,0 +1,94 @@
+<div *ngIf="showForm" class="container">
+  <hr style="border: 0; height: 2px; background-color:#686a6d; margin: 10px 0;">
+    <div class="user-form"  >
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+           
+      <input formControlName="id" type="hidden">
+        <div class="mb-3 form-row">
+          <label for="login" class="col-sm-2 col-form-label">Login </label>
+          <div class="col-sm-10">
+            <input formControlName="login" type="text" class="form-control" id="login" placeholder="Entrez le login" [ngClass]="{'empty': registerForm.get('login')?.valid, 'invalid': registerForm.get('login')?.invalid && registerForm.get('login')?.touched}">
+            <div *ngIf="registerForm.get('login')?.invalid && registerForm.get('login')?.touched" class="text-danger">
+              Le login est requis.
+            </div>
+          </div>
+        </div>
+  
+        <div class="mb-3 form-row">
+          <label for="email" class="form-label" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+          <input formControlName="email" type="email" class="form-control" id="email" placeholder="your_email" [ngClass]="{'empty': registerForm.get('email')?.valid, 'invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}">
+          <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+            Votre email est requis
+          </div>
+        </div>
+      </div>
+
+
+
+        <div class="mb-3 form-row">
+        
+          <label for="prenom" class="form-label" class="col-sm-2 col-form-label" >first Name </label>
+          <div class="col-sm-10">
+          <input formControlName="prenom" type="text" class="form-control" id="prenom" placeholder="your_first_name" [ngClass]="{'empty': registerForm.get('prenom')?.valid, 'invalid': registerForm.get('prenom')?.invalid && registerForm.get('prenom')?.touched}">
+          <div *ngIf="registerForm.get('prenom')?.invalid && registerForm.get('prenom')?.touched" class="text-danger">
+            Votre prénom est requis
+          </div>
+        </div>
+      </div>
+
+
+        <div class="mb-3 form-row">
+          
+            <label for="password" class="form-label" class="col-sm-2 col-form-label">password</label>
+            <div class="col-sm-10">
+            <input formControlName="password" type="password" class="form-control"  placeholder="your-password"  id="password" [ngClass]="{'empty': registerForm.get('password')?.valid, 'invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}" >
+            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger">
+              Le password est requis.
+            </div>
+          </div>
+        </div>
+  
+        <div class="mb-3 form-row">
+         
+          <label for="nom" class="form-label" class="col-sm-2 col-form-label" >Last Name </label>
+          <div class="col-sm-10">
+          <input formControlName="nom" type="text" class="form-control" id="nom" placeholder="your_last_name" [ngClass]="{'empty': registerForm.get('nom')?.valid, 'invalid': registerForm.get('nom')?.invalid && registerForm.get('nom')?.touched}">
+          <div *ngIf="registerForm.get('nom')?.invalid && registerForm.get('nom')?.touched" class="text-danger">
+            Votre nom est requis"
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 form-row">        
+        <label for="agence" class="form-label" class="col-sm-2 col-form-label" >agence </label>
+        <div class="col-sm-10">
+          <select formControlName="agence" class="form-select" id="agence" [ngClass]="{'empty': registerForm.get('agence')?.valid, 'invalid': registerForm.get('agence')?.invalid && registerForm.get('agence')?.touched}">
+            <option *ngFor="let agence of agences" [ngValue]="agence">{{ agence.nom }}</option>
+          </select>
+          <div *ngIf="registerForm.get('agence')?.invalid && registerForm.get('agence')?.touched" class="text-danger">
+            Le agence est requis.
+          </div>
+        </div>
+      </div>
+      
+    
+      <div class="mb-3 form-row">
+        
+        <label for="ssProfil" class="form-label" class="col-sm-2 col-form-label" >Profil </label>
+        <div class="col-sm-10">
+          <select formControlName="ssProfil" class="form-select" id="ssProfil" [ngClass]="{'empty': registerForm.get('ssProfil')?.valid, 'invalid': registerForm.get('ssProfil')?.invalid && registerForm.get('ssProfil')?.touched}">
+            <option *ngFor="let ssProfil of ssProfils" [value]="ssProfil">{{ ssProfil }}</option>
+        </select>
+        <div *ngIf="registerForm.get('ssProfil')?.invalid && registerForm.get('ssProfil')?.touched" class="text-danger">
+          Le profil est requis.
+        </div>
+      </div>
+    </div>
+   
+     </form>
+    </div>
+     
+  
+  </div>
+  

@@ -1,0 +1,40 @@
+
+  <app-navbar></app-navbar>
+  <br>
+
+  <div class="container-fluid page">
+    <div class="page__content">
+      <div class="left-panel" style="border: 3px solid #F8FBFF">
+          <app-userlist (userSelected)="onUserSelected($event)"></app-userlist>
+        </div>
+        <div class="right-panel" style="border: 3px solid #F8FBFF">
+          <div class="button-container">
+            <button type="button" class="btn btn-save" (click)="saveUser(creeUserComponent.registerForm.value)"   *ngIf="showCreeuser  "     >
+              <mat-icon>save</mat-icon> SAUVER
+            </button>
+            <button class="btn btn-besoin"(click)="deleteUserConfirmation(selectedUser.id)" *ngIf="showCreeuser && !creeUserComponent.isEditing && selectedUser " >
+              <mat-icon>delete</mat-icon>  SUPPRIMER
+            </button>
+            <button class="btn btn-besoin" type="button" (click)="editUser()" *ngIf="showCreeuser && !creeUserComponent.isEditing && selectedUser "   >
+              <mat-icon>edit</mat-icon>  MODIFIER
+            </button>
+          <button class="btn btn-besoin" (click)="cancelCreation()" *ngIf="showCreeuser ">
+            <mat-icon>block</mat-icon>  
+          ANNULER
+          </button>
+          <button class="btn btn-besoin"   (click)="addUser()" >
+            <mat-icon>add</mat-icon>  NOUVEAU
+          </button>
+          
+          </div>
+          <br>
+        <div style=" margin-left: 40px; ">
+          <h1  *ngIf="showCreeuser && !selectedUser  " >Creé Un Nouvel  Utilisateur</h1>
+          <h1  *ngIf="showCreeuser && selectedUser  " >   Information</h1>
+         </div>
+
+          <app-creeuser [user]="selectedUser" [showForm]="showCreeuser" (saveUser)="saveUser($event)"></app-creeuser>
+
+        </div>
+      </div>
+    </div>

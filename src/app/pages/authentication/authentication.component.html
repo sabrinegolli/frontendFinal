@@ -1,0 +1,47 @@
+<div class="full-container-main">
+    <div class="bande-top"></div>
+  
+    <div class="full-container-main-login">
+      <div class="container">
+        <div class="heading">Identification</div>
+        <br>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+
+          
+          <input placeholder="Nom d'utilisateur" id="login" name="login" type="text" class="input" formControlName="login"
+          [ngClass]="{'is-valid': isLoginValid(), 'is-invalid': isLoginInvalid()}" />
+   <br />
+   <div *ngIf="isLoginInvalid()">
+    <small class="error-message"> Le nom d'utilisateur est requis.</small>
+  </div>
+          <br />
+        
+          <input placeholder="Mot de passe" id="password" name="password" type="password" class="input" formControlName="password"
+          [ngClass]="{'is-valid': isPasswordValid(), 'is-invalid': isPasswordInvalid()}" />
+   <br />
+   <div *ngIf="isPasswordInvalid()">
+     <small class="error-message"> Le mot de passe est requis.</small>
+   </div>
+          <br />
+          <br />
+        
+          <input value="Connexion" type="submit" class="login-button" />
+        </form>
+        
+        
+        <div class="social-account-container">
+          <div class="g-recaptcha" data-sitekey="VOTRE_SITE_KEY"></div>
+        </div>
+        <div class="login-logo-imgg">
+         
+        </div>
+        <div class="login-logo-img">
+            <img src="../../../../assets/logo-adn@3x.png" class="img-responsive" alt="logo actia">
+         
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  

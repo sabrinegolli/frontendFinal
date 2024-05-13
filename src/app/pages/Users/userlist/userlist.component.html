@@ -1,0 +1,63 @@
+<div class="container" >
+  <h1>Users</h1>
+  
+
+  
+  <div class="table-responsive" style="max-height: 640px; overflow-y: auto; 
+  " >
+    <table class="table " style="width: 100%; table-layout: auto; 
+     ">
+      <thead>
+        <tr>
+         
+    
+          <th>last_name</th>
+          <th>first name</th>
+          <th>email</th>
+          <th>Profil</th>
+          <th>Agence</th>
+    
+   
+      
+      
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index" [ngClass]="{'selected': selectedRowIndex === i}" (click)="selectUser(user, i)">
+  
+          <td>{{user.nom}}</td>
+          <td>{{user.prenom}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.ssProfil}}</td>
+          <td>{{user.agence?.nom}}</td>
+    
+     
+         
+         
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+<br>
+<div class="pagination-container">
+  <div class="pagination-left" >
+    {{ getFirstEntryNumber() }}-{{ getLastEntryNumber() }} / {{ totalRecords }}
+  </div>
+  <!-- La pagination -->
+  <div class="fixed-bottom">
+    <div  style="margin-bottom: 18px;">
+      <p-paginator [rows]="pageSize" [totalRecords]="totalRecords" (onPageChange)="onPageChange($event)" >
+      </p-paginator>
+    </div>
+  </div>
+  <div class="pagination-right">
+    Page : {{ getFirstEntryNumber() }} / {{ totalRecords }}
+  </div>
+</div>
+
+  
+</div>
+
+
+

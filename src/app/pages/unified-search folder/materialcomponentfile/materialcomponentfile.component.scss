@@ -1,0 +1,144 @@
+$primary-color: #686a6d;
+$secondary-color: #0c5460;
+$background-color: #d1ecf1;
+$border-color: #ccc;
+$font-size: 12px;
+$small-font-size: 10px;
+
+.search-input:focus {
+  border-color: #A5EBEE;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.alert {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: $font-size;
+    line-height: 1.5;
+    color: #4a4a4a;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius: 0.25rem;
+
+    &:focus {
+      border-color: #A5EBEE;
+      box-shadow: 0 0 0 0.2rem rgba(165, 235, 238, 0.25);
+    }
+
+    &.invalid {
+      border-color: red;
+    }
+
+    &.empty {
+      border-color: rgb(6, 100, 6);
+    }
+  }
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 20px 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 110%;
+
+  form {
+    .form-group {
+      label {
+        width: 350px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="url"],
+      textarea,
+      select {
+        width: calc(100% - 350px);
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.table-responsive {
+  max-height: 300px;
+  overflow-y: auto;   }
+
+  table {
+    width: 100%;
+    table-layout: auto;   }
+
+    thead {
+      th {
+        font-weight: bold;
+        color: #fff;
+        background-color: $primary-color;
+        padding: 0.5rem;
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background-color: #f5f5f5;
+        }
+
+        td {
+          padding: 0.5rem;
+          border-bottom: 1px solid $border-color;
+
+          a {
+            color: $primary-color;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+        }
+    }
+}
+}
+  

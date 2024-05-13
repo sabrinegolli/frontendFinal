@@ -1,0 +1,191 @@
+<h2 class="material-File">Material Component file </h2>
+
+
+<div id="form1Ajout" class="form1-container"> 
+  <form *ngIf="isAddingTool || isEditingTool">
+    <div
+    class="form-group"
+    [ngClass]="{ 'has-data': hasData(formData.ProductName) }"
+  >
+  <label for="ProductName">
+    Product name :
+  </label>
+  <input
+    type="text"
+    id="ProductName"
+    name="ProductName"
+    [(ngModel)]="formData.ProductName"
+    [disabled]="!isEditable"
+  />
+</div>
+
+
+<div
+      class="form-group"
+    >
+    <label for="SerialNumber">
+        Serial number *	:
+    </label>
+    <input
+      type="text"
+      id="SerialNumber"
+      name="SerialNumber"
+      [(ngModel)]="formData.SerialNumber"
+      [disabled]="!isEditable"
+    />
+  </div>
+
+
+  <div
+  class="form-group"
+>
+<label for="DateCode">
+    Date code *	:
+</label>
+<input
+  type="date"
+  id="DateCode"
+  name="DateCode"
+  [(ngModel)]="formData.DateCode"
+  [disabled]="!isEditable"
+/>
+</div>
+
+<div
+      class="form-group"
+    >
+    <label for="DockingStationSerialNumber">
+        Docking station serial number:
+    </label>
+    <input
+      type="text"
+      id="DockingStationSerialNumber"
+      name="DockingStationSerialNumber"
+      [(ngModel)]="formData.DockingStationSerialNumber"
+      [disabled]="!isEditable"
+    />
+  </div>
+
+ 
+  
+  <div
+      class="form-group"
+      [ngClass]="{ 'has-data': hasData(formData.SetupDate) }"
+    >
+     
+    <label for="SetupDate">
+        Setup date :
+    </label>
+    <input
+      type="text"
+      id="SetupDate"
+      name="SetupDate"
+      [(ngModel)]="formData.SetupDate"
+      [disabled]="!isEditable"
+    />
+  </div>
+ 
+
+
+  <div
+      class="form-group"
+      [ngClass]="{ 'has-data': hasData(formData.WarrantyeEndDate) }">
+    <label for="City">
+      City * :	
+    </label>
+    <input
+      type="text"
+      id="WarrantyeEndDate"
+      name="WarrantyeEndDate"
+      [(ngModel)]="formData.WarrantyeEndDate"
+      [disabled]="!isEditable"
+    />
+  </div>
+
+
+  <div
+  class="form-group"
+  [ngClass]="{ 'has-data': hasData(formData.ToolNotUnderWarranty) }">
+<label for="ToolNotUnderWarranty">
+    Tool Not Under Warranty :	
+</label>
+<input
+  type="date"
+  id="ToolNotUnderWarranty"
+  name="ToolNotUnderWarranty"
+  [(ngModel)]="formData.ToolNotUnderWarranty"
+  [disabled]="!isEditable"/>
+</div>
+
+<div class="form-group">
+<label style="color: rgb(0, 0, 0);">
+<input type="checkbox" name="InRepair" value="example"> In repair
+</label>
+</div>
+
+<div class="form-group">
+    <label style="color: rgb(0, 0, 0);">
+    <input type="checkbox" name="LoanTool" value="example"> Loan tool	
+    </label>
+    </div>
+
+<div class="form-group">
+    <label style="color: rgb(0, 0, 0);">
+    <input type="checkbox" name="SerialNumberDouble" value="example"> Serial number double
+    </label>
+    </div>
+
+
+<div class="form-group">
+<div class="button-container">
+  <label for="note">Note: </label>
+<br>
+<textarea id="note" name="note" rows="4" cols="80" style="font-size: 12px; border: 1px solid #cccccc; border-radius: 5px;
+">
+</textarea>
+
+
+<div
+class="form-group"
+[ngClass]="{ 'has-data': hasData(formData.ToolCode) }">
+<label for="ToolNotUnderWarranty">
+	Tool code :
+</label>
+<input
+type="date"
+id="ToolCode"
+name="ToolCode"
+[(ngModel)]="formData.ToolCode"
+[disabled]="!isEditable"/>
+</div>
+  <!-- Bouton pour modifier ou enregistrer -->
+  <div>
+  <button
+    class="btn btn-primary"
+    type="button"
+    (click)="isEditable ? saveChanges() : enableEdit()"
+  >
+  <mat-icon>{{ isEditingTool ? "edit" : "save" }}</mat-icon>
+    {{ isEditingTool ? "Modifier" : "Enregistrer" }}
+   
+  </button>
+  <!-- Bouton Enregistrer -->
+  <button
+    class="btn btn-primary"
+    type="button"
+    *ngIf="isEditingTool"
+    (click)="saveChanges()"
+  >
+
+    Enregistrer
+    
+  </button>
+</div>
+</div>
+</div>
+  </form>
+</div>
+
+
+
+
