@@ -10,6 +10,7 @@ import { ManagementUserComponent } from './pages/Users/management-user/managemen
 import { UnifiedHomeComponent } from './pages/unified-search folder/unified-home/unified-home.component';
 import { SalescontractComponent } from './salescontract/salescontract.component';
 import { IncidentfileComponent } from './incidentfile/incidentfile.component';
+import { CustomerfileComponent } from './customerfile/customerfile.component';
 
 
 
@@ -68,6 +69,12 @@ const routes: Routes = [
    component:IncidentfileComponent,
   },
 
+  
+  {
+    path: 'customerfile',
+   component:CustomerfileComponent,
+  },
+ 
 
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },

@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./salescontract.component.scss']
 })
 export class SalescontractComponent {
+cancelContract() {
+throw new Error('Method not implemented.');
+}
+validateContract() {
+throw new Error('Method not implemented.');
+}
   isEditable: any;
   formData: any;
   items: any[] = [
@@ -15,6 +21,7 @@ export class SalescontractComponent {
     { label: 'Renew licence', route: 'accueil' },
     { label: 'Make a gift ', route: 'accueil' },
   ];
+contract: any;
 
   addUser() {
     throw new Error('Method not implemented.');

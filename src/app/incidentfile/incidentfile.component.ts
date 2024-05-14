@@ -12,5 +12,6 @@ ecu: any;
 tool: any;
 customer: any;
 vehicle: any;
+problemDescription: any;
 
 }

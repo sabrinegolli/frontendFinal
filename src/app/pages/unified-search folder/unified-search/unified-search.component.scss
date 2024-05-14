@@ -155,11 +155,11 @@ h1 {
   display: flex;
   justify-content: flex-end;
   text-align: center;
-  gap: 10px;
+  gap: 15px;
   margin-top: auto; // Add this line to align the button to the bottom of the container
-  background-color: #F8FBFF; // Add this line to match the background color of the left and right panels
+
   padding: 1rem; // Add this line to match the padding of the left and right panels
-  border: 3px solid #F8FBFF; // Add this line to match the border of the left and right panels
+
   border-radius: 5px; // Add this line to add some border radius to the button container
 }
 
@@ -174,7 +174,7 @@ h1 {
   border: none; 
   border-radius: 5px; 
   &:hover {
-    background-color: #dfd3d3; }}
+    background-color: #ffffff; }}
 
 // Alert Error
 .alert-error {
@@ -215,6 +215,17 @@ h1 {
   // Added line spacing
   margin-bottom: 20px;
 }
+.table {
+  color: $primary-color; /* Set text color to the same as $primary-color */
+  margin: 0 auto; /* Remove left and right margins */
+}
+
+.table th,
+.table td {
+  /* Inherit the color from the parent table element */
+  color: inherit;
+}
+
 
 // Badge
 .badge {

@@ -1,171 +1,126 @@
 $primary-color: #686A6D;
+
+body {
+  margin: 0; /* Set body margin to 0 for full-width content */
+}
+
 h3 {
-  font-size: 1.6rem; /* reduced font size */
+  font-size: 1.6rem; /* Existing styles */
   font-weight: normal;
-  margin-bottom: 1.2rem; /* increased margin bottom */
-  text-align: left; /* push it to left */
+  margin-bottom: 1.2rem;
+  text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  border-bottom: 1px solid #546472; /* applied the desired color */
-  color: #546472; /* applied the desired color */
-  padding-top: 0.5rem; /* added padding top */
-  padding-bottom: 0.5rem; /* added padding bottom */
+  border-bottom: 1px solid #546472 ;
+  color: #546472;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-weight: 200;
 }
-// Global styles
-body {
-  font-size: 16px; // Increase the font size
-  font-weight: bold;
-  color: #686A6D;
-  width: 350px;
-  font-weight: bold;
-  font-family: "Open Sans", Arial;
-}
-// Container styles
+
 .container {
-  max-width: 1800px; // Set a maximum width for the container
- // Center the container
-  padding: 20px; // Add some padding to the container
-  display: flex; // Use Flexbox to align elements in a row
-  justify-content: space-between; // Add space between elements
-  background-color: #F1F5F8;
-  height: 150px;
+  max-width: 850px;
+  margin: 20px }
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  label {
+    font-weight: bold;
+    color: #686A6D;
+    font-size: 0.9rem;
+    margin-right: 160px;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    &.empty {
+      border-left: 10px solid rgb(6, 100, 6);
+    }
+    &.invalid {
+      border-left: 10px solid red;
+    }
+    &:disabled {
+      border-left: 10px solid rgb(6, 100, 6);
+    }
+  }
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    &.empty {
+      border-left: 10px solid rgb(6, 100, 6);
+    }
+    &.invalid {
+      border-left: 10px solid red;
+    }
+    &:disabled {
+      border-left: 10px solid rgb(6, 100, 6);
+    }
+  }
+  button {
+    width: 30%;
+    padding: 4px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    background-color: #595F66;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      background-color: #C5C7CA;
+    }
+  }
+
+.alert {
+  background-color: #D1ECF1;
+  color: #0C5460;
+  padding: 10px;
+  margin-bottom: 10px;
 }
-// Form group styles
-.form-group {
-  flex-basis: 40%; // Set the width of the form group
+.alert-error {
+  background-color: #F8D7DA;
+  color: #721C24;
+  padding: 10px;
+  margin-bottom: 10px;
 }
-// Left section styles
-.left-section {
-  display: flex; // Use Flexbox to align elements in a row
-  align-items: center; // Align elements vertically centered
-}
-// Right section styles
-.right-section {
-  display: flex; // Use Flexbox to align elements in a row
-  align-items: center; // Align elements vertically centered
-  justify-content: flex-end; // Align elements to the right
-}
-// Label styles
-.form-label {
-  font-size: 16px; // Increase the font size
-  color: #686A6D;
-  margin-bottom: 0; // Remove bottom margin
-  display: inline-block; // Make labels inline-block elements
-  width: 300px; // Remove fixed width
-  margin-right: 20px; // Add some margin between label and input
-  font-weight: bold;
-  font-family: "Open Sans", Arial;
-}
-// Input styles
-.form-control {
-  width: 30%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px; // Increase the font size
-  padding-left: 30px;
-  outline: none;
-  &:focus {
-    border-color: #A5EBEE;
+.table-responsive {
+  tr.selected {
+    background-color: #CFE5FA;
+    border-left: 0.5em solid #BDD248;
+  }
+  th, td {
+    font-weight: bold;
+    color: #686A6D;
+    font-size: 0.8rem;
+    vertical-align: middle;
   }
 }
-// Disabled input styles
-.form-control[disabled] {
-  background-color: #F5F5F5; // Set a light gray background color for disabled inputs
-  cursor: not-allowed; // Disable pointer events
+.buttons {
+  margin-bottom: 20px;
 }
-// Form text styles
-.form-text {
-  font-size: 16px; // Increase the font size
-  color: #686A6D;
-  margin-bottom: 0;
-}
-// Additional SCSS code to align elements inline
-.inline {
-  display: inline-block; // Make elements inline-block elements
-  vertical-align: middle; // Align elements vertically centered
-  margin-right: 10px; // Add some margin between elements
-}
-.page__content {
-  display: flex;
-  padding: 1rem;
-  height: 96vh;
-}
-h1 {
-  color: #686A6D;
-  font-weight: normal;
-  font-size: 1.6rem;
-}
-:host {
+.pagination-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
-}
-.button-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-}
-.material-symbols-outlined {
-  font-family: 'Material Icons Outlined';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 15px;
-  display: inline-block;
-  line-height: 1;
-  vertical-align: middle;
-}
-.btn-besoin {
-  background-color: #546472;
-  color: white;
-}
-.btn-besoin:hover {
-  background-color: #DFD3D3;
-}
-.mat-icon {
-  font-size: 18px;
-}
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.form-label-row {
-  flex-basis: 30%;
-  margin-bottom: 5px;
-}
-.form-text-row {
-  flex-basis: 68%;
-  margin-bottom: 5px;
-}
-@media (min-width: 768px) {
-  .form-row {
-    flex-wrap: nowrap;
-  }
-  .form-label-row {
-    flex-basis: 33.33%;
-  }
-  .form-text-row {
-    flex-basis: 66.66%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  .pagination-left, .pagination-right {
+    font-weight: normal;
+    font-size: 0.8rem;
+    text-align: left;
   }
 }
-.container1 {
-    max-width: 2000px; // Set a maximum width for the container
-     
-    padding: 20px; // Add some padding to the container
-   // Use Flexbox to align elements in a row
-  // Add space between elements
-    background-color: #F1F5F8;
-    height: 200px;
-  }
-  .container2 {
-    max-width: 2000px; // Set a maximum width for the container
-     
-    padding: 20px; // Add some padding to the container
-   // Use Flexbox to align elements in a row
-  // Add space between elements
 
-    height: 800px;
-  }
+
+
+
+
+
+

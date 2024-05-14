@@ -44,6 +44,7 @@ import { MaterialcomponentfileComponent } from './pages/unified-search folder/ma
 import { TabMenuModule } from 'primeng/tabmenu';
 import { SalescontractComponent } from './salescontract/salescontract.component';
 import { IncidentfileComponent } from './incidentfile/incidentfile.component';
+import { CustomerfileComponent } from './customerfile/customerfile.component';
 
 
 
@@ -70,6 +71,7 @@ import { IncidentfileComponent } from './incidentfile/incidentfile.component';
     MaterialcomponentfileComponent,
     SalescontractComponent,
     IncidentfileComponent,
+    CustomerfileComponent,
     ],
     
   imports: [

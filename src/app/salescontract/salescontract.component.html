@@ -1,97 +1,72 @@
-<app-navbar> </app-navbar>
-<h3 class="sales-contract">Sale's Contract</h3>
-<div class="container">
-  <div class="form-group">
-    <div class="left-section">
-      <label for="CreationDate" class="form-label inline">Creation Date:</label>
-      <input
-        type="text"
-        id="CreationDate"
-        name="CreationDate"
-        [(ngModel)]="formData.CreationDate"
-        [disabled]="!isEditable"
-        class="form-control inline"
-      />
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="right-section">
-      <label for="Username" class="form-label inline">Username :</label>
-      <p id="Username" class="form-text inline">
-      </p>
-    </div>
-  </div>
-  <div class="left-panel">
-    <div class="button-container" style="font-size: 0;">
-      <button class="btn btn-besoin" (click)="addUser()" style="font-size: 13px;">VALIDATE</button>
-      <button class="btn btn-besoin" (click)="cancelCreation()" style="font-size: 13px;">ANNULER</button>
-    </div>
-  </div>
-  </div>
-  <h3 class="Customer-information">Customer information</h3>
-  <div class="container1">
-    <div class="form-row">
-      <label for="Company name" class="form-label inline"> Company name :</label>
-      <p id="Username" class="form-text inline">
-      </p>
-      <label for="Zip-code" class="form-label inline">Zip code :</label>
-      <p id="Zip-code" class="form-text inline">
-      </p>
-      <label for="Country" class="form-label inline">Country :</label>
-      <p id="Country" class="form-text inline">
-      </p>
-    </div>
-    <div class="form-row">
-      <label for="Contact-name" class="form-label inline">Contact name :</label>
-      <p id="Contact-name" class="form-text inline">
-      </p>
-      <label for="Phone-number" class="form-label inline">Phone number :</label>
-      <p id="Phone-number" class="form-text inline">
-      </p>
-      <label for="E-mail" class="form-label inline">E-mail :</label>
-      <p id="E-mail" class="form-text inline">
-      </p>
-    </div>
-  </div>
-  <p-tabMenu [model]="items">
-    <ng-template pTemplate="item" let-item>
-      <a [routerLink]="item.route" routerLinkActive="active" class="p-menuitem-link">
-        <span [class]="item.icon"></span>
-        <span class="ml-2">{{ item.label }}</span>
-      </a>
-    </ng-template>
-  </p-tabMenu>
-  <div class="container2">
-    <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
-      <table class="table striped-table" style="width: 100%; table-layout: auto;">
-        <thead>
-          <tr class="first-line-background">
-            <th>Existing Commercial Pack</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-          <tr class="second-line-background">
-            <th>Material Component</th>
-            <th>Product name</th>
-            <th>Serial number</th>
-            <th></th>
-            <th>Date code</th>
-            <th>Warranty end date</th>
-          </tr>
-          <tr class="second-line-background">
-            <th>Licence</th>
-            <th>Product name</th>
-            <th>Invoice ID</th>
-            <th>Activated [MANUAL]</th>
-            <th>Subscription Duration [End date]</th>
-            <th>Major Version</th>
-          </tr>
-        </thead>
-      </table>
+<app-navbar></app-navbar>
+
+<div class="contract-info">
+
+  <h3 class="sales-contract">Sale's Contract</h3>
+
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="row align-items-end mb-3">
+        <div class="col">
+          <label for="creationDate">Creation date</label>
+          <input type="date" id="creationDate" class="form-control" [(ngModel)]="contract.creationDate">
+        </div>
+        <div class="col">
+          <label for="username">Username</label>
+          <input type="text" id="username" class="form-control" [(ngModel)]="contract.username" disabled>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-success" (click)="validateContract()">Validate</button>
+          <button class="btn btn-danger" (click)="cancelContract()">Cancel</button>
+        </div>
+      </div>
     </div>
   </div>
 
+  <h3 class="sales-contract">Customer information</h3>
 
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <label for="companyName">Company name</label>
+            <input type="text" id="companyName" class="form-control" [(ngModel)]="contract.companyName">
+          </div>
+          <div class="col">
+            <label for="contactName">Contact name</label>
+            <input type="text" id="contactName" class="form-control" [(ngModel)]="contract.contactName">
+          </div>
+          <div class="col">
+            <label for="zipCode">Zip code</label>
+            <input type="text" id="zipCode" class="form-control" [(ngModel)]="contract.zipCode">
+          </div>
+          <div class="col">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" class="form-control" [(ngModel)]="contract.phone">
+          </div>
+          <div class="col">
+            <label for="country">Country</label>
+            <input type="text" id="country" class="form-control" [(ngModel)]="contract.country">
+          </div>
+          <div class="col">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" class="form-control" [(ngModel)]="contract.email">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row mt-3">
+        <div class="col">
+          <a routerLink="/new-pack" class="btn btn-outline-primary">New pack</a>
+          <a routerLink="/add-element" class="btn btn-outline-secondary">Add element</a>
+          <a routerLink="/upgrade-pack" class="btn btn-outline-success">Upgrade pack</a>
+          <a routerLink="/renew-license" class="btn btn-outline-warning">Renew license</a>
+          <a routerLink="/make-gift" class="btn btn-outline-info">Make a gift</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
