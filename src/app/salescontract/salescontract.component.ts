@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-salescontract',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./salescontract.component.scss']
 })
 export class SalescontractComponent {
+
+items:any[] = [
+  { label: 'Make a new sale', route: '/salescontract' }, 
+  { label: 'Move pack here', route: '/incidentfile' }, 
+  { label: 'Trash pack', route: '/accueil' } ,
+  { label: 'Tool history', route: '/accueil' },
+  { label: 'Add a new incident', route: '/incidentfile' } ,
+];
 cancelContract() {
 throw new Error('Method not implemented.');
 }
@@ -14,13 +23,8 @@ throw new Error('Method not implemented.');
 }
   isEditable: any;
   formData: any;
-  items: any[] = [
-    { label: 'New pack', route: '/salescontract' }, // Current route (for highlighting)
-    { label: 'Add element', route: 'acceuil' },
-    { label: 'Upgrade pack', route: 'accueil' },
-    { label: 'Renew licence', route: 'accueil' },
-    { label: 'Make a gift ', route: 'accueil' },
-  ];
+  errorMessage: any;
+  successMessage: any;
 contract: any;
 
   addUser() {

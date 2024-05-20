@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './customerfile.component.scss'
 })
 export class CustomerfileComponent {
+items: any;
+item: any;
 
 }

@@ -101,3 +101,111 @@
     vertical-align: middle;
     color: #888;
   }
+  .table-container {
+  max-width: 850px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  overflow-x: auto;
+  background-color: #F8F9FA;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.table {
+  /* Existing styles from original SCSS */
+  width: 100%;
+  border-collapse: collapse;
+  background: #FFFFFF;
+  color: #686A6D;
+
+  th,
+  td {
+    /* Existing styles from original SCSS */
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 0.8rem;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    /* Existing styles from original SCSS */
+    background-color: #fffafa;
+    color: #686A6D;
+    font-weight: bold;
+  }
+
+  /* Additional styles */
+  tr.selected {
+    background-color: #CFE5FA;
+    border-left: 0.5em solid #BDD248; /* Maintain selection style */
+  }
+
+  tr:hover {
+    background-color: #E8F0FE; /* Maintain hover effect */
+  }
+}
+
+
+.search-container {
+  position: relative;
+  margin-bottom: 20px;
+  .search-input {
+    width: 100%;
+    padding: 5px 30px 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    outline: none;
+    &:focus {
+      border-color: #A5EBEE;
+    }
+  }
+  .material-icons {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  .btn {
+    background-color: #546472;
+    color: white;
+    font-size: 13px;
+    padding: 6px 12px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    &:hover {
+      background-color: #DFD3D3;
+    }
+  }
+}
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  &-error {
+    background-color: #F8D7DA;
+    color: #721C24;
+  }
+  &-success {
+    background-color: #D1ECF1;
+    color: #0C5460;
+  }
+}
+
+
+
+
+
+
+
+
+
