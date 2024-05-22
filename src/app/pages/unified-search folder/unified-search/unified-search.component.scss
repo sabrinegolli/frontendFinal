@@ -162,42 +162,61 @@ h1 {
 
   border-radius: 5px; // Add this line to add some border radius to the button container
 }
-
+mat-icon {
+  margin-left: 5px; /* Add margin between text and icon */
+}
 .btn {
-  background-color: #546472; 
-  font-size: 13px; 
-  padding: 6px 12px; 
-  text-align: center; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  border: none; 
-  border-radius: 5px; 
+  background-color: #546472;
+  color: white;
+  font-size: 12px;
+  padding: 6px 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
   &:hover {
-    background-color: #ffffff; }}
-
-// Alert Error
-.alert-error {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 10px;
-  margin-bottom: 10px;
-
-  // Added line spacing
-  margin-bottom: 20px;
+    background-color: #DFD3D3;
+  }
+}
+.btn-save {
+  background-color: #BDD248;
+}
+.btn-cancel {
+  background-color: #546472;
+}
+.btn-new {
+  background-color: #546472;
+}
+.btn-delete {
+  background-color: #90969D;
+}
+.btn-warning {
+  position: relative;
 }
 
-// Alert
+.btn-warning mat-icon {
+  color: #f7f7f7;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1em;
+}
+// Add the following styles to your existing SCSS code
+
+// Button styles
+.option-item input[type="radio"] {
+  margin-bottom: 5px; /* Add some margin between each option */
+}
+
+
 .alert {
-  background-color: $background-color;
-  color: $primary-color;
+  background-color: #d1ecf1;
+  color: #0c5460;
   padding: 10px;
   margin-bottom: 10px;
-
-  // Added line spacing
-  margin-bottom: 20px;
 }
-
 // Table
 .table th {
   font-weight: bold;

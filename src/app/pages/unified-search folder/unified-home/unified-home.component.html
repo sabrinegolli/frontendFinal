@@ -1,36 +1,33 @@
 <app-navbar></app-navbar>
-
-<div class="container-fluid page" style="border: 1px solid #bdd248">
-    <div class="d-flex page__box p-3 mt-2"></div>
-  
-    <div class="page__content shadow p-2 position-relative">
-      <div class="left-panel" style="border: 0.5px solid #bdd248">
-       <app-unified-search (CustomerSelected)="onCustomerSelected($event)"></app-unified-search>
+<div class="container-fluid page" style="border: 1px solid #BDD248">
+  <div class="d-flex page__box p-3 mt-2"></div>
+  <div class="page__content shadow p-2 position-relative">
+    <div class="left-panel">
+      <app-unified-search (CustomerSelected)="onCustomerSelected($event)"></app-unified-search>
+    </div>
+    <div class="right-panel">
+      <div class="button-container">
+        <button class="btn btn-save" type="button" *ngIf="isEditingCustomer">
+          <mat-icon>save</mat-icon> SAVE
+        </button>
+        <button class="btn btn-cancel" type="button" (click)="cancelForm()" *ngIf="isAddingCustomer || isEditingCustomer">
+          <mat-icon>cancel</mat-icon> CLOSE
+        </button>
+        <button class="btn btn-new" type="button" (click)="toggleForm()">
+          <mat-icon>add</mat-icon> ADD
+        </button>
+        <button class="btn btn-delete" type="button" *ngIf="isEditingCustomer">
+          <mat-icon>delete</mat-icon> DELETE
+        </button>
       </div>
-      <div class="right-panel" style="border: 0.5px solid #bdd248">
-        <div class="button-container">
-          <button class="btn btn-besoin" type="button"  *ngIf="isEditingCustomer">
-            <mat-icon>delete</mat-icon> Supprimer
-          </button>
-          <button class="btn btn-besoin" type="button" (click)="cancelForm()" *ngIf="isAddingCustomer || isEditingCustomer">
-            <mat-icon>cancel</mat-icon> Annuler
-          </button>
-          <button class="btn btn-besoin" (click)="toggleForm()">
-            <mat-icon>add</mat-icon> Ajouter
-          </button>
-        </div>
-        
-  
-        <!-- Affichage du formulaire d'ajout ou de modification -->
-        <app-unified-form
-          *ngIf="isAddingCustomer || isEditingCustomer"
-          [isAddingCustomer]= "isAddingCustomer"
-          [isEditingCustomer]="isEditingCustomer"
-          [selectedCustomer]="selectedCustomer"
-          [isEditable]="isEditable"
-  
-        ></app-unified-form>
-      </div>
+      <!-- Affichage du formulaire d'ajout ou de modification -->
+      <app-unified-form
+        *ngIf="isAddingCustomer || isEditingCustomer"
+        [isAddingCustomer]="isAddingCustomer"
+        [isEditingCustomer]="isEditingCustomer"
+        [selectedCustomer]="selectedCustomer"
+        [isEditable]="isEditable"
+      ></app-unified-form>
     </div>
   </div>
-  
+</div>

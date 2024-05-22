@@ -6,22 +6,22 @@
         <div class="option-item">
           <input type="radio" name="option" id="customerID" (change)="toggleField('customerID')">
           <label for="customerID" class="code-label">by customer id:</label>
-          <input type="text" [disabled]="!iscustomerIDSelected">
+          <input type="text" [disabled]="!iscustomerIDSelected"(click)="handleClick($event)">
         </div>
         <div class="option-item">
           <input type="radio" name="option" id="customerE-mail" (change)="toggleField('customerE-mail')">
           <label for="customerE-mail" class="code-label">by customer e-mail:</label>
-          <input type="text" [disabled]="!iscustomerEmailSelected">
+          <input type="text" [disabled]="!iscustomerEmailSelected"(click)="handleClick($event)">
         </div>
         <div class="option-item">
           <input type="radio" name="option" id="contractNumber" (change)="toggleField('contractNumber')">
           <label for="contractNumber" class="code-label">by contract number:</label>
-          <input type="text" [disabled]="!iscontractNumberSelected">
+          <input type="text" [disabled]="!iscontractNumberSelected" (click)="handleClick($event)">
         </div>
         <div class="option-item">
           <input type="radio" name="option" id="zipCode" (change)="toggleField('zipCode')">
           <label for="zipCode" class="code-label">by zip code:</label>
-          <input type="text" [disabled]="!iszipCodeSelected">
+          <input type="text" [disabled]="!iszipCodeSelected" (click)="handleClick($event)">
         </div>
         <div class="option-item">
           <input type="radio" name="option" id="phoneNumber" (change)="toggleField('phoneNumber')">
@@ -31,12 +31,12 @@
         <div class="option-item">
           <input type="radio" name="option" id="companyName" (change)="toggleField('companyName')">
           <label for="companyName" class="code-label">by company name:</label>
-          <input type="text" [disabled]="!iscompanyNameSelected">
+          <input type="text" [disabled]="!iscompanyNameSelected" (click)="handleClick($event)">
         </div>
         <div class="option-item">
           <input type="radio" name="option" id="AgentCustomerId" (change)="toggleField('AgentCustomerId')">
           <label for="AgentCustomerId" class="code-label">by agent customer id:</label>
-          <input type="text" [disabled]="!isAgentCustomerIdSelected">
+          <input type="text" [disabled]="!isAgentCustomerIdSelected"(click)="handleClick($event)">
         </div>
         <div class="button-container">
 
@@ -153,10 +153,8 @@
       </div>
     </mat-tab>
   </mat-tab-group>
-  <div class="button-container">
-    <button class="btn btn-warning" type="button">
-     Rechercher
-    </button>
-  </div>
+  <button class="btn btn-warning" type="button">
+    <mat-icon>search</mat-icon> SEARCH
+  </button>
 </div>
   

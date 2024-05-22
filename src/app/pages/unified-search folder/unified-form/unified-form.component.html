@@ -1,14 +1,9 @@
+
+<app-movepack></app-movepack>
+
 <h2 class="customer-file">Customer file:</h2>
 
 
-<p-tabMenu [model]="items">
-  <ng-template pTemplate="item" let-item>
-    <a [routerLink]="item.route" routerLinkActive="active" class="p-menuitem-link">
-      <span [class]="item.icon"></span>
-      <span class="ml-2">{{ item.label }}</span>
-    </a>
-  </ng-template>
-</p-tabMenu>
 
 <div id="formAjout" class="form-container">
   <form *ngIf="isAddingCustomer || isEditingCustomer">
@@ -19,7 +14,7 @@
   <label for="ActiaCustomerID ">
     Actia customer ID:
   </label>
-  <input
+  <input (click)="handleClick($event)"
     type="text"
     id="ActiaCustomerID "
     name="ActiaCustomerID "
@@ -35,7 +30,7 @@
     <label for="AgentCustomerID">
       Agent Customer ID:
     </label>
-    <input
+    <input (click)="handleClick($event)"
       type="text"
       id="AgentCustomerID"
       name="AgentCustomerID"
@@ -165,7 +160,7 @@
     <label for="Address">
       Address *	:
     </label>
-    <input
+    <input (click)="handleClick($event)"
       type="text"
       id="Address"
       name="Address"
@@ -182,7 +177,7 @@
     <label for="ZipCode">
       Zip code* :
     </label>
-    <input
+    <input (click)="handleClick($event)"
       type="text"
       id="ZipCode"
       name="ZipCode"
@@ -200,7 +195,7 @@
     <label for="City">
       City * :	
     </label>
-    <input
+    <input (click)="handleClick($event)"
       type="text"
       id="City"
       name="City"
@@ -235,7 +230,7 @@ class="form-group"
 <label for="Email">
 E-mail:
 </label>
-<input
+<input (click)="handleClick($event)"
 type="text"
 id="Email"
 name="Email"
@@ -252,7 +247,7 @@ class="form-group"
 <label for="ContactName">
 Contact name *:
 </label>
-<input
+<input (click)="handleClick($event)"
 type="text"
 id="ContactName"
 name="ContactName"
@@ -269,7 +264,7 @@ class="form-group"
 <label for="PhoneNumber">
 Phone number *:
 </label>
-<input
+<input (click)="handleClick($event)"
 type="text"
 id="PhoneNumber"
 name="PhoneNumber"
@@ -286,7 +281,7 @@ class="form-group"
 <label for="FaxNumber">
 Fax number*:
 </label>
-<input
+<input (click)="handleClick($event)"
 type="text"
 id="FaxNumber"
 name="FaxNumber"
@@ -358,24 +353,6 @@ class="form-control"
     {{ isEditingCustomer ? "Modifier" : "Enregistrer" }}
    
   </button>
-  <!-- Bouton Enregistrer -->
-<!-- Bouton Enregistrer -->
-<button
-  class="btn btn-primary btn-save"
-  type="button"
-  *ngIf="isEditingCustomer"
-  (click)="saveChanges()"
->
- 
-  Enregistrer
-</button>
-</div>
-</div>
-</div>
-  </form>
-</div>
-
-
 <!-- Tableau -->
 <div
   class="table-responsive"

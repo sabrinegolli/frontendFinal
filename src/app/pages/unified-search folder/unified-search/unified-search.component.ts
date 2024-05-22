@@ -10,6 +10,7 @@ import { MatSort } from '@angular/material/sort';
 })
 
 export class UnifiedSearchComponent implements OnInit {
+ 
   
 searchResults: any;
 navigateToForm(_t54: any) {
@@ -80,7 +81,11 @@ isSelectDisabled: any;
   ngOnInit(): void {
     // Initialize data sources
   }
-
+  handleClick(event: MouseEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.style.borderLeft = '5px solid green';
+  
+  }
   // Toggle search fields
   toggleField(field: string) {
     switch (field) {
@@ -134,7 +139,7 @@ isSelectDisabled: any;
         break;
     }
   }
-  
+
   resetOtherFields(selectedField: string) {
     const fields = [
       'iscustomerIDSelected',
