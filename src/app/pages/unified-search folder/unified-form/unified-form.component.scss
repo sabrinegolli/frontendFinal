@@ -109,16 +109,6 @@ $small-font-size: 10px;
   }
 }
 
-.table {
-  color: $primary-color; /* Set text color to the same as $primary-color */
-  margin: 0 auto; /* Remove left and right margins */
-}
-
-.table th,
-.table td {
-  /* Inherit the color from the parent table element */
-  color: inherit;
-}
 
 
 .customer-file {
@@ -253,7 +243,8 @@ input, select, textarea {
   flex: 1;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid $border-color;
+  color: #686a6d ;
+  border: 1px;
   border-radius: 5px;
   outline: none;
 }
@@ -268,7 +259,7 @@ h1 {
 // Table Responsive
 .table-responsive tr.selected {
   background-color: #cfe5fa;
-  border-left: 0.5em solid #686a6d;
+  border-left: 0.5em solid;
 }
 
 // Buttons
@@ -297,8 +288,8 @@ h1 {
   border-color: #ccc;
 }
 .table thead th {
-  background-color: #686a6d;
-  color: #fff;
+ 
+  color: #686a6d;
   font-weight: bold;
 }
 .table tbody tr:hover {
@@ -306,7 +297,7 @@ h1 {
 }
 .table tfoot th {
   background-color: #686a6d;
-  color: #fff;
+  color: #686a6d;
   font-weight: bold;
 }
 // Badge
@@ -405,7 +396,7 @@ h1 {
 }
 
 .form-container form label {
-  color: #686a6d;
+
   font-weight: bold;
   font-size: 0.9rem;
 }
@@ -430,7 +421,7 @@ h1 {
   font-weight: bold;
   cursor: pointer;
   -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  -moz-border-radius: 5px; 
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
@@ -472,14 +463,14 @@ h1 {
 }
 p-tabMenu {
   .p-menuitem-link {
-    color: #686A6D;
+    color: #ccc;
     font-family: 'Open Sans', Arial, sans-serif;
     padding: 0 20px; // Adds more space around each menu item
     &:hover {
-      color: darken(#686A6D, 10%);
+      color: darken(#ccc, 10%);
     }
     &.active {
-      color: darken(#686A6D, 20%);
+      color: darken(#ccc, 20%);
       font-weight: normal; // Ensure the active item is not bold
     }
   }
@@ -490,18 +481,25 @@ p-tabMenu {
     }
   }
 }
-.table-responsive {
-  table {
-    background-color: #fff; /* Set background color to white */
-    color: #808080; /* Set text color to gray */
-    
-    thead {
-      th {
-        background-color: #ffffff; /* Adjust the header background color if needed */
-        color: #333; /* Adjust the header text color if needed */
-      }
-    }
-  }
+
+
+.table td,
+.table th {
+  font-size: 0.8rem;
+  vertical-align: middle;
+
+  // Added line spacing
+  margin-bottom: 20px;
+}
+.table {
+  color: #ccc; /* Set text color to grey */
+  margin: 0 auto; /* Remove left and right margins */
+}
+
+.table th,
+.table td {
+  /* Inherit the color from the parent table element */
+  color: #fff; /* Set text color to white */
 }
 
 

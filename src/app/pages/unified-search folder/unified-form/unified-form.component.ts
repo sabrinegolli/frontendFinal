@@ -6,9 +6,11 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './unified-form.component.scss'
 })
 export class UnifiedFormComponent {
-handleClick($event: MouseEvent) {
-throw new Error('Method not implemented.');
-}
+  handleClick(event: MouseEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.style.borderLeft = '5px solid green';
+  
+  }
 errorMessage: any;
 successMessage: any;
 

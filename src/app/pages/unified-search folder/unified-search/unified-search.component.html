@@ -81,7 +81,7 @@
         <div class="option-item">
           <input type="radio" name="option" id="ProductName" [(ngModel)]="customerID" (change)="toggleField('customerID')">
           <label for="ProductName" class="code-label">Product name:</label>
-          <select [disabled]="isSelectDisabled">
+          <select [disabled]="isSelectDisabled" (click)="handleClick($event)">
             <option value="option1">all element</option>
             <option value="option2">2</option>
             <option value="option3">3</option>
@@ -118,17 +118,17 @@
         <div class="option-item">
           <input type="radio" name="option" id="customerID" (change)="toggleField('customerID')">
           <label for="customerID" class="code-label">File id:</label>
-          <input type="text" [disabled]="!iscustomerIDSelected">
+          <input type="text" [disabled]="!iscustomerIDSelected" (click)="handleClick($event)">
         </div>
         <div class="option-item">
           <input type="radio" name="option" id="customerE-mail" (change)="toggleField('customerE-mail')">
           <label for="customerE-mail" class="code-label">License plate:</label>
-          <input type="text" [disabled]="!iscustomerEmailSelected">
+          <input type="text" [disabled]="!iscustomerEmailSelected" (click)="handleClick($event)">
         </div>
         <div class="option-item">
           <input type="radio" name="option" id="contractNumber" (change)="toggleField('contractNumber')">
           <label for="contractNumber" class="code-label">by customer reference:</label>
-          <input type="text" [disabled]="!iscontractNumberSelected">
+          <input type="text" [disabled]="!iscontractNumberSelected" (click)="handleClick($event)">
         </div> 
       </div>
 

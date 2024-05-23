@@ -101,49 +101,7 @@
     vertical-align: middle;
     color: #888;
   }
-  .table-container {
-  max-width: 850px;
-  margin: 10px auto;
-  padding: 10px;
-  border-radius: 10px;
-  overflow-x: auto;
-  background-color: #F8F9FA;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.table {
-  /* Existing styles from original SCSS */
-  width: 100%;
-  border-collapse: collapse;
-  background: #FFFFFF;
-  color: #686A6D;
-
-  th,
-  td {
-    /* Existing styles from original SCSS */
-    border: 1px solid #ddd;
-    padding: 8px;
-    font-size: 0.8rem;
-    text-align: left;
-    vertical-align: middle;
-  }
-
-  th {
-    /* Existing styles from original SCSS */
-    background-color: #fffafa;
-    color: #686A6D;
-    font-weight: bold;
-  }
-
-  /* Additional styles */
-  tr.selected {
-    background-color: #CFE5FA;
-    border-left: 0.5em solid #BDD248; /* Maintain selection style */
-  }
-
-  tr:hover {
-    background-color: #E8F0FE; /* Maintain hover effect */
-  }
-}
+  
 
 
 .search-container {
@@ -200,12 +158,45 @@
     color: #0C5460;
   }
 }
-
-
-
-
-
-
-
-
-
+.table-container {
+  width: 80%;
+  max-height: 300px;
+  overflow: scroll;
+  position: relative;
+  margin: 20px auto; /* Center horizontally and add top margin */
+  /* Remove vertical centering for closer positioning */
+  .custom-table {
+    width: 140%;
+    min-width: 700px;
+    border-collapse: collapse;
+    th, td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      white-space: nowrap;
+    }
+    thead {
+      position: sticky;
+      top: 0;
+      background: #F9F9F9;
+      z-index: 2;
+    }
+    th:nth-child(1) {
+      width: 20%; /* Adjust width as needed */
+    }
+    th:nth-child(2) {
+      width: 15%; /* Adjust width as needed */
+    }
+    th:nth-child(3) {
+      width: 10%; /* Adjust width as needed */
+    }
+    th:nth-child(4) {
+      width: 15%; /* Adjust width as needed */
+    }
+    th:nth-child(5) {
+      width: 20%; /* Adjust width as needed */
+    }
+    th:nth-child(6) {
+      width: 20%; /* Adjust width as needed */
+    }
+  }
+}

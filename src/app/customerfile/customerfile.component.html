@@ -1,5 +1,3 @@
-
-<!-- Include Angular Material for toolbar and icons if not already included -->
 <app-navbar></app-navbar>
 <div class="container mt-4">
   <form>
@@ -16,7 +14,6 @@
         <label for="customerStatus">Customer status</label>
         <select class="form-control" id="customerStatus">
           <option>Select an element</option>
-          <!-- Add other options here -->
         </select>
       </div>
     </div>
@@ -29,14 +26,12 @@
         <label for="distributorCategory">Distributor Category</label>
         <select class="form-control" id="distributorCategory">
           <option>All elements</option>
-          <!-- Add other options here -->
         </select>
       </div>
       <div class="col-md-4 mb-3">
         <label for="network">Network</label>
         <select class="form-control" id="network">
           <option>ADMINISTRATION</option>
-          <!-- Add other options here -->
         </select>
       </div>
     </div>
@@ -63,14 +58,12 @@
         <label for="country">Country *</label>
         <select class="form-control" id="country" required>
           <option>France</option>
-          <!-- Add other countries here -->
         </select>
       </div>
       <div class="col-md-3">
         <label for="language">Language</label>
         <select class="form-control" id="language">
           <option>French</option>
-          <!-- Add other languages here -->
         </select>
       </div>
     </div>
@@ -106,7 +99,6 @@
         </div>
       </div>
     </div>
-    <!-- Rich Text Editor Placeholder -->
     <div class="form-group">
       <label for="note">Note</label>
       <textarea id="note" class="form-control"></textarea>
@@ -118,60 +110,41 @@
     </div>
   </form>
 </div>
-
-
-<div class="table-responsive">
-  <table class="table">
+<div class="table-container">
+  <table class="custom-table">
     <thead>
       <tr>
-        <!-- Headers for product details -->
-        <th colspan="2">Product Details</th>
-        <!-- Headers for Serial number	 details -->
-        <th colspan="1">Serial number	</th>
-        <!-- Headers  -->
-        <th colspan="1"></th>
-        <!-- Headers for Date code -->
-        <th colspan="1">Date code</th>
-        <!-- Headers for VCI serial number	 -->
-        <th colspan="1">VCI serial number	</th>
-        <!-- Headers for Under warranty	 -->
-        <th colspan="1">Under warranty	</th>
+        <th>Product name</th>
+        <th>Serial number</th>
+        <th></th>
+        <th>Date code</th>
+        <th>VCI serial number</th>
+        <th>Under warranty</th>
       </tr>
-
-
-      <tr>
-        <!-- Headers Material Component -->
-        <th colspan="2">Material Component</th>
-        <!-- Headers for Product name		 details -->
-        <th colspan="1">Product name		</th>
-        <!-- Headers for 	Serial number  -->
-        <th colspan="1">	Serial number</th>
-        <!-- Headers  -->
-        <th colspan="1"></th>
-        <!-- Headers for Date code		 -->
-        <th colspan="1">Date code		</th>
-        <!-- Headers for Warranty end date -->
-        <th colspan="1">Warranty end date  </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData">
+        <td>{{ item.Productname}}</td>
+        <td>{{ item.Serialnumber }}</td>
+        <td></td>
+        <td>{{ item.dateCode }}</td>
+        <td>{{ item.vciSerialNumber }}</td>
+        <td>{{ item.underWarranty }}</td>
       </tr>
+    </tbody>
+  </table>
+</div>
 
-      
-      <tr>
-        <!-- Headers Licence -->
-        <th colspan="2">Licence</th>
-        <!-- Headers for Product name	details -->
-        <th colspan="1">Product name</th>
-        <!-- Headers for 	Invoice ID -->
-        <th colspan="1">	Invoice ID	</th>
-        <!-- Headers Activated [MANUAL] -->
-        <th colspan="1">Activated [MANUAL]</th>
-        <!-- 	[Subscription Duration ] End date -->
-        <th colspan="1">[Subscription Duration ] End date</th>
-        <!-- Headers for Major Version -->
-        <th colspan="1">Major Version</th>
-      </tr>
 
-      
-       
+
+
+
+
+
+
+
+
+
 
 
 
