@@ -112,8 +112,8 @@ $small-font-size: 10px;
 
 
 .customer-file {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: normal;
   color: #686a6d;
   margin-bottom: 1rem;
 }
@@ -482,25 +482,6 @@ p-tabMenu {
   }
 }
 
-
-.table td,
-.table th {
-  font-size: 0.8rem;
-  vertical-align: middle;
-
-  // Added line spacing
-  margin-bottom: 20px;
-}
-.table {
-  color: #ccc; /* Set text color to grey */
-  margin: 0 auto; /* Remove left and right margins */
-}
-
-.table th,
-.table td {
-  /* Inherit the color from the parent table element */
-  color: #fff; /* Set text color to white */
-}
 
 
 

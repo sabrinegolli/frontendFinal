@@ -12,6 +12,7 @@ import { SalescontractComponent } from './salescontract/salescontract.component'
 import { IncidentfileComponent } from './incidentfile/incidentfile.component';
 import { CustomerfileComponent } from './customerfile/customerfile.component';
 import { MovepackComponent } from './movepack/movepack.component';
+import { MaterialcomponentfileComponent } from './pages/unified-search folder/materialcomponentfile/materialcomponentfile.component';
 
 
 
@@ -81,7 +82,12 @@ const routes: Routes = [
     path: 'movepack',
    component:MovepackComponent,
   },
+  {
+    path: 'materialcomponent',
+   component:MaterialcomponentfileComponent,
+  },
  
+
 
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },

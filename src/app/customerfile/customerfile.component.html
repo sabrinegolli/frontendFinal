@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+
 <div class="container mt-4">
   <form>
     <div class="form-row">
@@ -93,9 +94,7 @@
       <div class="col-md-3 align-self-center">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="acceptedEULA">
-          <label class="form-check-label" for="acceptedEULA">
-            Accepted EULA
-          </label>
+          <label class="form-check-label" for="acceptedEULA"> Accepted EULA </label>
         </div>
       </div>
     </div>
@@ -103,18 +102,24 @@
       <label for="note">Note</label>
       <textarea id="note" class="form-control"></textarea>
     </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Save</button>
-      <button type="button" class="btn btn-secondary">Save & Close</button>
-      <button type="button" class="btn btn-danger">Close</button>
+    <div class="button-container">
+      <button class="btn btn-save" type="button" >
+        <mat-icon>save</mat-icon> SAVE
+      </button>
+      <button class="btn btn-cancel" type="button" (click)="cancelForm()">
+        <mat-icon>cancel</mat-icon> CLOSE
+      </button>
     </div>
   </form>
 </div>
+<div class="container mt-4">
 <div class="table-container">
   <table class="custom-table">
     <thead>
       <tr>
+        
         <th>Product name</th>
+        <th></th>
         <th>Serial number</th>
         <th></th>
         <th>Date code</th>
@@ -122,19 +127,28 @@
         <th>Under warranty</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let item of tableData">
-        <td>{{ item.Productname}}</td>
-        <td>{{ item.Serialnumber }}</td>
-        <td></td>
-        <td>{{ item.dateCode }}</td>
-        <td>{{ item.vciSerialNumber }}</td>
-        <td>{{ item.underWarranty }}</td>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Material Component</th>
+        <th>Product name</th>
+        <th>Serial number</th>
+        <th></th>
+        <th>Date code</th>
+        <th>Warranty end date</th>
       </tr>
-    </tbody>
-  </table>
-</div>
-
+    </thead>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Licence</th>
+        <th>Product name</th>
+        <th>Invoice ID</th>
+        <th>Activated [MANUAL]	</th>
+        <th>[Subscription Duration ] End date	</th>
+        <th>Major Version</th>
+      </tr>
+    </thead>
 
 
 

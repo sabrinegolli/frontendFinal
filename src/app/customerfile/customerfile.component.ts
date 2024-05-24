@@ -7,17 +7,12 @@ import { Component,OnInit } from '@angular/core';
 })
 
 export class CustomerfileComponent implements OnInit {
+cancelForm() {
+throw new Error('Method not implemented.');
+}
   items: any;
 item: any;
-tableData = [
-  {Productname: 'Applications', Serialnumber: '200mb', folder: 'Folder', dateCode:'',vciSerialNumber:'', underWarranty:''},
-  { name: 'Cloud', size: '20mb', type: 'Folder' },
-  { name: 'Desktop', size: '150kb', type: 'Folder' },
-  { name: 'Documents', size: '75kb', type: 'Folder' },
-  { name: 'Angular', size: '25mb', type: 'Folder' },
-  { name: 'editor.app', size: '25mb', type: 'Application' },
-  { name: 'settings.app', size: '50mb', type: 'Application' }
-];
+isEditingCustomer: any;
 
 
   constructor() { }
