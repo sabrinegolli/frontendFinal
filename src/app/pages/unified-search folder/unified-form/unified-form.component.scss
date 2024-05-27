@@ -112,10 +112,11 @@ $small-font-size: 10px;
 
 
 .customer-file {
-  font-size: 1.8rem;
+  color: #686A6D;
   font-weight: normal;
-  color: #686a6d;
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin-right: 470px;
+  margin-bottom: -10px;
 }
 
 .has-data {
@@ -481,6 +482,29 @@ p-tabMenu {
     }
   }
 }
+.p-menu-button {
+  background-color: white;
+  border-radius: 0;
+  border: none;
+  color: #686A6D;
+  padding-right: 0.5rem; // Add some space between the button text and the line
+  margin-right: 0.5rem; // Add some space between the buttons
+  border-right: 1px solid #ccc; // Adjust color and thickness as needed
+  font-size: 0.9rem; // Match the font size with the small label
+  &:hover, &:active {
+    background-color: white;
+    border: none;
+    color: #686A6D;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 

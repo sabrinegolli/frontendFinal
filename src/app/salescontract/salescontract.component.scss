@@ -599,3 +599,22 @@ p-tabMenu {
     }
   }
 }}
+.p-menuitem-link {
+  color: #686A6D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  margin-left: 70px; /* Add this line to push the menu items to the right */
+  & .ml-2 {
+    margin-left: 1rem; /* Adjust margin as needed */
+  }
+}
+
+.p-tabmenu .p-tabmenu-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

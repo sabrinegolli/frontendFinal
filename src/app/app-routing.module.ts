@@ -11,8 +11,8 @@ import { UnifiedHomeComponent } from './pages/unified-search folder/unified-home
 import { SalescontractComponent } from './salescontract/salescontract.component';
 import { IncidentfileComponent } from './incidentfile/incidentfile.component';
 import { CustomerfileComponent } from './customerfile/customerfile.component';
-import { MovepackComponent } from './movepack/movepack.component';
 import { MaterialcomponentfileComponent } from './pages/unified-search folder/materialcomponentfile/materialcomponentfile.component';
+import { PackactionComponent } from './packaction/packaction.component';
 
 
 
@@ -78,16 +78,16 @@ const routes: Routes = [
    component:CustomerfileComponent,
   },
 
-  {
-    path: 'movepack',
-   component:MovepackComponent,
-  },
+
   {
     path: 'materialcomponent',
    component:MaterialcomponentfileComponent,
   },
  
-
+  {
+    path: 'packaction',
+   component:PackactionComponent,
+  },
 
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },

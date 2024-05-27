@@ -45,8 +45,9 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { SalescontractComponent } from './salescontract/salescontract.component';
 import { IncidentfileComponent } from './incidentfile/incidentfile.component';
 import { CustomerfileComponent } from './customerfile/customerfile.component';
-import { MovepackComponent } from './movepack/movepack.component';
-import { PackfusionComponent } from './packfusion/packfusion.component';
+import { PackactionComponent } from './packaction/packaction.component';
+
+
 
 
 
@@ -74,8 +75,9 @@ import { PackfusionComponent } from './packfusion/packfusion.component';
     SalescontractComponent,
     IncidentfileComponent,
     CustomerfileComponent,
-    MovepackComponent,
-    PackfusionComponent,
+    PackactionComponent,
+   
+   
     ],
     
   imports: [
