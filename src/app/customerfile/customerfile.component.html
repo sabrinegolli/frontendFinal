@@ -1,5 +1,4 @@
 <app-navbar></app-navbar>
-
 <div class="container mt-4">
   <form>
     <div class="form-row">
@@ -113,58 +112,76 @@
   </form>
 </div>
 <div class="container mt-4">
-<div class="table-container">
-  <table class="custom-table">
-    <thead>
-      <tr>
-        
-        <th>Product name</th>
-        <th></th>
-        <th>Serial number</th>
-        <th></th>
-        <th>Date code</th>
-        <th>VCI serial number</th>
-        <th>Under warranty</th>
-      </tr>
-    </thead>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Material Component</th>
-        <th>Product name</th>
-        <th>Serial number</th>
-        <th></th>
-        <th>Date code</th>
-        <th>Warranty end date</th>
-      </tr>
-    </thead>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Licence</th>
-        <th>Product name</th>
-        <th>Invoice ID</th>
-        <th>Activated [MANUAL]	</th>
-        <th>[Subscription Duration ] End date	</th>
-        <th>Major Version</th>
-      </tr>
-    </thead>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="table-container">
+    <!-- Products Table -->
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>  <button class="btn btn-icon" (click)="toggleRow('products')">+</button> Product name</th>
+          <th>Serial number</th>
+          <th>Date code</th>
+          <th>VCI serial number</th>
+          <th>Under warranty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of displayedProducts; let i = index" [hidden]="!product.showRow">
+          <td>{{ product.productName }}</td>
+          <td>{{ product.serialNumber }}</td>
+          <td>{{ product.dateCode }}</td>
+          <td>{{ product.vciSerialNumber }}</td>
+          <td>{{ product.underWarranty }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Materials Table -->
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>
+          </th>
+          <th><button class="btn btn-icon" (click)="toggleRow('materials')">+</button> Material Component</th>
+          <th>Product name</th>
+          <th>Serial number</th>
+          <th>Date code</th>
+          <th>Warranty end date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let material of displayedMaterials; let i = index" [hidden]="!material.showRow">
+          <td></td>
+          <td>{{ material.materialComponent }}</td>
+          <td>{{ material.serialNumber }}</td>
+          <td>{{ material.dateCode }}</td>
+          <td>{{ material.warrantyEndDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Licences Table -->
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>
+          </th>
+          <th>  <button class="btn btn-icon" (click)="toggleRow('licences')">+</button>Licence</th>
+          <th>Product name</th>
+          <th>Invoice ID</th>
+          <th>Activated [MANUAL]</th>
+          <th>[Subscription Duration] End date</th>
+          <th>Major Version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let licence of displayedLicences; let i = index" [hidden]="!licence.showRow">
+          <td></td>
+          <td>{{ licence.licence }}</td>
+          <td>{{ licence.productName }}</td>
+          <td>{{ licence.invoiceID }}</td>
+          <td>{{ licence.activatedManual }}</td>
+          <td>{{ licence.subscriptionEndDate }}</td>
+          <td>{{ licence.majorVersion }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
