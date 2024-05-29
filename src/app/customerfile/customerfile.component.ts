@@ -20,16 +20,22 @@ throw new Error('Method not implemented.');
     { licence: 'Licence 1', productName: 'Product C', invoiceID: 'INV001', activatedManual: 'Yes', subscriptionEndDate: '2022-12-31', majorVersion: 'v1.0', showRow: true },
     { licence: 'Licence 2', productName: 'Product D', invoiceID: 'INV002', activatedManual: 'No', subscriptionEndDate: '2023-11-30', majorVersion: 'v2.0', showRow: true }
   ];
+  productsVisible: boolean = true;
+  materialsVisible: boolean = true;
+  licencesVisible: boolean = true;
   constructor() { }
   ngOnInit(): void {
   }
   toggleRow(type: string): void {
     if (type === 'products') {
-      this.displayedProducts.forEach(product => product.showRow = !product.showRow);
+      this.productsVisible = !this.productsVisible;
+      this.displayedProducts.forEach(product => product.showRow = this.productsVisible);
     } else if (type === 'materials') {
-      this.displayedMaterials.forEach(material => material.showRow = !material.showRow);
+      this.materialsVisible = !this.materialsVisible;
+      this.displayedMaterials.forEach(material => material.showRow = this.materialsVisible);
     } else if (type === 'licences') {
-      this.displayedLicences.forEach(licence => licence.showRow = !licence.showRow);
+      this.licencesVisible = !this.licencesVisible;
+      this.displayedLicences.forEach(licence => licence.showRow = this.licencesVisible);
     }
   }
 }

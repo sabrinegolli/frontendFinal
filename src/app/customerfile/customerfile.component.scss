@@ -190,70 +190,46 @@
   overflow: scroll;
   position: relative;
   margin: 20px auto;
-
   .custom-table {
-    width: 140%;
+    width: 100%;
     min-width: 700px;
     border-collapse: collapse;
-
     th, td {
       padding: 8px;
       border: 1px solid #ddd;
       white-space: nowrap;
     }
-
     thead {
       position: sticky;
       top: 0;
       background: hsl(0, 0%, 100%);
       z-index: 2;
     }
-
-    thead tr:nth-child(1) th:nth-child(1) {
-      width: 20%; /* Product name */
+    th, td {
+      &:nth-child(1) { width: 20%; } /* Product name, Material Component, Licence */
+      &:nth-child(2) { width: 10%; } /* Empty column */
+      &:nth-child(3) { width: 20%; } /* Serial number, Product name, Invoice ID */
+      &:nth-child(4) { width: 10%; } /* Empty column, Serial number, Activated [MANUAL] */
+      &:nth-child(5) { width: 15%; } /* Date code, [Subscription Duration] End date */
+      &:nth-child(6) { width: 15%; } /* VCI serial number, Warranty end date, Major Version */
+      &:nth-child(7) { width: 10%; } /* Under warranty, Major Version */
     }
-
-    thead tr:nth-child(1) th:nth-child(2) {
-      width: 15%; /* Serial number */
-    }
-
-    thead tr:nth-child(1) th:nth-child(3) {
-      width: 10%; /* empty column */
-    }
-
-    thead tr:nth-child(1) th:nth-child(4) {
-      width: 10%; /* Date code */
-    }
-
-    thead tr:nth-child(1) th:nth-child(5) {
-      width: 20%; /* VCI serial number */
-    }
-
-    thead tr:nth-child(1) th:nth-child(6) {
-      width: 20%; /* Under warranty */
-    }
-
-
   }
 }
-
 .table {
   font-size: 14px;
-  border-color: #fffcfc;
+  border-color: #FFFCFC;
 }
-
 .table thead th {
-  color: #686a6d;
+  color: #686A6D;
   font-weight: bold;
 }
-
 .table tbody tr:hover {
-  background-color: #fffdfd;
+  background-color: #FFFDFD;
 }
-
 .table tfoot th {
-  background-color: #686a6d;
-  color: #686a6d;
+  background-color: #686A6D;
+  color: #686A6D;
   font-weight: bold;
 }
 .button-container {
@@ -273,12 +249,13 @@
 }
 .btn {
   color: white;
-  font-size: 13px;
-  padding: 6px 12px;
+  font-size: 10px;
+  padding: 2px 6px; /* Adjust padding to make the button smaller */
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 5px; /* Add margin to create space between the button and label */
 }
 .btn:hover {
   background-color: #DFD3D3;
@@ -290,16 +267,10 @@
   background-color: #546472;
 }
 .btn-new {
-  background-color: #546472 ;
+  background-color: #546472;
 }
-.btn-delete {
-  background-color: #90969D;
-}
-.mat-icon {
-  font-size: 18px;
-  margin-right: 5px;
-  color: white;
-}
+
+
 
 
 

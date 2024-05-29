@@ -117,17 +117,26 @@
     <table class="custom-table">
       <thead>
         <tr>
-          <th>  <button class="btn btn-icon" (click)="toggleRow('products')">+</button> Product name</th>
+          <th>
+            <div class="btn-label">
+              <button class="btn btn-icon" (click)="toggleRow('products')">{{ productsVisible ? '-' : '+' }}</button>
+              <span>Product name</span>
+            </div>
+          </th>
+          <th></th>
           <th>Serial number</th>
+          <th></th>
           <th>Date code</th>
           <th>VCI serial number</th>
           <th>Under warranty</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of displayedProducts; let i = index" [hidden]="!product.showRow">
+        <tr *ngFor="let product of displayedProducts" [hidden]="!product.showRow">
           <td>{{ product.productName }}</td>
+          <td></td>
           <td>{{ product.serialNumber }}</td>
+          <td></td>
           <td>{{ product.dateCode }}</td>
           <td>{{ product.vciSerialNumber }}</td>
           <td>{{ product.underWarranty }}</td>
@@ -138,20 +147,27 @@
     <table class="custom-table">
       <thead>
         <tr>
+          <th></th>
           <th>
+            <div class="btn-label">
+              <button class="btn btn-icon" (click)="toggleRow('materials')">{{ materialsVisible ? '-' : '+' }}</button>
+              <span>Material Component</span>
+            </div>
           </th>
-          <th><button class="btn btn-icon" (click)="toggleRow('materials')">+</button> Material Component</th>
           <th>Product name</th>
           <th>Serial number</th>
+          <th></th>
           <th>Date code</th>
           <th>Warranty end date</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let material of displayedMaterials; let i = index" [hidden]="!material.showRow">
+        <tr *ngFor="let material of displayedMaterials" [hidden]="!material.showRow">
           <td></td>
           <td>{{ material.materialComponent }}</td>
+          <td>{{ material.productName }}</td>
           <td>{{ material.serialNumber }}</td>
+          <td></td>
           <td>{{ material.dateCode }}</td>
           <td>{{ material.warrantyEndDate }}</td>
         </tr>
@@ -161,9 +177,13 @@
     <table class="custom-table">
       <thead>
         <tr>
+          <th></th>
           <th>
+            <div class="btn-label">
+              <button class="btn btn-icon" (click)="toggleRow('licences')">{{ licencesVisible ? '-' : '+' }}</button>
+              <span>Licence</span>
+            </div>
           </th>
-          <th>  <button class="btn btn-icon" (click)="toggleRow('licences')">+</button>Licence</th>
           <th>Product name</th>
           <th>Invoice ID</th>
           <th>Activated [MANUAL]</th>
@@ -172,7 +192,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let licence of displayedLicences; let i = index" [hidden]="!licence.showRow">
+        <tr *ngFor="let licence of displayedLicences" [hidden]="!licence.showRow">
           <td></td>
           <td>{{ licence.licence }}</td>
           <td>{{ licence.productName }}</td>
