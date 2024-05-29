@@ -13,6 +13,7 @@ import { IncidentfileComponent } from './incidentfile/incidentfile.component';
 import { CustomerfileComponent } from './customerfile/customerfile.component';
 import { MaterialcomponentfileComponent } from './pages/unified-search folder/materialcomponentfile/materialcomponentfile.component';
 import { PackactionComponent } from './packaction/packaction.component';
+import { SearchDoublesComponent } from './pages/search-doubles/search-doubles.component';
 
 
 
@@ -89,6 +90,10 @@ const routes: Routes = [
    component:PackactionComponent,
   },
 
+  {
+    path: 'searchdoubles',
+    component: SearchDoublesComponent,
+  },
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];

@@ -46,6 +46,7 @@ import { SalescontractComponent } from './salescontract/salescontract.component'
 import { IncidentfileComponent } from './incidentfile/incidentfile.component';
 import { CustomerfileComponent } from './customerfile/customerfile.component';
 import { PackactionComponent } from './packaction/packaction.component';
+import { SearchdoublesComponent } from './searchdoubles/searchdoubles.component';
 
 
 
@@ -76,6 +77,7 @@ import { PackactionComponent } from './packaction/packaction.component';
     IncidentfileComponent,
     CustomerfileComponent,
     PackactionComponent,
+ 
    
    
     ],

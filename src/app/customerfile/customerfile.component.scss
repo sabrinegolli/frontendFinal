@@ -1,3 +1,25 @@
+.customer-file {
+  color: #686A6D;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin-right: 470px;
+  margin-bottom: -10px;
+  position: relative;
+}
+.border-left-green {
+  border-left: 5px solid green;
+}
+
+
+.line {
+  height: 2px;
+  width:100%;
+  background-color: #686A6D;
+  margin-top: 10px;
+  display: block;
+}
+
+
 .container {
   max-width: 1525px;
   margin: 20px auto;
@@ -11,7 +33,7 @@
     align-items: center;
     margin-bottom: 20px;
   }
-
+  
 
   label {
     color: #686A6D;
@@ -125,7 +147,7 @@
   .material-icons {
     font-size: 18px;
     vertical-align: middle;
-    color: #888;
+    color: #ffffff;
   }
   
 
@@ -149,7 +171,7 @@
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #888;
+    color: #ffffff;
   }
 }
 .buttons {
@@ -199,6 +221,7 @@
       border: 1px solid #ddd;
       white-space: nowrap;
     }
+    
     thead {
       position: sticky;
       top: 0;
@@ -253,28 +276,28 @@
   padding: 2px 6px; /* Adjust padding to make the button smaller */
   text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-right: 5px; /* Add margin to create space between the button and label */
+  margin-left: 5px; /* Add margin to create space between the button and label */
 }
+
 .btn:hover {
   background-color: #DFD3D3;
 }
+
 .btn-save {
   background-color: #BDD248;
 }
+
 .btn-cancel {
   background-color: #546472;
 }
+
 .btn-new {
   background-color: #546472;
 }
 
-
-
-
-
-
-
-
-
+.btn-label {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}

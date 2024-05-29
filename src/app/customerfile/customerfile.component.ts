@@ -5,9 +5,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customerfile.component.scss']
 })
 export class CustomerfileComponent implements OnInit {
-cancelForm() {
-throw new Error('Method not implemented.');
-}
+  companyNameToggleIcon: string = 'add';
+  hideFields: boolean=false;
+  constructor() { }
+  ngOnInit(): void {
+  }
+  handleClick(event: MouseEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.style.borderLeft = '5px solid green';}
+  cancelForm() {
+    throw new Error('Method not implemented.');
+  }
   displayedProducts: any[] = [
     { productName: 'Product 1', serialNumber: '12345', dateCode: '2021-01-01', vciSerialNumber: 'VCI123', underWarranty: true, showRow: true },
     { productName: 'Product 2', serialNumber: '67890', dateCode: '2022-02-02', vciSerialNumber: 'VCI456', underWarranty: false, showRow: true }
@@ -23,8 +31,10 @@ throw new Error('Method not implemented.');
   productsVisible: boolean = true;
   materialsVisible: boolean = true;
   licencesVisible: boolean = true;
-  constructor() { }
-  ngOnInit(): void {
+  toggleCompanyName(): void {
+    // Toggle the icon between plus and minus
+    this.companyNameToggleIcon = (this.companyNameToggleIcon === 'add') ? 'remove' : 'add';
+    this.hideFields = !this.hideFields;
   }
   toggleRow(type: string): void {
     if (type === 'products') {
@@ -39,3 +49,33 @@ throw new Error('Method not implemented.');
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

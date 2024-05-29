@@ -6,6 +6,25 @@ $primary-color: #686A6D;
   font-size: 1.4rem;
   margin-right: 470px;
   margin-bottom: -10px;
+  position: relative;
+}
+
+.line {
+  height: 1px;
+  width: 50%;
+  background-color: #686A6D;
+  margin-top: 5px;
+  display: block;
+}
+
+.incident-file::after {
+  content: "";
+  height: 2px;
+  width: 50%;
+  background-color: #686A6D;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
 }
 .container {
   
@@ -15,6 +34,7 @@ $primary-color: #686A6D;
   background-color: #FFFFFF;
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 25px;
 
 
   .right-container {
