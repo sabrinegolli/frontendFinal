@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+
+<div class="container customer-file">
+    <h1 class="customer-file">Licence</h1>
+
+    <div class="form-row">
+      <div class="col-md-4">
+        <label for="customerName">Customer Name:</label>   
+      </div>
+      <div class="col-md-4">
+        <label for="tool">Choose an existing tool *</label>
+        <select id="productName" >
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="productName">Product Name:</label>
+        <select id="productName" >
+        </select>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container licence-component">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="salesDate">Sales date (YYYY-MM-DD)</label>
+            <input type="text" id="salesDate" value="2024-05-30" readonly>
+      
+            <label for="contractId">Contract ID</label>
+            <input type="text" id="contractId">
+      
+            <label for="invoiceId">Invoice ID</label>
+            <input type="text" id="invoiceId">
+      
+            <label for="demoLicense">Demo license</label>
+            <input type="checkbox" id="demoLicense">
+      
+            <label for="md360">MD 360</label>
+            <input type="checkbox" id="md360">
+      
+            <label for="automaticDeduction">Automatic deduction (standing order)</label>
+            <input type="checkbox" id="automaticDeduction">
+      
+            <label for="majorVersion">Major Version / user KPI level</label>
+            <input type="text" id="majorVersion">
+      
+            <label for="agentCustomerId">Agent Customer ID</label>
+            <input type="text" id="agentCustomerId">
+      
+            <label for="note">Note</label>
+            <textarea id="note"></textarea>
+          </div>
+          <div class="col-md-6">
+            <label for="subscriptionDuration">Subscription Duration</label>
+            <input type="number" id="subscriptionDuration" value="12">
+            <span>Months</span>
+          </div>
+        </div>
+      </div>
+    
+    <div class="button-container">
+        <button class="btn btn-save" type="button">
+          <mat-icon>save</mat-icon> SAVE
+        </button>
+        <button class="btn btn-cancel" type="button">
+          <mat-icon>cancel</mat-icon> CLOSE
+        </button>
+      </div>
+

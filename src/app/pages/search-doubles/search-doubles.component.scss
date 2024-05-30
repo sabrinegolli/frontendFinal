@@ -1,11 +1,132 @@
 $font-family-base: "Open Sans", "Arial";
-
-.container {
-    max-width: 1525px;
-    margin: 20px auto;
-    padding: 15px;
-    background-color: #FFFFFF;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
+.Search-serial-number-doubles {
+    color: #686A6D;
+    font-weight: normal;
+    font-size: 1.4rem;
+    margin-right: 470px;
+    margin-bottom: -10px;
+    position: relative;
+  }
   
-
+  .line {
+    height: 1px;
+    width: 50%;
+    background-color: #686A6D;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  .Search-serial-number-doubles::after {
+    content: "";
+    height: 2px;
+    width: 50%;
+    background-color: #686A6D;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+.container {
+  max-width: 1525px;
+  margin: 30px auto;
+  padding: 15px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adds distance between the elements inside the container */
+}
+.list-container {
+  margin-bottom: 50px; /* Adds distance between the two main containers */
+}
+.list1 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  color: #686A6D; /* Sets the text and label colors */
+}
+.list1 label {
+  margin-right: 10px;
+  font-weight: bold;
+  font-weight: 20px;
+}
+.list1 select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px; /* Adjusts the width of the dropdown lists */
+}
+.total {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #686A6D; /* Sets the color of the total text */
+}
+.table-responsive {
+  max-height: 370px;
+  overflow-y: auto;
+}
+.table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  border: 1px solid #F2F2F2;
+  padding: 8px;
+}
+.table th {
+  background-color: #F2F2F2;
+  text-align: left;
+  color: #686A6D; /* Sets the header text color */
+}
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    gap: 0px;
+  }
+  .material-symbols-outlined {
+    font-family: 'Material Icons Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  .btn {
+    color: white;
+    font-size: 13px;
+    padding: 6px 12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn:hover {
+    background-color: #DFD3D3;
+  }
+  .btn-save {
+    background-color: #BDD248;
+  }
+  .btn-cancel {
+    background-color: #546472;
+  }
+  .btn-new {
+    background-color: #546472 ;
+  }
+  .btn-delete {
+    background-color: #90969D;
+  }
+  .mat-icon {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  

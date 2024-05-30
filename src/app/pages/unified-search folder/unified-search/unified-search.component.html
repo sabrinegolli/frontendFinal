@@ -39,6 +39,9 @@
           <input type="text" [disabled]="!isAgentCustomerIdSelected"(click)="handleClick($event)">
         </div>
         <div class="button-container">
+          <button class="btn btn-warning" type="button">
+            <mat-icon>search</mat-icon> SEARCH
+          </button>
 
           <!-- L'affichage du resultat de la recherche effectuée  -->
           <div class="container">
@@ -92,6 +95,9 @@
         <label for="SerialNumber" class="code-label">Serial number:</label>
         <input type="text">
       </div>
+      <button class="btn btn-warning" type="button">
+        <mat-icon>search</mat-icon> SEARCH
+      </button>
       
       <!-- L'affichage du resultat de la recherche effectuée  -->
       <div class="container">
@@ -131,6 +137,9 @@
           <input type="text" [disabled]="!iscontractNumberSelected" (click)="handleClick($event)">
         </div> 
       </div>
+      <button class="btn btn-warning" type="button">
+        <mat-icon>search</mat-icon> SEARCH
+      </button>
 
       <!-- L'affichage du resultat de la recherche effectuée  -->
       <div class="container">
@@ -153,8 +162,6 @@
       </div>
     </mat-tab>
   </mat-tab-group>
-  <button class="btn btn-warning" type="button">
-    <mat-icon>search</mat-icon> SEARCH
-  </button>
+  
 </div>
   

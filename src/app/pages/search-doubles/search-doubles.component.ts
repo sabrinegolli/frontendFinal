@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './search-doubles.component.scss'
 })
 export class SearchDoublesComponent {
+  
 
 }

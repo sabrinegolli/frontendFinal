@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-salescontract',
@@ -9,11 +10,11 @@ import { MatDialog } from '@angular/material/dialog';
 export class SalescontractComponent {
 
 items:any[] = [
-  { label: 'Make a new sale', route: '/salescontract' }, 
-  { label: 'Move pack here', route: '/incidentfile' }, 
-  { label: 'Trash pack', route: '/accueil' } ,
-  { label: 'Tool history', route: '/accueil' },
-  { label: 'Add a new incident', route: '/incidentfile' } ,
+  {label: 'New pack', route: '/newcommpack' }, 
+  { label: 'Add element', route: '/addelement' }, 
+  { label: 'Upgrade pack', route: '/upgrading' } ,
+  { label: 'Renew licence ', route: '/licence' },
+  ,
 ];
 cancelContract() {
 throw new Error('Method not implemented.');
@@ -26,7 +27,9 @@ throw new Error('Method not implemented.');
   errorMessage: any;
   successMessage: any;
 contract: any;
-
+handleClick(event: MouseEvent) {
+  const inputElement = event.target as HTMLInputElement;
+  inputElement.style.borderLeft = '5px solid green';}
   addUser() {
     throw new Error('Method not implemented.');
   }

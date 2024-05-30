@@ -14,6 +14,13 @@ import { CustomerfileComponent } from './customerfile/customerfile.component';
 import { MaterialcomponentfileComponent } from './pages/unified-search folder/materialcomponentfile/materialcomponentfile.component';
 import { PackactionComponent } from './packaction/packaction.component';
 import { SearchDoublesComponent } from './pages/search-doubles/search-doubles.component';
+import { StandbyComponent } from './standby/standby.component';
+import { NewcommpackComponent } from './newcommpack/newcommpack.component';
+import { AddelementComponent } from './addelement/addelement.component';
+import { UpgradingpackComponent } from './upgradingpack/upgradingpack.component';
+import { LicenceComponent } from './licence/licence.component';
+import { ToolhistoryComponent } from './toolhistory/toolhistory.component';
+
 
 
 
@@ -94,6 +101,29 @@ const routes: Routes = [
     path: 'searchdoubles',
     component: SearchDoublesComponent,
   },
+
+  {
+    path: 'standby',
+    component: StandbyComponent,
+  }, 
+  {path: 'newcommpack',
+  component: NewcommpackComponent,
+
+  },
+  {path: 'addelement' , 
+    component:AddelementComponent,
+  },
+  {path: 'upgrading' , 
+  component:UpgradingpackComponent,
+},
+{path: 'licence' , 
+component:LicenceComponent,
+},
+{path: 'toolhistory' , 
+component:ToolhistoryComponent,
+},
+
+
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];

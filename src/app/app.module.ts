@@ -46,7 +46,14 @@ import { SalescontractComponent } from './salescontract/salescontract.component'
 import { IncidentfileComponent } from './incidentfile/incidentfile.component';
 import { CustomerfileComponent } from './customerfile/customerfile.component';
 import { PackactionComponent } from './packaction/packaction.component';
-import { SearchdoublesComponent } from './searchdoubles/searchdoubles.component';
+import { StandbyComponent } from './standby/standby.component';
+import { NewcommpackComponent } from './newcommpack/newcommpack.component';
+import { AddelementComponent } from './addelement/addelement.component';
+import { UpgradingpackComponent } from './upgradingpack/upgradingpack.component';
+import { LicenceComponent } from './licence/licence.component';
+import { ToolhistoryComponent } from './toolhistory/toolhistory.component';
+
+
 
 
 
@@ -77,6 +84,13 @@ import { SearchdoublesComponent } from './searchdoubles/searchdoubles.component'
     IncidentfileComponent,
     CustomerfileComponent,
     PackactionComponent,
+    StandbyComponent,
+    NewcommpackComponent,
+    AddelementComponent,
+    UpgradingpackComponent,
+    LicenceComponent,
+    ToolhistoryComponent,
+  
  
    
    

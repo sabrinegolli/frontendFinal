@@ -1,141 +1,123 @@
 <app-navbar></app-navbar>
-<div class="container"> 
- 
-
-  <div>
-
+<div class="container">
+  <div class="contract-container">
     <h3 class="sales-contract">Sale's Contract</h3>
-     <div class="card mb-3">
+    <div class="card mb-3">
       <div class="card-body">
         <div class="row align-items-end mb-3">
           <div class="col">
             <div class="label-input-container">
-              <label for="creationDate">Creation date</label>
-              <input type="date" id="creationDate" class="form-control" >
+              <label for="creationDate">Creation date:</label>
+              <input type="date" id="creationDate" class="form-control">
             </div>
           </div>
           <div class="col">
             <div class="label-input-container">
-              <label for="username">Username</label>
-              <input type="text" id="username" class="form-control"  disabled>
+              <label for="username">Username:</label>
+              <input (click)="handleClick($event)" type="text" id="username" class="form-control" >
             </div>
           </div>
-          <div class="col-auto">
-            <button class="btn btn-success" (click)="validateContract()"> <mat-icon>done</mat-icon> VALIDATE</button>
-            <button class="btn btn-danger" (click)="cancelContract()"> <mat-icon>cancel</mat-icon> CANCEL</button>
+          <div class="col-auto buttons">
+            <button class="btn btn-save" (click)="validateContract()">
+              <mat-icon>done</mat-icon> VALIDATE
+            </button>
+            <button class="btn btn-cancel" type="button">
+              <mat-icon>cancel</mat-icon> CLOSE
+            </button>
+          </div>
         </div>
       </div>
-    </div>  
-
-    <h3 class="sales-contract">Customer information</h3>
-
-<section> 
-       <div class="card">
+    </div>
+  </div>
+  <div class="customer-info-container">
+    <h3 class="sales-contract">Customer information:</h3>
+    <section>
+      <div class="card">
         <div class="card-body">
           <div class="row">
             <div class="col">
               <div class="label-input-container">
-                <label for="companyName">Company name</label>
-                <input type="text" id="companyName" class="form-control" >
+                <label for="companyName">Company name:</label>
+                <input (click)="handleClick($event)" type="text" id="companyName" class="form-control">
               </div>
             </div>
             <div class="col">
               <div class="label-input-container">
-                <label for="contactName">Contact name</label>
-                <input type="text" id="contactName" class="form-control">
+                <label for="contactName">Contact name:</label>
+                <input (click)="handleClick($event)" type="text" id="contactName" class="form-control">
               </div>
             </div>
             <div class="col">
               <div class="label-input-container">
-                <label for="zipCode">Zip code</label>
-                <input type="text" id="zipCode" class="form-control">
+                <label for="zipCode">Zip code:</label>
+                <input (click)="handleClick($event)"  id="zipCode" class="form-control">
               </div>
             </div>
-          </div> 
-
+          </div>
           <div class="row">
             <div class="col">
               <div class="label-input-container">
-                <label for="phone">Phone number</label>
-                <input type="tel" id="phone" class="form-control">
+                <label for="phone">Phone number:</label>
+                <input (click)="handleClick($event)" type="tel" id="phone" class="form-control">
               </div>
             </div>
             <div class="col">
               <div class="label-input-container">
-                <label for="country">Country</label>
-                <input type="text" id="country" class="form-control" >
+                <label for="country">Country:</label>
+                <input (click)="handleClick($event)" type="text" id="country" class="form-control">
               </div>
             </div>
             <div class="col">
               <div class="label-input-container">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" class="form-control" >
+                <label for="email">E-mail:</label>
+                <input (click)="handleClick($event)" type="email" id="email" class="form-control">
               </div>
             </div>
           </div>
         </div>
       </div>
-</section>
-  </div> 
-
-  <p-tabMenu [model]="items">
-    <ng-template pTemplate="item" let-item>
-      <a [routerLink]="item.route" routerLinkActive="active" class="p-menuitem-link">
-        <span [class]="item.icon"></span>
-        <span class="ml-2">{{ item.label }}</span>
-      </a>
-    </ng-template>
-  </p-tabMenu>
-
-  
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <!-- Headers for product details -->
-        <th colspan="2">Product Details</th>
-        <!-- Headers for Serial number	 details -->
-        <th colspan="1">Serial number	</th>
-        <!-- Headers  -->
-        <th colspan="1"></th>
-        <!-- Headers for Date code -->
-        <th colspan="1">Date code</th>
-        <!-- Headers for VCI serial number	 -->
-        <th colspan="1">VCI serial number	</th>
-        <!-- Headers for Under warranty	 -->
-        <th colspan="1">Under warranty	</th>
-      </tr>
-
-
-      <tr>
-        <!-- Headers Material Component -->
-        <th colspan="2">Material Component</th>
-        <!-- Headers for Product name		 details -->
-        <th colspan="1">Product name		</th>
-        <!-- Headers for 	Serial number  -->
-        <th colspan="1">	Serial number</th>
-        <!-- Headers  -->
-        <th colspan="1"></th>
-        <!-- Headers for Date code		 -->
-        <th colspan="1">Date code		</th>
-        <!-- Headers for Warranty end date -->
-        <th colspan="1">Warranty end date  </th>
-      </tr>
-
-      
-      <tr>
-        <!-- Headers Licence -->
-        <th colspan="2">Licence</th>
-        <!-- Headers for Product name	details -->
-        <th colspan="1">Product name</th>
-        <!-- Headers for 	Invoice ID -->
-        <th colspan="1">	Invoice ID	</th>
-        <!-- Headers Activated [MANUAL] -->
-        <th colspan="1">Activated [MANUAL]</th>
-        <!-- 	[Subscription Duration ] End date -->
-        <th colspan="1">[Subscription Duration ] End date</th>
-        <!-- Headers for Major Version -->
-        <th colspan="1">Major Version</th>
-      </tr>
-
-</thead></table></div></div>
+    </section>
+  </div>
+  <div class="tabs-container">
+    <p-tabMenu [model]="items">
+      <ng-template pTemplate="item" let-item>
+        <a [routerLink]="item.route" routerLinkActive="active" class="p-menuitem-link">
+          <span [class]="item.icon"></span>
+          <span class="ml-2">{{ item.label }}</span>
+        </a>
+      </ng-template>
+    </p-tabMenu>
+  </div>
+  <div class="table-container">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="2">Product Details</th>
+            <th colspan="1">Serial number</th>
+            <th colspan="1"></th>
+            <th colspan="1">Date code</th>
+            <th colspan="1">VCI serial number</th>
+            <th colspan="1">Under warranty</th>
+          </tr>
+          <tr>
+            <th colspan="2">Material Component</th>
+            <th colspan="1">Product name</th>
+            <th colspan="1">Serial number</th>
+            <th colspan="1"></th>
+            <th colspan="1">Date code</th>
+            <th colspan="1">Warranty end date</th>
+          </tr>
+          <tr>
+            <th colspan="2">Licence</th>
+            <th colspan="1">Product name</th>
+            <th colspan="1">Invoice ID</th>
+            <th colspan="1">Activated [MANUAL]</th>
+            <th colspan="1">[Subscription Duration] End date</th>
+            <th colspan="1">Major Version</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
