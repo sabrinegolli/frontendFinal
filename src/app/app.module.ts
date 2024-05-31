@@ -52,6 +52,7 @@ import { AddelementComponent } from './addelement/addelement.component';
 import { UpgradingpackComponent } from './upgradingpack/upgradingpack.component';
 import { LicenceComponent } from './licence/licence.component';
 import { ToolhistoryComponent } from './toolhistory/toolhistory.component';
+import { ValidatesaleComponent } from './validatesale/validatesale.component';
 
 
 
@@ -90,6 +91,7 @@ import { ToolhistoryComponent } from './toolhistory/toolhistory.component';
     UpgradingpackComponent,
     LicenceComponent,
     ToolhistoryComponent,
+    ValidatesaleComponent,
   
  
    
