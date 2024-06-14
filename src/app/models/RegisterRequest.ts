@@ -1,4 +1,4 @@
-import { SsProfil } from "./SsProfil";
+import { Profil } from "./Profil";
 
 export interface RegisterRequest {
   id?:number
@@ -7,5 +7,5 @@ export interface RegisterRequest {
     login?: string;
     password?: string;
     email?: string;
-    ssProfil?: SsProfil;
+    profil?: Profil;
   }

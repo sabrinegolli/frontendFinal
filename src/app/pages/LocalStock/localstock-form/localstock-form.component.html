@@ -1,0 +1,53 @@
+<!-- <div *ngIf="showForm" class="container">
+    <hr style="border: 0; height: 2px; background-color:#686a6d; margin: 10px 0;">
+    <div class="agence-form"  >
+    <form [formGroup]="agenceForm" (ngSubmit)="onSubmit()">
+      <input formControlName="id" type="hidden">
+  
+      <div class="mb-3 form-row">
+        <label for="nom" class="col-sm-2 col-form-label">Agence</label>
+        <div class="col-sm-10">
+          <input formControlName="nom" type="text" class="form-control" id="nom" placeholder="Nom de l'agence" [ngClass]="{'empty': agenceForm.get('nom')?.valid, 'invalid': agenceForm.get('nom')?.invalid && agenceForm.get('nom')?.touched}">
+  
+          <div *ngIf="agenceForm.get('nom')?.invalid && agenceForm.get('nom')?.touched" class="text-danger">
+            Le nom de l'agence est requis.
+          </div>
+        </div>
+      </div>
+  
+      <div class="mb-3 form-row">
+        <label for="code" class="col-sm-2 col-form-label">Code</label>
+        <div class="col-sm-10">
+          <input formControlName="code" type="text" class="form-control" id="code"  placeholder="Code de l'agence" [ngClass]="{'empty': agenceForm.get('code')?.valid, 'invalid': agenceForm.get('code')?.invalid && agenceForm.get('code')?.touched}">
+          
+          <div *ngIf="agenceForm.get('code')?.invalid && agenceForm.get('code')?.touched" class="text-danger">
+            Le code est requis.
+          </div>
+        </div>
+      </div>
+  
+      <div class="mb-3 form-row">
+        <label for="type" class="col-sm-2 col-form-label">Type</label>
+        <div class="col-sm-10">
+          <input formControlName="type" type="text" class="form-control" id="type" placeholder="type de l'agence"  [ngClass]="{'empty': agenceForm.get('type')?.valid, 'invalid': agenceForm.get('type')?.invalid && agenceForm.get('type')?.touched}">
+          <div *ngIf="agenceForm.get('type')?.invalid && agenceForm.get('type')?.touched" class="text-danger">
+            Le type est requis.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 form-row">
+        <label for="email" class="form-label" class="col-sm-2 col-form-label">Contact</label>
+        <div class="col-sm-10">
+        <input formControlName="email" type="email" class="form-control" id="email" placeholder="agency email" [ngClass]="{'empty': agenceForm.get('email')?.valid, 'invalid': agenceForm.get('email')?.invalid && agenceForm.get('email')?.touched}">
+        <div *ngIf="agenceForm.get('email')?.invalid && agenceForm.get('email')?.touched" class="text-danger">
+          Votre email est requis
+        </div>
+      </div>
+    </div>
+  
+  
+    </form>
+  </div>
+  
+  
+  </div> -->

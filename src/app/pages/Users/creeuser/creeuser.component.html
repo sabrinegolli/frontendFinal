@@ -59,7 +59,6 @@
           </div>
         </div>
       </div>
-
       <div class="mb-3 form-row">        
         <label for="agence" class="form-label" class="col-sm-2 col-form-label" >agence </label>
         <div class="col-sm-10">
@@ -71,22 +70,27 @@
           </div>
         </div>
       </div>
-      
+
     
       <div class="mb-3 form-row">
         
-        <label for="ssProfil" class="form-label" class="col-sm-2 col-form-label" >Profil </label>
+        <label for="profil" class="form-label" class="col-sm-2 col-form-label" >Profil </label>
         <div class="col-sm-10">
-          <select formControlName="ssProfil" class="form-select" id="ssProfil" [ngClass]="{'empty': registerForm.get('ssProfil')?.valid, 'invalid': registerForm.get('ssProfil')?.invalid && registerForm.get('ssProfil')?.touched}">
-            <option *ngFor="let ssProfil of ssProfils" [value]="ssProfil">{{ ssProfil }}</option>
+          <select formControlName="profil" class="form-select" id="profil" [ngClass]="{'empty': registerForm.get('profil')?.valid, 'invalid': registerForm.get('profil')?.invalid && registerForm.get('profil')?.touched}">
+            <option *ngFor="let profil of profils" [value]="profil">{{ profil }}</option>
         </select>
-        <div *ngIf="registerForm.get('ssProfil')?.invalid && registerForm.get('ssProfil')?.touched" class="text-danger">
+        <div *ngIf="registerForm.get('profil')?.invalid && registerForm.get('profil')?.touched" class="text-danger">
           Le profil est requis.
         </div>
       </div>
     </div>
    
-     </form>
+     
+  
+    
+  
+       
+      </form>
     </div>
      
   

@@ -1,0 +1,32 @@
+.small-label {
+    font-size: 0.9rem;
+    color: #686A6D;
+    border-right: 1px solid #ccc; // Adjust color and thickness as needed
+    padding-right: 0.5rem; // Add some space between the text and the line
+  }
+  .btn-primary {
+    background-color: white;
+    border-radius: 0;
+    border: none;
+    color: #686A6D;
+   
+    padding-right: 0.5rem; // Add some space between the button text and the line
+    margin-right: 0.5rem; // Add some space between the buttons
+    &:hover, &:active {
+      background-color: white;
+      border: none;
+  
+    }
+  }
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

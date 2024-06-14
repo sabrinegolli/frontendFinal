@@ -1,0 +1,410 @@
+<h2 class="customer-file">Customer file:</h2>
+<button class="p-menu-button" routerLink="/salescontract">Make a new sale</button> 
+<button class="p-menu-button" routerLink="/incidentfile">Add a new incident</button> 
+<app-packaction></app-packaction> 
+
+  
+<div id="formAjout" class="form-container">
+  <form *ngIf="isAddingCustomer || isEditingCustomer">
+    <div
+    class="form-group"
+    [ngClass]="{ 'has-data': hasData(formData.ActiaCustomerID) }"
+  >
+  <label for="ActiaCustomerID">Actia customer ID:</label>
+  <input
+    type="text"
+    id="ActiaCustomerID"
+    name="ActiaCustomerID"
+    [(ngModel)]="formData.ActiaCustomerID"
+    [disabled]="true"
+    class="form-control"
+  />
+</div>
+<div
+      class="form-group"
+     
+    >
+    <label for="AgentCustomerID">
+      Agent Customer ID:
+    </label>
+    <input (click)="handleClick($event)"
+      type="text"
+      id="AgentCustomerID"
+      name="AgentCustomerID"
+      [(ngModel)]="formData.AgentCustomerID"
+      [disabled]="!isEditable"
+      class="form-control"
+    />
+  </div>
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-data': hasData(formData.CustomerStatus) }"
+    >
+      <label for="CustomerStatus">
+        Customer status:
+      </label>
+      <select
+        id="CustomerStatus"
+        name="CustomerStatus"
+        [(ngModel)]="formData.CustomerStatus"
+        [disabled]="!isEditable"
+        class="form-control"
+      >
+        <option>Nothing to report</option>
+        <option>Closed centre</option>
+        <option>Suspended due to non-payment</option>
+        <option>Do not renew</option>
+        <option>Bankruptcy</option>
+        <option>Switched to competitor</option>
+      </select>
+    </div>
+    
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-data': hasData(formData.Agency) }"
+    >
+      <label for="Agency">
+        Agency:
+      </label>
+      <select
+        id="Agency"
+        name="Agency"
+        [(ngModel)]="formData.Agency"
+        [disabled]="!isEditable"
+        class="form-control"
+      >
+        <option>AAUTOO EQUIP</option>
+        <option>ACS</option>
+        <option>ACTIA AFRICA</option>
+        <option>Actia china </option>
+        <option>ACTIA AUTOMOTIVE</option>
+      </select>
+    </div>
+    <div
+    class="form-group"
+    [ngClass]="{ 'has-data': hasData(formData.DistributorCategory) }"
+  >
+    <label for="DistributorCategory">
+      Distributor Category:
+    </label>
+    <select
+      id="DistributorCategory"
+      name="DistributorCategory"
+      [(ngModel)]="formData.DistributorCategory"
+      [disabled]="!isEditable"
+      class="form-control"
+    >
+      <option>Select an element</option>
+      <option>To classify</option>
+    </select>
+  </div>
+  <div
+    class="form-group"
+    [ngClass]="{ 'has-data': hasData(formData.Distributor) }"
+  >
+    <label for="Distributor">
+      Distributor: 
+    </label>
+    <select
+      id="Distributor"
+      name="Distributor"
+      [(ngModel)]="formData.Distributor"
+      [disabled]="!isEditable"
+      class="form-control"
+   >
+      <option>Select an element</option>
+      <option>To classify</option>
+    </select>
+  </div> 
+
+  <div
+    class="form-group"
+    [ngClass]="{ 'has-data': hasData(formData.Network) }"
+  >
+    <label for="Network">
+      Network:  
+    </label>
+    <select
+      id="Network"
+      name="Network"
+      [(ngModel)]="formData.Network"
+      [disabled]="!isEditable"
+      class="form-control"
+    >
+      <option>select an element</option>
+      <option> Independent</option>
+    </select>
+  </div>
+ 
+     <div class="form-group">
+    <label for="CompanyName">
+      Company name *:
+    </label>
+    <input (click)="handleClick($event)"
+      type="text"
+      id="CompanyName"
+      name="CompanyName"
+      [(ngModel)]="formData.CompanyName"
+      [disabled]="!isEditable"
+      class="form-control"
+    />
+  </div>
+  <div
+      class="form-group"
+      [ngClass]="{ 'has-data': hasData(formData.Address) }"
+    >
+     
+    <label for="Address">
+      Address *	:
+    </label>
+    <input (click)="handleClick($event)"
+      type="text"
+      id="Address"
+      name="Address"
+      [(ngModel)]="formData.Address"
+      [disabled]="!isEditable"
+      class="form-control"
+    />
+  </div>
+  <div
+      class="form-group"
+      [ngClass]="{ 'has-data': hasData(formData.ZipCode) }"
+    >
+     
+    <label for="ZipCode">
+      Zip code* :
+    </label>
+    <input (click)="handleClick($event)"
+      type="text"
+      id="ZipCode"
+      name="ZipCode"
+      [(ngModel)]="formData.ZipCode"
+      [disabled]="!isEditable"
+      class="form-control"
+    />
+  </div>
+ 
+  <div
+      class="form-group"
+      [ngClass]="{ 'has-data': hasData(formData.City) }"
+    >
+     
+    <label for="City">
+      City * :	
+    </label>
+    <input (click)="handleClick($event)"
+      type="text"
+      id="City"
+      name="City"
+      [(ngModel)]="formData.City"
+      [disabled]="!isEditable"
+      class="form-control"
+    />
+  </div>
+  <div
+  class="form-group"
+  [ngClass]="{ 'has-data': hasData(formData.County) }"
+>
+  <label for="County">
+    Country *:
+  </label>
+  <select
+    id="County"
+    name="County"
+    [(ngModel)]="formData.County"
+    [disabled]="!isEditable"
+    class="form-control"
+  >
+    <option>select an element </option>
+    <option>france</option>
+  </select>
+</div>
+<div
+class="form-group"
+[ngClass]="{ 'has-data': hasData(formData.Email) }"
+>
+
+<label for="Email">
+E-mail:
+</label>
+<input (click)="handleClick($event)"
+type="text"
+id="Email"
+name="Email"
+[(ngModel)]="formData.Email"
+[disabled]="!isEditable"
+class="form-control"
+/>
+</div>
+<div
+class="form-group"
+[ngClass]="{ 'has-data': hasData(formData.ContactName) }"
+>
+
+<label for="ContactName">
+Contact name *:
+</label>
+<input (click)="handleClick($event)"
+type="text"
+id="ContactName"
+name="ContactName"
+[(ngModel)]="formData.ContactName"
+[disabled]="!isEditable"
+class="form-control"
+/>
+</div>
+<div
+class="form-group"
+[ngClass]="{ 'has-data': hasData(formData.PhoneNumber) }"
+>
+
+<label for="PhoneNumber">
+Phone number *:
+</label>
+<input (click)="handleClick($event)"
+type="text"
+id="PhoneNumber"
+name="PhoneNumber"
+[(ngModel)]="formData.PhoneNumber"
+[disabled]="!isEditable"
+class="form-control"
+/>
+</div>
+<div
+class="form-group"
+[ngClass]="{ 'has-data': hasData(formData.FaxNumber) }"
+>
+
+<label for="FaxNumber">
+Fax number*:
+</label>
+<input (click)="handleClick($event)"
+type="text"
+id="FaxNumber"
+name="FaxNumber"
+[(ngModel)]="formData.FaxNumber"
+[disabled]="!isEditable"
+class="form-control"
+/>
+</div>
+<div
+class="form-group"
+[ngClass]="{ 'has-data': hasData(formData.MobileNumber) }"
+>
+
+<label for="MobileNumber">
+Mobile number:
+</label>
+<input (click)="handleClick($event)"
+type="text"
+id="MobileNumber"
+name="MobileNumber"
+[(ngModel)]="formData.MobileNumber"
+[disabled]="!isEditable"
+class="form-control"
+/>
+</div>
+<div
+class="form-group"
+[ngClass]="{ 'has-data': hasData(formData.Language) }"
+>
+<label for="Language">
+Language:
+</label>
+<select
+id="Language"
+name="Language"
+[(ngModel)]="formData.Language"
+[disabled]="!isEditable"
+class="form-control"
+>
+<option>select an element </option>
+<option>french</option>
+</select>
+</div>
+
+
+<div class="form-group">
+  <label for="Acceptedula" style="color: red;">
+    Accepted EULANote
+    <input type="checkbox" name="Acceptedula" value="example">
+  </label>
+</div>
+  
+
+<div class="form-group">
+<div class="button-container">
+  <label for="note">Note: </label>
+<br>
+<textarea id="note" name="note" rows="4" cols="80" style="font-size: 12px; border: 1px solid #cccccc; border-radius: 5px;
+">
+</textarea>
+  
+<!-- Tableau -->
+<div
+  class="table-responsive"
+  style="max-height: 300px; overflow-y: auto"
+  *ngIf="showTable"
+>
+  <table class="table" style="width: 100%; table-layout: auto">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Colonne 1</th>
+        <th>Colonne 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#">1</a></td>
+
+        <td>Donnée 1</td>
+        <td>Donnée 2</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div class="alert-error" *ngIf="errorMessage">
+  {{ errorMessage }}
+</div>
+
+<div class="alert" *ngIf="successMessage">
+  {{ successMessage }}
+</div>
+<div class="container">
+  <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
+    <table class="table striped-table" style="width: 100%; table-layout: auto;">
+      <thead>
+        <tr class="first-line-background">
+          <th>Product name</th>
+          <th></th>
+          <th>Serial number</th>
+          <th></th>
+          <th>Date code</th>
+          <th>VCI serial number</th>
+          <th>Under warranty</th>
+        </tr>
+        <tr class="second-line-background">
+          <th></th>
+          <th>Material Component</th>
+          <th>Product name</th>
+          <th>Serial number</th>
+          <th></th>
+          <th>Date code</th>
+          <th>Warranty end date</th>
+        </tr>
+        <tr class="third-line-background">
+          <th></th>
+          <th>Licence</th>
+          <th>Product name</th>
+          <th>Invoice ID</th>
+          <th>Activated [MANUAL]</th>
+          <th>Subscription Duration [End date]</th>
+          <th>Major Version</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>

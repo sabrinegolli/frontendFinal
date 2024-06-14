@@ -1,4 +1,8 @@
-<div  class="list1">
+<app-navbar></app-navbar>
+<h1 class="Search-serial-number-doubles">Search serial number doubles</h1>
+
+<div class="container list-container">
+  <div class="list1">
     <label for="agency">Agency:</label>
     <select id="agency">
       <option default>All elements</option>
@@ -13,40 +17,51 @@
       <option>Product Name 2</option>
       <option>Product Name 3</option>
     </select>
-  </div>
-  
-    <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
-      <table class="table striped-table" style="width: 100%; table-layout: auto;">
-        <thead>
-          <tr class="first-line-background">
-            <th>Product name</th>
-            <th>Serial number</th>
-            <th>Date code</th>
-            <th>VCI serial number</th>
-            <th>Setup date</th>
-            <th>Under warranty</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Product 1</td>
-            <td>1234567890</td>
-            <td>2022-01-01</td>
-            <td>ABCDEFGHIJ</td>
-            <td>2022-01-02</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>Product 2</td>
-            <td>0987654321</td>
-            <td>2022-02-01</td>
-            <td>JKLmnopqrst</td>
-            <td>2022-02-03</td>
-            <td>No</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="button-container">
+      <button class="btn btn-save" type="button" >
+        <mat-icon>search</mat-icon> SEARCH
+      </button>
+      <button class="btn btn-cancel" type="button">
+        <mat-icon>cancel</mat-icon> CLOSE
+      </button>
     </div>
-  
-  
-  
+
+  </div>
+  <div class="total">
+    Total: <span id="total">0</span>
+  </div>
+</div>
+<div class="container table-container">
+  <div class="table-responsive">
+    <table class="table striped-table">
+      <thead>
+        <tr class="first-line-background">
+          <th>Product name</th>
+          <th>Serial number</th>
+          <th>Date code</th>
+          <th>VCI serial number</th>
+          <th>Setup date</th>
+          <th>Under warranty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Product 1</td>
+          <td>1234567890</td>
+          <td>2022-01-01</td>
+          <td>ABCDEFGHIJ</td>
+          <td>2022-01-02</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Product 2</td>
+          <td>0987654321</td>
+          <td>2022-02-01</td>
+          <td>JKLmnopqrst</td>
+          <td>2022-02-03</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

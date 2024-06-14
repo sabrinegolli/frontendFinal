@@ -1,4 +1,14 @@
+
+
+
 <h2 class="customer-file">Customer file:</h2>
+<button class="p-menu-button" routerLink="/salescontract">Make a new sale</button> 
+<button class="p-menu-button" routerLink="/incidentfile">Add a new incident</button> 
+<app-packaction></app-packaction> 
+
+
+
+
 
 <div id="formAjout" class="form-container">
   <form *ngIf="isAddingCustomer || isEditingCustomer">
@@ -6,15 +16,13 @@
     class="form-group"
     [ngClass]="{ 'has-data': hasData(formData.ActiaCustomerID) }"
   >
-  <label for="ActiaCustomerID ">
-    Actia customer ID:
-  </label>
+  <label for="ActiaCustomerID">Actia customer ID:</label>
   <input
     type="text"
-    id="ActiaCustomerID "
-    name="ActiaCustomerID "
-    [(ngModel)]="formData.ActiaCustomerID "
-    [disabled]="!isEditable"
+    id="ActiaCustomerID"
+    name="ActiaCustomerID"
+    [(ngModel)]="formData.ActiaCustomerID"
+    [disabled]="true"
     class="form-control"
   />
 </div>
@@ -25,7 +33,7 @@
     <label for="AgentCustomerID">
       Agent Customer ID:
     </label>
-    <input
+    <input (click)="handleClick($event)"
       type="text"
       id="AgentCustomerID"
       name="AgentCustomerID"
@@ -138,7 +146,7 @@
     <label for="CompanyName">
       Company name *:
     </label>
-    <input
+    <input (click)="handleClick($event)"
       type="text"
       id="CompanyName"
       name="CompanyName"
@@ -155,7 +163,7 @@
     <label for="Address">
       Address *	:
     </label>
-    <input
+    <input (click)="handleClick($event)"
       type="text"
       id="Address"
       name="Address"
@@ -172,7 +180,7 @@
     <label for="ZipCode">
       Zip code* :
     </label>
-    <input
+    <input (click)="handleClick($event)"
       type="text"
       id="ZipCode"
       name="ZipCode"
@@ -190,7 +198,7 @@
     <label for="City">
       City * :	
     </label>
-    <input
+    <input (click)="handleClick($event)"
       type="text"
       id="City"
       name="City"
@@ -225,7 +233,7 @@ class="form-group"
 <label for="Email">
 E-mail:
 </label>
-<input
+<input (click)="handleClick($event)"
 type="text"
 id="Email"
 name="Email"
@@ -242,7 +250,7 @@ class="form-group"
 <label for="ContactName">
 Contact name *:
 </label>
-<input
+<input (click)="handleClick($event)"
 type="text"
 id="ContactName"
 name="ContactName"
@@ -259,7 +267,7 @@ class="form-group"
 <label for="PhoneNumber">
 Phone number *:
 </label>
-<input
+<input (click)="handleClick($event)"
 type="text"
 id="PhoneNumber"
 name="PhoneNumber"
@@ -276,7 +284,7 @@ class="form-group"
 <label for="FaxNumber">
 Fax number*:
 </label>
-<input
+<input (click)="handleClick($event)"
 type="text"
 id="FaxNumber"
 name="FaxNumber"
@@ -293,7 +301,7 @@ class="form-group"
 <label for="MobileNumber">
 Mobile number:
 </label>
-<input
+<input (click)="handleClick($event)"
 type="text"
 id="MobileNumber"
 name="MobileNumber"
@@ -337,35 +345,7 @@ class="form-control"
 <textarea id="note" name="note" rows="4" cols="80" style="font-size: 12px; border: 1px solid #cccccc; border-radius: 5px;
 ">
 </textarea>
-  <!-- Bouton pour modifier ou enregistrer -->
-  <div>
-  <button
-    class="btn btn-primary"
-    type="button"
-    (click)="isEditable ? saveChanges() : enableEdit()"
-  >
-  <mat-icon>{{ isEditingCustomer ? "edit" : "save" }}</mat-icon>
-    {{ isEditingCustomer ? "Modifier" : "Enregistrer" }}
-   
-  </button>
-  <!-- Bouton Enregistrer -->
-<!-- Bouton Enregistrer -->
-<button
-  class="btn btn-primary btn-save"
-  type="button"
-  *ngIf="isEditingCustomer"
-  (click)="saveChanges()"
->
- 
-  Enregistrer
-</button>
-</div>
-</div>
-</div>
-  </form>
-</div>
-
-
+  
 <!-- Tableau -->
 <div
   class="table-responsive"
@@ -398,4 +378,39 @@ class="form-control"
 
 <div class="alert" *ngIf="successMessage">
   {{ successMessage }}
+</div>
+<div class="container">
+  <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
+    <table class="table striped-table" style="width: 100%; table-layout: auto;">
+      <thead>
+        <tr class="first-line-background">
+          <th>Product name</th>
+          <th></th>
+          <th>Serial number</th>
+          <th></th>
+          <th>Date code</th>
+          <th>VCI serial number</th>
+          <th>Under warranty</th>
+        </tr>
+        <tr class="second-line-background">
+          <th></th>
+          <th>Material Component</th>
+          <th>Product name</th>
+          <th>Serial number</th>
+          <th></th>
+          <th>Date code</th>
+          <th>Warranty end date</th>
+        </tr>
+        <tr class="third-line-background">
+          <th></th>
+          <th>Licence</th>
+          <th>Product name</th>
+          <th>Invoice ID</th>
+          <th>Activated [MANUAL]</th>
+          <th>Subscription Duration [End date]</th>
+          <th>Major Version</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
 </div>

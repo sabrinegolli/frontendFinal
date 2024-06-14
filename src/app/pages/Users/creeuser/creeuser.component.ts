@@ -5,8 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserDto } from '../../../models/UserDto';
 import { Observable } from 'rxjs/internal/Observable';
 import { Agence } from '../../../models/Agence';
+import { Profil } from '../../../models/Profil';
 import { AgenceService } from '../../../services/agence.service';
-import { SsProfil } from '../../../models/SsProfil';
 
 @Component({
   selector: 'app-creeuser',
@@ -15,14 +15,12 @@ import { SsProfil } from '../../../models/SsProfil';
 })
 export class CreeuserComponent implements OnInit {
   registerForm!: FormGroup;
-
   @Input() showForm: boolean = false;
   isEditing: boolean = false;
   @Output() saveUser: EventEmitter<any> = new EventEmitter<any>();
   agences: Agence[] = []; 
-
   constructor(private formBuilder: FormBuilder, private authService: AuthService ,private snackBar: MatSnackBar , private agenceService: AgenceService) { }
-  ssProfils = Object.keys(SsProfil); 
+  profils = Object.keys(Profil); 
   ngOnInit(): void {
     
  
@@ -35,14 +33,16 @@ export class CreeuserComponent implements OnInit {
         password: ['', Validators.required],
         agence: [null, Validators.required],
 
-        ssProfil: ['',Validators.required],
+        profil: ['',Validators.required],
         langue: ['fr',Validators.required],
       
     
         
       });
  
-      this.fetchSites();
+      this.fetchSites();        
+      console.log ("gneces",this.agences ); 
+
     this.initForm();
    
    
@@ -61,10 +61,11 @@ export class CreeuserComponent implements OnInit {
         agence: [null, Validators.required],
 
 
-        ssProfil: ['',Validators.required],
+        profil: ['',Validators.required],
         langue: ['fr',Validators.required],
       });
-    
+  
+
   } 
   onSubmit() {
     if (this.registerForm.valid) {
@@ -146,7 +147,7 @@ export class CreeuserComponent implements OnInit {
     }
   
     editUser() {
-  
+
 
       this.registerForm.enable();
       this.isEditing = true;

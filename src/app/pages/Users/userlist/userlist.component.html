@@ -1,5 +1,5 @@
 <div class="container" >
-  <h1>Users</h1>
+  <h1>Users Managment</h1>
   
 
   
@@ -23,12 +23,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users; let i = index" [ngClass]="{'selected': selectedRowIndex === i}" (click)="selectUser(user, i)">
+        <tr *ngFor="let user of users; let i = index"[ngClass]="{'selected': selectedRowIndex === i}" (click)="selectUser(user, i)">
   
           <td>{{user.nom}}</td>
           <td>{{user.prenom}}</td>
           <td>{{user.email}}</td>
-          <td>{{user.ssProfil}}</td>
+          <td>{{user.profil}}</td>
           <td>{{user.agence?.nom}}</td>
     
      
@@ -39,7 +39,14 @@
       </tbody>
     </table>
   </div>
+</div>
 <br>
+
+
+
+
+
+
 <div class="pagination-container">
   <div class="pagination-left" >
     {{ getFirstEntryNumber() }}-{{ getLastEntryNumber() }} / {{ totalRecords }}
@@ -55,9 +62,3 @@
     Page : {{ getFirstEntryNumber() }} / {{ totalRecords }}
   </div>
 </div>
-
-  
-</div>
-
-
-

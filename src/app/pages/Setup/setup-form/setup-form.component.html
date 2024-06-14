@@ -1,0 +1,59 @@
+<div *ngIf="showForm" class="container">
+  <hr style="border: 0; height: 2px; background-color:#686a6d; margin: 10px 0;">
+  <div class="setup-form">
+    <form [formGroup]="setupForm" (ngSubmit)="onSubmit()">
+      <input formControlName="id" type="hidden">
+<input formControlName="id" type="hidden">
+<div class="mb-3 form-row">
+  <label for="typeSetup"class="form-select" class="col-sm-2 col-form-label">Code:</label>
+    <div class="col-sm-10">
+    <select  formControlName="typeOutil" >
+     
+      <option *ngFor="let typeOutil of typeOutils" [ngValue]="typeOutil">{{ typeOutil.nom }}</option>
+  </select>
+  <div *ngIf="setupForm.get('typeOutil')?.invalid && setupForm.get('typeOutil')?.touched" class="text-danger">
+    Le TypeOutil  est requis.
+  </div>
+</div>
+</div>
+<div class="mb-3 form-row">
+  <label for="typeSetup"class="form-select" class="col-sm-2 col-form-label">Product Name</label>
+    <div class="col-sm-10">
+    <select  formControlName="typeOutil" >
+     
+      <option *ngFor="let typeOutil of typeOutils" [ngValue]="typeOutil">{{ typeOutil.nom }}</option>
+  </select>
+  <div *ngIf="setupForm.get('typeOutil')?.invalid && setupForm.get('typeOutil')?.touched" class="text-danger">
+    Le TypeOutil  est requis.
+  </div>
+</div>
+</div>
+
+<div class="mb-3 form-row">
+  <label for="typeSetup"class="form-select" class="col-sm-2 col-form-label">Type Setup:</label>
+    <div class="col-sm-10">
+    <select  formControlName="typeSetup" >
+     
+      <option *ngFor="let TypeSetup of type" [ngValue]="TypeSetup">{{ TypeSetup.nom }}</option>
+  </select>
+  <div *ngIf="setupForm.get('typeSetup')?.invalid && setupForm.get('typeSetup')?.touched" class="text-danger">
+    Le TypeSetup  est requis.
+  </div>
+</div>
+</div>
+
+
+
+
+<div class="mb-3 form-row">
+  <label for="website" class="form-label" class="col-sm-2 col-form-label">Website</label>
+  <div class="col-sm-10">
+    <input formControlName="website" id="website" type="text" class="form-control" placeholder="Enter website" [ngClass]="{'empty': setupForm.get('websiteNeedSetup')?.valid, 'invalid':setupForm.get('websiteNeedSetup')?.touched}">
+    <div *ngIf="setupForm.get('websiteNeedSetup')?.invalid && setupForm.get('websiteNeedSetup')?.touched"  class="text-danger">
+     website is required.
+    </div>
+  </div>
+</div>
+    </form>
+  </div>
+</div>

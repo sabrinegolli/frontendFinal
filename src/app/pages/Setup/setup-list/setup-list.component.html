@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Setup Management</h1>
+  <div class="table-responsive" style="max-height: 640px; overflow-y: auto;">
+    <table class="table" style="width: 100%; table-layout: auto;">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Product Name</th>
+          <th>Type Setup</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let setup of setups; let i = index" [ngClass]="{'selected': selectedRowIndex === i}" (click)="selectSetup(setup, i)">
+          <td>{{ setup.typeOutil?.code }}</td>
+          <td>{{ setup.typeOutil?.nom }}</td>
+          <td>{{ setup.typeSetup?.nom }}</td>
+          <td>{{ setup.website}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+
+  
+  
+    
+  
+  
+  
+  

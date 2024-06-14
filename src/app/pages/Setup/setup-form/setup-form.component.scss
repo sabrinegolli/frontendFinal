@@ -1,0 +1,107 @@
+
+.setup-form {
+  margin-bottom: 20px;
+}
+
+.setup-form form {
+background-color: #ffffff;
+border-radius: 6px;
+
+padding: 15px;
+
+}
+
+.setup-form form .mb-3 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.setup-form form .col-form-label {
+  font-weight: bold;
+  color: #686a6d;
+  font-size: 0.8rem;
+  margin-right: 160px; 
+
+}
+
+.setup-form .form-row > div {
+  flex: 1; 
+}
+
+.setup-form form input.empty {
+  border-left: 10px solid;
+  border-color: rgb(6, 100, 6); 
+}
+
+.setup-form form input.invalid {
+  border-left: 10px solid;
+  border-color: red; 
+}
+.setup-form form input:disabled {
+  border-left: 10px solid;
+  border-color: rgb(6, 100, 6); 
+}  .setup-form form select:disabled {
+border-left: 10px solid;
+border-color: rgb(6, 100, 6); 
+}
+
+.setup-form form select.empty {
+  border-left: 10px solid;
+  border-color: rgb(6, 100, 6); 
+}
+
+.setup-form form select.invalid {
+  border-left: 10px solid;
+  border-color: red; 
+}
+
+
+.setup-form form label {
+  color: #686a6d;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.setup-form form input,
+.setup-form form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.setup-form form button {
+  width: 30%;
+  padding: 4px;
+  border: none;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  background-color: #595f66;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.setup-form form button:hover {
+  background-color: #c5c7ca;
+}
+.mat-icon {
+  font-size: 15px; 
+  margin-right: 4px; 
+  vertical-align: middle; 
+}
+.text-danger {
+  color: red; 
+  font-size: 0.7rem; 
+  margin-top: 0.25rem; 
+}
+
+
+
+

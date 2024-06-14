@@ -1,0 +1,36 @@
+<!-- <app-navbar></app-navbar>
+<br>
+
+<div class="container-fluid page">
+  <div class="page__content">
+    <div class="left-panel" style="border: 3px solid #F8FBFF">
+      <app-agence-list (agenceSelected)="onAgenceSelected($event)"></app-agence-list>
+    </div>
+    <div class="right-panel" style="border: 3px solid #F8FBFF">
+      <div class="button-container">
+
+        <button type="button" class="btn btn-save" (click)="saveAgence(agenceFormComponent.agenceForm.value)" *ngIf="showAgenceForm">
+          <mat-icon>save</mat-icon> SAUVER
+        </button>
+        <button class="btn btn-besoin" (click)="deleteAgenceConfirmation(selectedAgence.id)" *ngIf="showagenceForm && !agenceFormComponent.isEditing && selectedAgence">
+          <mat-icon>delete</mat-icon> SUPPRIMER
+        </button>
+        <button class="btn btn-besoin" type="button" (click)="editAgence()" *ngIf="showagenceForm && !agenceFormComponent.isEditing && selectedAgence">
+          <mat-icon>edit</mat-icon> MODIFIER
+        </button>
+        <button class="btn btn-besoin" (click)="cancelCreation()" *ngIf="showagenceForm">
+          <mat-icon>block</mat-icon> ANNULER
+        </button>
+        <button class="btn btn-besoin" (click)="addAgence()">
+          <mat-icon>add</mat-icon> NOUVEAU
+        </button>
+      </div>
+      <br>
+      <div style="margin-left: 40px;">
+        <h1 *ngIf="showagenceForm && !selectedAgence">Creer une nouvelle agence</h1>
+        <h1 *ngIf="showagenceForm && selectedAgence">Information</h1>
+        <app-agence-form [agence]="selectedAgence" [showForm]="showagenceForm" (saveAgence)="saveAgence($event)"></app-agence-form>
+      </div>
+    </div>
+  </div>
+</div> -->

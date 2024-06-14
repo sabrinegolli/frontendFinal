@@ -19,7 +19,6 @@ export class ManagementUserComponent {
   showCreeuser: boolean = false;
   selectedUser: UserDto | null = null;
   confirmationDialogOpen: boolean = false;
-
   isEditing: boolean = false;
   @ViewChild(CreeuserComponent) creeUserComponent!: CreeuserComponent;
   @ViewChild(UserlistComponent) userListComponent!: UserlistComponent ;
@@ -105,7 +104,10 @@ export class ManagementUserComponent {
       }
     });
   }
-
+  updateUserList(): void {
+    this.userActionEvent.emit();
+    this.userListComponent.getUsers(); 
+  }
   deleteUserConfirmation(userId: number | undefined): void {
     if (userId) {
       const dialogRef = this.dialog.open(ModelComponent, {
@@ -134,53 +136,9 @@ export class ManagementUserComponent {
     }
   }
 
-  updateUserList(): void {
-    this.userActionEvent.emit();
-    this.userListComponent.getUsers(); 
-  }
+  
 }
 
-
-
-  /*
-  
-    saveUser(user: UserDto): void {
-      if (this.creeUserComponent.isEditing) {
-        console.log("Saving edited user:", user); 
-        this.authService.updateUser(user).subscribe(
-          (response) => {
-            alert('Utilisateur modifié avec succès');
-            this.showCreeuser = false;
-            this.snackBar.open('Utilisateur modifié avec succès', 'Fermer', { duration: 3000 });
-
-          },
-          (error) => {
-            console.error('Erreur lors de la modification de l\'utilisateur : ', error);
-            this.snackBar.open('Erreur lors de la modification de l\'utilisateur', 'Fermer', { duration: 3000 });
-
-          }
-        );
-      } else {
-        console.log("Saving new user:", user); 
-        this.authService.register(user).subscribe(
-          (response) => {
-            alert('Utilisateur enregistré avec succès');
-            this.showCreeuser = false;
-          },
-          (error) => {
-            this.snackBar.open('EErreur lors de l\'enregistrement de l\'utilisateur:', 'Fermer', { duration: 3000 });
-            console.error('Erreur lors de l\'enregistrement de l\'utilisateur : ', error);
-          }
-        );
-      }
-    }
-
-  }
-*/
-
-  
-
-  
 
 
 

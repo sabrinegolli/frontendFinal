@@ -1,0 +1,203 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+  <form>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="actiaCustomerId">Actia Customer ID</label>
+        <input type="text" class="form-control" id="actiaCustomerId" placeholder="MFRA18850">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="agentCustomerId">Agent Customer ID</label>
+        <input type="text" class="form-control" id="agentCustomerId" placeholder="AD COSAC">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="customerStatus">Customer status</label>
+        <select class="form-control" id="customerStatus">
+          <option>Select an element</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="agency">Agency</label>
+        <input type="text" class="form-control" id="agency" placeholder="ACTIA hotline">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="distributorCategory">Distributor Category</label>
+        <select class="form-control" id="distributorCategory">
+          <option>All elements</option>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="network">Network</label>
+        <select class="form-control" id="network">
+          <option>ADMINISTRATION</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="companyName">Company name *</label>
+        <input type="text" class="form-control" id="companyName" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="address">Address *</label>
+        <input type="text" class="form-control" id="address" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="zipCode">Zip code *</label>
+        <input type="text" class="form-control" id="zipCode" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="city">City *</label>
+        <input type="text" class="form-control" id="city" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="country">Country *</label>
+        <select class="form-control" id="country" required>
+          <option>France</option>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="language">Language</label>
+        <select class="form-control" id="language">
+          <option>French</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="email">E-mail *</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="contactName">Contact name *</label>
+        <input type="text" class="form-control" id="contactName" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="phoneNumber">Phone number *</label>
+        <input type="tel" class="form-control" id="phoneNumber" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="mobileNumber">Mobile number</label>
+        <input type="tel" class="form-control" id="mobileNumber">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="faxNumber">Fax number *</label>
+        <input type="text" class="form-control" id="faxNumber" required>
+      </div>
+      <div class="col-md-4 mb-3 align-self-center">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="acceptedEULA">
+          <label class="form-check-label" for="acceptedEULA"> Accepted EULA </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label for="note">Note</label>
+        <textarea id="note" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="btn btn-save" type="button">
+        <mat-icon>save</mat-icon> SAVE
+      </button>
+      <button class="btn btn-cancel" type="button" (click)="cancelForm()">
+        <mat-icon>cancel</mat-icon> CLOSE
+      </button>
+    </div>
+  </form>
+</div>
+<div class="container mt-4">
+  <div class="container mt-4">
+    <div class="table-container">
+      <!-- Products Table -->
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th class="text-center">
+              <div class="btn-label">
+                <button class="btn btn-icon" (click)="toggleRow('products')">{{ productsVisible ? '-' : '+' }}</button>
+                <span>Product name</span>
+              </div>
+            </th>
+            <th class="text-center">Serial number</th>
+            <th class="text-center">Date code</th>
+            <th class="text-center">VCI serial number</th>
+            <th class="text-center">Under warranty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of displayedProducts" [hidden]="!product.showRow">
+            <td class="text-center">{{ product.productName }}</td>
+            <td class="text-center">{{ product.serialNumber }}</td>
+            <td class="text-center">{{ product.dateCode }}</td>
+            <td class="text-center">{{ product.vciSerialNumber }}</td>
+            <td class="text-center">{{ product.underWarranty }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Continuation du fichier customerfile.component.html -->
+
+<!-- Materials Table -->
+<table class="custom-table" [hidden]="!materialsVisible">
+  <thead>
+    <tr>
+      <th class="text-center">
+        <div class="btn-label">
+          <button class="btn btn-icon" (click)="toggleRow('materials')">{{ materialsVisible ? '-' : '+' }}</button>
+          <span>Material Component</span>
+        </div>
+      </th>
+      <th class="text-center">Product name</th>
+      <th class="text-center">Serial number</th>
+      <th class="text-center"></th>
+      <th class="text-center">Date code</th>
+      <th class="text-center">Warranty end date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let material of displayedMaterials" [hidden]="!material.showRow">
+      <td class="text-center">{{ material.materialComponent }}</td>
+      <td class="text-center">{{ material.productName }}</td>
+      <td class="text-center">{{ material.serialNumber }}</td>
+      <td class="text-center"></td>
+      <td class="text-center">{{ material.dateCode }}</td>
+      <td class="text-center">{{ material.warrantyEndDate }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Licences Table -->
+<table class="custom-table" [hidden]="!licencesVisible">
+  <thead>
+    <tr>
+      <th class="text-center">
+        <div class="btn-label">
+          <button class="btn btn-icon" (click)="toggleRow('licences')">{{ licencesVisible ? '-' : '+' }}</button>
+          <span>Licence</span>
+        </div>
+      </th>
+      <th class="text-center">Product name</th>
+      <th class="text-center">Invoice ID</th>
+      <th class="text-center">Activated [MANUAL]</th>
+      <th class="text-center">Subscription Duration End date</th>
+      <th class="text-center">Major Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let licence of displayedLicences" [hidden]="!licence.showRow">
+      <td class="text-center">{{ licence.licence }}</td>
+      <td class="text-center">{{ licence.productName }}</td>
+      <td class="text-center">{{ licence.invoiceID }}</td>
+      <td class="text-center">{{ licence.activatedManual }}</td>
+      <td class="text-center">{{ licence.subscriptionEndDate }}</td>
+      <td class="text-center">{{ licence.majorVersion }}</td>
+    </tr>
+  </tbody>
+</table>

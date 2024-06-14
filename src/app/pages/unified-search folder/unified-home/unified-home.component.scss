@@ -12,74 +12,121 @@
   background: rgb(255, 255, 255);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-  
 .left-panel {
-  margin-right: 30px; 
+  margin-right: 30px;
 }
-  
-  h1{
+h1 {
+  color: #686A6D;
+  font-weight: normal;
+  font-size: 1.6rem;
+}
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  gap: 10px; // Espace entre les boutons
+}
+.material-symbols-outlined {
+  font-family: 'Material Icons Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+.btn {
+  color: white;
+  font-size: 13px;
+  padding: 6px 12px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn:hover {
+  background-color: #DFD3D3;
+}
+.btn-save {
+  background-color: #BDD248;
+}
+.btn-cancel, .btn-new {
+  background-color: #546472;
+}
+.btn-delete {
+  background-color: #90969D;
+}
+.mat-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+// Styles pour la zone de recherche
+.search-container {
+  margin-bottom: 20px;
+}
 
-    color: #686a6d;
-    font-weight: normal;
-    font-size: 1.6rem;
-  } 
-  :host {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  
+.search-input {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
 
-  .button-container {
-    display: flex;
-    justify-content: flex-end;
-    text-align: center;
-    gap: 10px;
-   
-  }
-  
-  .material-symbols-outlined {
-    font-family: 'Material Icons Outlined';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 15px;
-    display: inline-block;
-    line-height: 1;
-    vertical-align: middle;
-  }
-  
-  .btn-besoin {
-    background-color: #546472;
-    color: white;
-    font-size: 13px;
-    padding: 6px 12px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .btn-besoin:hover{
-    background-color: #dfd3d3; 
-  }
+.search-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+}
 
-  .btn-save {
-    background-color: #bdd248;
-    color: white;
-    font-size: 13px;
-    padding: 6px 12px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .btn-save:hover  {
-    background-color: #dfd3d3; 
-  }
-  
-  .mat-icon {
-    font-size: 18px; 
-  }
-  
-  
-  
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+// Styles pour la liste
+.list-container {
+  margin-bottom: 20px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+// Styles pour le tableau
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}

@@ -1,7 +1,5 @@
-
+import { Profil } from "./Profil";
 import { Agence } from "./Agence";
-import { SsProfil } from "./SsProfil";
-
 
 export interface UserDto {
   id? : number ;
@@ -10,7 +8,7 @@ export interface UserDto {
     prenom?: string;
     login?: string;
     email?: string;
-    ssProfil?: SsProfil;
+    profil?: Profil;
     agence?:Agence ;
     langKey?:string; 
   }

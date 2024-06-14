@@ -1,5 +1,153 @@
-<app-navbar></app-navbar>
+<head>
+    <title>ACTIA Sales and Aftersales Website</title>
+</head>
+<body>
+    <app-navbar></app-navbar>
+        <div
+            id="hero"
+            class="flex flex-column justify-content-center pt-4 px-4 lg:px-8 overflow-hidden"
+            style="
+                background-image: url('assets/landing.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-blend-mode: multiply;
+                height: 500px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                text-align: left;
+                clip-path: ellipse(150% 87% at 93% 13%);
+            "
 
-<div class="button-container">
-
-</div>
+            alt="ACTIA logo"
+        >
+            <div class="mx-4 md:mx-8 mt-0 md:mt-4">
+                <h1 class="text-6xl font-bold line-height-2">
+                    <span
+                        class="font-bold text-6xl block"
+                        style="color: #16495f"
+                        >Welcome to the new ACTIA Sales and Aftersales
+                        website</span
+                    >
+                </h1>
+                <div
+                    style="
+                        display: flex;
+                        gap: 10px;
+                        justify-content: flex-start;
+                        color: #000d27;
+                    "
+                >
+                    <p>Specially designed for ACTIA Group and its agents.</p>
+                </div>
+            </div>
+        </div>
+    <div id="home" class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
+        <div class="grid justify-content-center">
+            <div
+                class="col-12 mt-8 mb-8 p-2 md:p-8"
+                style="
+                    border-radius: 20px;
+                    background: linear-gradient(
+                            0deg,
+                            #bdd248,
+                            rgba(255, 255, 255, 0.6)
+                        ),
+                        radial-gradient(
+                            77.36% 256.97% at 77.36% 57.52%,
+                            #bdd248,
+                            #bdd248 100%
+                        );
+                "
+            >
+                <div
+                    class="flex flex-column justify-content-center align-items-center text-center px-3 py-3 md:py-0"
+                >
+                    <h3 class="mb-2" style="color: #16495f">
+                        Manage your business with ease
+                    </h3>
+                    <ul
+                        class="sm:line-height-2 md:line-height-4 text-2xl mt-4 text-left"
+                        style="max-width: 600px; color: #000d27"
+                    >
+                        <li>Manage your dealers</li>
+                        <li>
+                            Manage their tools and your local security stock
+                        </li>
+                        <li>
+                            Manage the incidents by registering the problems and
+                            following their evolutions
+                        </li>
+                        <li>
+                            Keep the contact with your dealers by tracking the
+                            tools transports
+                        </li>
+                        <li>
+                            Get real-time activity reports and communication
+                            with ACTIA
+                        </li>
+                    </ul>
+                    <span class="text-gray-600 text-2xl"
+                        >Please send requests and remarks about the website to
+                        <a href="mailto:support.websav@actia.fr"
+                            >support.websavactia.fr</a
+                        ></span
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .container {
+        text-align: left; /* Align the container to the left */
+        ul {
+            padding-left: 0; /* Remove the default padding from the list */
+            li {
+                text-align: left; /* Align the list items to the left */
+            }
+        }
+    }
+    .container img {
+        display: block;
+        margin: 0 auto; /* Add this line to center the image */
+        width: 100%; /* Set the width to 100% to make the image responsive */
+        height: auto; /* Set the height to auto to maintain the aspect ratio */
+    }
+    .mat-icon.icon {
+        font-size: 26px;
+        vertical-align: middle;
+    }
+    .custom-button:hover {
+        background-color: #b30000;
+    }
+    .button-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+    .custom-button {
+        background-color: #ff0033;
+        color: white;
+        border: none;
+        border-radius: 80%;
+        padding: 0;
+        width: 80px;
+        height: 80px;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    h1 {
+        color: #bdd248;
+    }
+</style>

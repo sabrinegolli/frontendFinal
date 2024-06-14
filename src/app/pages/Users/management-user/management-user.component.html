@@ -29,8 +29,8 @@
           </div>
           <br>
         <div style=" margin-left: 40px; ">
-          <h1  *ngIf="showCreeuser && !selectedUser  " >Creé Un Nouvel  Utilisateur</h1>
-          <h1  *ngIf="showCreeuser && selectedUser  " >   Information</h1>
+          <h1  *ngIf="showCreeuser && !selectedUser  " >Add New User</h1>
+          <h1  *ngIf="showCreeuser && selectedUser  " >   Informations</h1>
          </div>
 
           <app-creeuser [user]="selectedUser" [showForm]="showCreeuser" (saveUser)="saveUser($event)"></app-creeuser>

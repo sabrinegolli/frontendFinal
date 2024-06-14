@@ -35,9 +35,9 @@
 
 
         <div class="form-group">
-          <label class="form-control-label" for="ssProfil">role</label>
-          <input type="text" class="form-control" id="ssProfil" name="role"
-                 [value]="user?.ssProfil"    [disabled]="true">
+          <label class="form-control-label" for="profil">role</label>
+          <input type="text" class="form-control" id="profil" name="role"
+                 [value]="user?.profil"    [disabled]="true">
        
         </div>
   
@@ -45,14 +45,14 @@
   
 
 
-        
+<!--         
       <div class="form-group">
         <label class="form-control-label" for="lang">lang</label>
         <select class="custom-select" [(ngModel)]="user.langKey" id="lang" name="lang" #lang="ngModel" required>
           <option></option>
         </select>
        
-        </div>
+        </div> -->
 
         <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-success pull-right" style="background-color: #bdd248; font-size: smaller;">
           SAUVER

@@ -1,0 +1,298 @@
+
+$primary-color: #686A6D;
+.incident-file {
+  color: #686A6D;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin-right: 470px;
+  margin-bottom: -10px;
+}
+.container {
+  
+  display: flex;
+  max-width: 1800px;
+  padding: 15px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+  .right-container {
+    flex: 1;
+  }
+
+  label {
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-basis: 20%;
+  
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: $primary-color;
+  }
+
+  input::placeholder {
+    color: #aaa;
+  }
+
+  input:focus,
+  select:focus {
+    border-color: #A5EBEE;
+  }
+
+  .form-check-input {
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  .form-check-label {
+    cursor: pointer;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: #595F66;
+    color: #fff;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #C5C7CA;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 100px;
+    resize: none;
+    color: $primary-color;
+    margin-top:10px ;
+  }
+
+  .btn-primary {
+    background-color: #BDD248;
+    color: #546472;
+  }
+
+  .btn-primary:hover {
+    background-color: #CFE5FA;
+  }
+
+  .btn-secondary {
+    background-color: #546472;
+    color: #fff;
+  }
+
+  .btn-secondary:hover {
+    background-color: #DFD3D3;
+  }
+
+  .btn-danger {
+    background-color: #F8D7DA;
+  }
+  
+
+  .alert,
+  .alert-error {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+
+  .alert {
+    background-color: #D1ECF1;
+    color: #686A6D;
+  }
+
+  .alert-error {
+    background-color: #F5C6C6;
+    color: #721C24;
+  }
+}
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 15px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 900px;
+
+  .tool-item {
+    margin-bottom: 20px;
+  }
+
+  label {
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-basis: 20%;
+    margin-right: 10px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    flex-grow: 2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: $primary-color;
+  }
+
+  input::placeholder {
+    color: #aaa;
+  }
+
+  input:focus,
+  select:focus {
+    border-color: #A5EBEE;
+  }
+
+  .form-check-input {
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  .form-check-label {
+    cursor: pointer;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 100px;
+    resize: none;
+    color: $primary-color;
+  }
+}
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 15px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 900px;
+
+  .tool-item {
+    margin-bottom: 20px;
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+
+      legend {
+        padding: 0 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: #F2F2F2;
+        border-radius: 6px 6px 0 0;
+        margin-bottom: 10px;
+      }
+
+      .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        label {
+          color: $primary-color;
+          font-weight: bold;
+          font-size: 0.9rem;
+          flex-basis: 20%;
+          margin-right: 50px;
+        }
+
+        select,
+        input[type="text"] {
+          flex-grow: 1;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 0.9rem;
+          color: $primary-color;
+        }
+
+        input[type="text"] {
+          width: 100px; /* adjusted width */
+        }
+        input:focus,
+  select:focus {
+    border-color: #A5EBEE;
+  }
+
+        select {
+          width: 20px; /* adjusted width */
+        }
+
+        .form-checkbox {
+          margin-right: 10px;
+        }
+
+        textarea {
+          width: 70%;
+          padding: 10px;
+          border: 1px solid #aaa;
+          border-radius: 5px;
+          height: 100px;
+          resize: none;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+.container {
+  display: flex;
+
+
+  .form-group {
+    flex: 1 1 20%;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+}
+.form-group {
+  display: flex;
+
+
+  label {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+    white-space: nowrap;
+  }}

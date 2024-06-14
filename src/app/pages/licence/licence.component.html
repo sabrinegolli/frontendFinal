@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+
+<div class="container customer-file">
+    <h1 class="customer-file">Licence</h1>
+
+    <div class="form-row">
+        <div class="col-md-4">
+            <label for="customerName">Customer Name:</label>   
+            <input type="text" id="customerName" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <label for="tool">Choose an existing tool *</label>
+            <select id="tool" class="form-control">
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="productName">Product Name:</label>
+            <select id="productName" class="form-control">
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="container licence-component">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="salesDate">Sales date (YYYY-MM-DD)</label>
+                <input type="text" id="salesDate" value="2024-05-30" readonly class="form-control">
+        
+                <label for="contractId">Contract ID</label>
+                <input type="text" id="contractId" class="form-control">
+        
+                
+        
+                <label for="agentCustomerId">Agent Customer ID</label>
+                <input type="text" id="agentCustomerId" class="form-control">
+        
+                <label for="note">Note</label>
+                <textarea id="note" class="form-control"></textarea>
+            </div>
+            <div class="col-md-6">
+                <label for="subscriptionDuration">Subscription Duration</label>
+                <div class="subscription-duration">
+                    <input type="number" id="subscriptionDuration" value="12" class="form-control subscription-duration-input">
+                    <span>Months</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="btn btn-save" type="button">
+            <mat-icon>save</mat-icon> SAVE
+        </button>
+        <button class="btn btn-cancel" type="button">
+            <mat-icon>cancel</mat-icon> CLOSE
+        </button>
+    </div>
+</div>

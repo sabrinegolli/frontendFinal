@@ -1,0 +1,251 @@
+<app-navbar></app-navbar>
+<h1>Incident File</h1>
+<div class="container">
+  <div class="left-container">
+   
+    <!-- Customer Section -->
+    <div class="container mt-4">
+      <form>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="actiaCustomerId">Actia Customer ID</label>
+            <input type="text" class="form-control" id="actiaCustomerId" placeholder="MFRA18850" value="12345">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="agentCustomerId">Agent Customer ID</label>
+            <input type="text" class="form-control" id="agentCustomerId" placeholder="AD COSAC" value="67890">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="customerStatus">Customer status</label>
+            <select class="form-control" id="customerStatus">
+              <option value="active" selected>Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="agency">Agency</label>
+            <input type="text" class="form-control" id="agency" placeholder="ACTIA hotline" value="XYZ Agency">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="distributorCategory">Distributor Category</label>
+            <select class="form-control" id="distributorCategory">
+              <option value="category1" selected>Category 1</option>
+              <option value="category2">Category 2</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="network">Network</label>
+            <select class="form-control" id="network">
+              <option value="administration" selected>Administration</option>
+              <option value="production">Production</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6">
+            <label for="companyName">Company name *</label>
+            <input type="text" class="form-control" id="companyName" required value="Example Company">
+          </div>
+          <div class="col-md-6">
+            <label for="address">Address *</label>
+            <input type="text" class="form-control" id="address" required value="123 Example St">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3">
+            <label for="zipCode">Zip code *</label>
+            <input type="text" class="form-control" id="zipCode" required value="12345">
+          </div>
+          <div class="col-md-3">
+            <label for="city">City *</label>
+            <input type="text" class="form-control" id="city" required value="Cityville">
+          </div>
+          <div class="col-md-3">
+            <label for="country">Country *</label>
+            <select class="form-control" id="country" required>
+              <option value="France" selected>France</option>
+              <option value="USA">USA</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="language">Language</label>
+            <select class="form-control" id="language">
+              <option value="French" selected>French</option>
+              <option value="English">English</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3">
+            <label for="email">E-mail *</label>
+            <input type="email" class="form-control" id="email" required value="example@example.com">
+          </div>
+          <div class="col-md-3">
+            <label for="contactName">Contact name *</label>
+            <input type="text" class="form-control" id="contactName" required value="John Doe">
+          </div>
+          <div class="col-md-3">
+            <label for="phoneNumber">Phone number *</label>
+            <input type="tel" class="form-control" id="phoneNumber" required value="123-456-7890">
+          </div>
+          <div class="col-md-3">
+            <label for="mobileNumber">Mobile number</label>
+            <input type="tel" class="form-control" id="mobileNumber" value="987-654-3210">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3">
+            <label for="faxNumber">Fax number *</label>
+            <input type="text" class="form-control" id="faxNumber" required value="555-555-5555">
+          </div>
+          <div class="col-md-3 align-self-center">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="acceptedEULA" checked>
+              <label class="form-check-label" for="acceptedEULA">
+                Accepted EULA
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="note">Note</label>
+          <textarea id="note" class="form-control">This is a note</textarea>
+        </div>
+      </form>
+    </div>
+    <!-- File ID Section -->
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label>File id</label>
+          <input type="text" placeholder="NOT SAVED" value="1">
+        </div>
+        <div class="form-group">
+          <label>Call date *</label>
+          <input type="text" placeholder="YYYY-MM-DD hh:mm" value="2024-06-11 14:30">
+        </div>
+        <div class="form-group">
+          <label>Customer reference</label>
+          <input type="text" value="Customer123">
+        </div>
+        <div class="form-group">
+          <label>Creation date</label>
+          <input type="text" placeholder="YYYY-MM-DD / hh:mm" value="2024-06-10 09:45">
+        </div>
+        <div class="form-group">
+          <label>Hotliner</label>
+          <input type="text" placeholder="Test Test" value="John Doe">
+        </div>
+        <div class="form-group">
+          <label>Follow-up</label>
+          <input type="text" value="Follow-up data">
+        </div>
+      </form>
+    </div>
+  </div>
+ <!-- Tool Section -->
+  <div class="tool-list">
+    <div class="tool-item">
+      <fieldset class="section">
+        <legend>Tool</legend>
+        <div class="form-row">
+          <label>Tool Name</label>
+          <select>
+            <option value="">Select an element</option>
+            <option value="tool1" selected>Tool 1</option>
+            <option value="tool2">Tool 2</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Licence Name</label>
+          <select>
+            <option value="">Select an element</option>
+            <option value="license1" selected>License 1</option>
+            <option value="license2">License 2</option>
+          </select>
+        </div>
+      </fieldset>
+    </div>
+    <div class="tool-item">
+      <fieldset class="section">
+        <legend>ECU</legend>
+        <div class="form-row">
+          <label>ECU Family</label>
+          <select>
+            <option value="">Select an element</option>
+            <option value="ecu1" selected>ECU 1</option>
+            <option value="ecu2">ECU 2</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>ECU Name</label>
+          <input type="text" value="ECU Name">
+        </div>
+      </fieldset>
+    </div>
+    <div class="tool-item">
+      <fieldset class="section">
+        <legend>Vehicle</legend>
+        <div class="form-row">
+          <input type="checkbox" class="form-checkbox" checked>
+          <label>Brand</label>
+          <select>
+            <option value="">Select an element</option>
+            <option value="brand1" selected>Brand 1</option>
+            <option value="brand2">Brand 2</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input type="checkbox" class="form-checkbox" checked>
+          <label>Model</label>
+          <select>
+            <option value="">Select an element</option>
+            <option value="model1" selected>Model 1</option>
+            <option value="model2">Model 2</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input type="checkbox" class="form-checkbox" checked>
+          <label>Generation</label>
+          <select>
+            <option value="">Select an element</option>
+            <option value="generation1" selected>Generation 1</option>
+            <option value="generation2">Generation 2</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input type="checkbox" class="form-checkbox" checked>
+          <label>Year</label>
+          <select>
+            <option value="">Select an element</option>
+            <option value="year1" selected>Year 1</option>
+            <option value="year2">Year 2</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input type="checkbox" class="form-checkbox" checked>
+          <label>Body Type</label>
+          <select>
+            <option value="">Select an element</option>
+            <option value="body1" selected>Body 1</option>
+            <option value="body2">Body 2</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input type="checkbox" class="form-checkbox" checked>
+          <label>ECU Model</label>
+          <select>
+            <option value="">Select an element</option>
+            <option value="ecuModel1" selected>ECU Model 1</option>
+            <option value="ecuModel2">ECU Model 2</option>
+          </select>
+        </div>
+        <div class="bottom-container">
+          <textarea placeholder="Enter notes...">These are vehicle notes.</textarea>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>

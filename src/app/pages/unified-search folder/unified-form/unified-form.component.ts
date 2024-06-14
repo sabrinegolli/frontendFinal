@@ -1,13 +1,20 @@
 import { Component, Input, OnChanges, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-unified-form',
   templateUrl: './unified-form.component.html',
   styleUrl: './unified-form.component.scss'
 })
 export class UnifiedFormComponent {
+  handleClick(event: MouseEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.style.borderLeft = '5px solid green';
+  
+  }
 errorMessage: any;
 successMessage: any;
+
   CustomerSelected(CustomerSelected: any, arg1: string) {
     throw new Error('Method not implemented.');
   }

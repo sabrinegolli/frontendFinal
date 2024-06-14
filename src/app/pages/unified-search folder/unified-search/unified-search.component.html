@@ -1,162 +1,205 @@
 <!-- L'affichage des differents option de recherche dans le menu Hotline -->
 <div class="container">
-  <mat-tab-group>
-    <mat-tab label="Customer search" >
-      <div class="search-options" matlab-table>
-        <div class="option-item">
-          <input type="radio" name="option" id="customerID" (change)="toggleField('customerID')">
-          <label for="customerID" class="code-label">by customer id:</label>
-          <input type="text" [disabled]="!iscustomerIDSelected">
-        </div>
-        <div class="option-item">
-          <input type="radio" name="option" id="customerE-mail" (change)="toggleField('customerE-mail')">
-          <label for="customerE-mail" class="code-label">by customer e-mail:</label>
-          <input type="text" [disabled]="!iscustomerEmailSelected">
-        </div>
-        <div class="option-item">
-          <input type="radio" name="option" id="contractNumber" (change)="toggleField('contractNumber')">
-          <label for="contractNumber" class="code-label">by contract number:</label>
-          <input type="text" [disabled]="!iscontractNumberSelected">
-        </div>
-        <div class="option-item">
-          <input type="radio" name="option" id="zipCode" (change)="toggleField('zipCode')">
-          <label for="zipCode" class="code-label">by zip code:</label>
-          <input type="text" [disabled]="!iszipCodeSelected">
-        </div>
-        <div class="option-item">
-          <input type="radio" name="option" id="phoneNumber" (change)="toggleField('phoneNumber')">
-          <label for="phoneNumber" class="code-label">by phone number:</label>
-          <input type="text" [disabled]="!isphoneNumberSelected">
-        </div>
-        <div class="option-item">
-          <input type="radio" name="option" id="companyName" (change)="toggleField('companyName')">
-          <label for="companyName" class="code-label">by company name:</label>
-          <input type="text" [disabled]="!iscompanyNameSelected">
-        </div>
-        <div class="option-item">
-          <input type="radio" name="option" id="AgentCustomerId" (change)="toggleField('AgentCustomerId')">
-          <label for="AgentCustomerId" class="code-label">by agent customer id:</label>
-          <input type="text" [disabled]="!isAgentCustomerIdSelected">
-        </div>
-        <div class="button-container">
-
-          <!-- L'affichage du resultat de la recherche effectuée  -->
-          <div class="container">
-            <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
-              <table class="table striped-table">
-                <thead>
-                  <tr class="first-line-background">
-                    <th>Actia Customer ID</th>
-                    <th>Company name</th>
-                    <th>Address *</th>
-                    <th>Contact name</th>
-                    <th>Phone number</th>
-                    <th>Fax number</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let item of searchResults" (click)="navigateToForm(item)">
-                    <td>{{ item.actiaCustomerID }}</td>
-                    <td>{{ item.companyName }}</td>
-                    <td>{{ item.address }}</td>
-                    <td>{{ item.contactName }}</td>
-                    <td>{{ item.phoneNumber }}</td>
-                    <td>{{ item.faxNumber }}</td>
-                    <td>{{ item.status }}</td>
-                  </tr>
-                </tbody>
-              </table>
+    <mat-tab-group>
+      <mat-tab label="Customer search" routerLink="/Customer" >
+        <div class="search-options" matlab-table>
+          <div class="option-item">
+            <input type="radio" name="option" id="customerID" (change)="toggleField('customerID')">
+            <label for="customerID" class="code-label">by customer id:</label>
+            <input type="text" [disabled]="!iscustomerIDSelected"(click)="handleClick($event)">
+          </div>
+          <div class="option-item">
+            <input type="radio" name="option" id="customerE-mail" (change)="toggleField('customerE-mail')">
+            <label for="customerE-mail" class="code-label">by customer e-mail:</label>
+            <input type="text" [disabled]="!iscustomerEmailSelected"(click)="handleClick($event)">
+          </div>
+          <div class="option-item">
+            <input type="radio" name="option" id="contractNumber" (change)="toggleField('contractNumber')">
+            <label for="contractNumber" class="code-label">by contract number:</label>
+            <input type="text" [disabled]="!iscontractNumberSelected" (click)="handleClick($event)">
+          </div>
+          <div class="option-item">
+            <input type="radio" name="option" id="zipCode" (change)="toggleField('zipCode')">
+            <label for="zipCode" class="code-label">by zip code:</label>
+            <input type="text" [disabled]="!iszipCodeSelected" (click)="handleClick($event)">
+          </div>
+          <div class="option-item">
+            <input type="radio" name="option" id="phoneNumber" (change)="toggleField('phoneNumber')">
+            <label for="phoneNumber" class="code-label">by phone number:</label>
+            <input type="text" [disabled]="!isphoneNumberSelected">
+          </div>
+          <div class="option-item">
+            <input type="radio" name="option" id="companyName" (change)="toggleField('companyName')">
+            <label for="companyName" class="code-label">by company name:</label>
+            <input type="text" [disabled]="!iscompanyNameSelected" (click)="handleClick($event)">
+          </div>
+          <div class="option-item">
+            <input type="radio" name="option" id="AgentCustomerId" (change)="toggleField('AgentCustomerId')">
+            <label for="AgentCustomerId" class="code-label">by agent customer id:</label>
+            <input type="text" [disabled]="!isAgentCustomerIdSelected"(click)="handleClick($event)">
+          </div>
+          <div class="button-container">
+  
+            <!-- L'affichage du resultat de la recherche effectuée  -->
+            <div class="container">
+              <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
+                <table class="table striped-table">
+                  <thead>
+                    <tr class="first-line-background">
+                      <th>Actia Customer ID</th>
+                      <th>Company name</th>
+                      <th>Address *</th>
+                      <th>Contact name</th>
+                      <th>Phone number</th>
+                      <th>Fax number</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of searchResults" (click)="navigateToForm(item)">
+                      <td>{{ item.actiaCustomerID }}</td>
+                      <td>{{ item.companyName }}</td>
+                      <td>{{ item.address }}</td>
+                      <td>{{ item.contactName }}</td>
+                      <td>{{ item.phoneNumber }}</td>
+                      <td>{{ item.faxNumber }}</td>
+                      <td>{{ item.status }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            </div>
+    
+            <div class="card flex justify-content-center">
             </div>
           </div>
-          </div>
   
-          <div class="card flex justify-content-center">
+      </mat-tab> 
+      <mat-tab label="Tool search">
+         
+          <div class="search-options" matlab-table>
+            <div class="option-item">
+              <input type="radio" name="option" id="customerID" (change)="toggleField('customerID')">
+              <label for="customerID" class="code-label">Product Name</label>
+              <input type="text" [disabled]="!iscustomerIDSelected" (click)="handleClick($event)">
+
+              <div class="option-item">
+                <input type="radio" name="option" id="customerID" (change)="toggleField('customerID')">
+                <label for="customerID" class="code-label">Serial Number</label>
+                <input type="text" [disabled]="!iscustomerIDSelected" (click)="handleClick($event)">
+            </div>
+           
+        </div>
+        </div>  
+        <!-- L'affichage du resultat de la recherche effectuée  -->
+        <div class="container">
+          <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
+            <table class="table striped-table" style="width: 100%; table-layout: auto;" >
+              <thead>
+                <tr class="first-line-background">
+                  <th>Product name</th>
+                  <th>Serial number</th>
+                  <th>Date code</th>
+                  <th>VCI serial number</th>
+                  <th>Setup date</th>
+                  <th>Under warranty</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Ajoutez ici les lignes de données statiques -->
+                <tr>
+                  <tr>
+                    <td>Product 1</td>
+                    <td>12345</td>
+                    <td>2024-06-01</td>
+                    <td>VCI12345</td>
+                    <td>2024-06-01</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <td>Product 1</td>
+                    <td>54321</td>
+                    <td>2024-06-02</td>
+                    <td>VCI54321</td>
+                    <td>2024-06-02</td>
+                    <td>No</td>
+                  </tr>
+                  <tr>
+                    <td>Product 1</td>
+                    <td>67890</td>
+                    <td>2024-06-03</td>
+                    <td>VCI67890</td>
+                    <td>2024-06-03</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <td>Product 1</td>
+                    <td>98765</td>
+                    <td>2024-06-04</td>
+                    <td>VCI98765</td>
+                    <td>2024-06-04</td>
+                    <td>No</td>
+                  </tr>
+                <!-- Ajoutez plus de lignes si nécessaire -->
+              </tbody>
+            </table>
           </div>
         </div>
-
-    </mat-tab> 
-    <mat-tab label="Tool search">
-      <div class="search-options" matlab-table>
-        <div class="option-item">
-          <input type="radio" name="option" id="ProductName" [(ngModel)]="customerID" (change)="toggleField('customerID')">
-          <label for="ProductName" class="code-label">Product name:</label>
-          <select [disabled]="isSelectDisabled">
-            <option value="option1">all element</option>
-            <option value="option2">2</option>
-            <option value="option3">3</option>
-          </select>
+      </mat-tab>
+      <mat-tab label="Incident search">
+        <div class="search-options" matlab-table>
+          <div class="option-item">
+            <input type="radio" name="option" id="customerID" (change)="toggleField('customerID')">
+            <label for="customerID" class="code-label">File id:</label>
+            <input type="text" [disabled]="!iscustomerIDSelected" (click)="handleClick($event)">
+          </div>
+          <div class="option-item">
+            <input type="radio" name="option" id="customerE-mail" (change)="toggleField('customerE-mail')">
+            <label for="customerE-mail" class="code-label">License plate:</label>
+            <input type="text" [disabled]="!iscustomerEmailSelected" (click)="handleClick($event)">
+          </div>
+          <div class="option-item">
+            <input type="radio" name="option" id="contractNumber" (change)="toggleField('contractNumber')">
+            <label for="contractNumber" class="code-label">by customer reference:</label>
+            <input type="text" [disabled]="!iscontractNumberSelected" (click)="handleClick($event)">
+          </div> 
         </div>
-      </div>  
-      <div class="option-item">
-        <label for="SerialNumber" class="code-label">Serial number:</label>
-        <input type="text">
-      </div>
-      
-      <!-- L'affichage du resultat de la recherche effectuée  -->
-      <div class="container">
-        <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
-          <table class="table striped-table" style="width: 100%; table-layout: auto;">
-            <thead>
-              <tr class="first-line-background">
-                <th>Product name</th>
-                <th>Serial number</th>
-                <th>Date code</th>
-                <th>VCI serial number</th>
-                <th>Setup date</th>
-                <th>Under warranty</th>
-              </tr>
-            </thead>
-          </table>
+  
+        <!-- L'affichage du resultat de la recherche effectuée  -->
+        <div class="container">
+          <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
+            <table class="table striped-table" style="width: 100%; table-layout: auto;">
+              <thead>
+                <tr class="first-line-background">
+                  <th>File id	</th>
+                  <th>Creation date</th>
+                  <th>Customer name</th>
+                  <th>Tool	</th>
+                  <th>Incident type</th>
+                  <th>Problem description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Ligne statique avec File id 1 -->
+                <tr>
+                    <td>1</td>
+                    <td>2024-06-11</td>
+                    <td>Customer Name</td>
+                    <td>Tool Name</td>
+                    <td>Incident Type</td>
+                    <td>Problem Description</td>
+                </tr>
+                <!-- Ajoutez ici les données dynamiques -->
+            </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      <div class="card flex justify-content-center">
-      </div>
-    </mat-tab> 
-    <mat-tab label="Incident search">
-      <div class="search-options" matlab-table>
-        <div class="option-item">
-          <input type="radio" name="option" id="customerID" (change)="toggleField('customerID')">
-          <label for="customerID" class="code-label">File id:</label>
-          <input type="text" [disabled]="!iscustomerIDSelected">
+        <div class="card flex justify-content-center">
         </div>
-        <div class="option-item">
-          <input type="radio" name="option" id="customerE-mail" (change)="toggleField('customerE-mail')">
-          <label for="customerE-mail" class="code-label">License plate:</label>
-          <input type="text" [disabled]="!iscustomerEmailSelected">
-        </div>
-        <div class="option-item">
-          <input type="radio" name="option" id="contractNumber" (change)="toggleField('contractNumber')">
-          <label for="contractNumber" class="code-label">by customer reference:</label>
-          <input type="text" [disabled]="!iscontractNumberSelected">
-        </div> 
-      </div>
-
-      <!-- L'affichage du resultat de la recherche effectuée  -->
-      <div class="container">
-        <div class="table-responsive" style="max-height: 370px; overflow-y: auto;">
-          <table class="table striped-table" style="width: 100%; table-layout: auto;">
-            <thead>
-              <tr class="first-line-background">
-                <th>File id	</th>
-                <th>Creation date</th>
-                <th>Customer name</th>
-                <th>Tool	</th>
-                <th>Incident type</th>
-                <th>Problem description</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="card flex justify-content-center">
-      </div>
-    </mat-tab>
-  </mat-tab-group>
-  <div class="button-container">
-    <button class="btn btn-warning" type="button">
-     Rechercher
+      </mat-tab>
+    </mat-tab-group>
+    <button class="btn" type="button">
+     SEARCH
     </button>
   </div>
-</div>
-  

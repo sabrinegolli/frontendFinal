@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container-fluid page">
+  <div class="page__content">
+    <div class="left-panel" style="border: 3px solid #F8FBFF">
+      <app-setup-list (setupSelected)="onSetupSelected($event)"></app-setup-list>
+    </div>
+    <div class="right-panel" style="border: 3px solid #F8FBFF">
+      <div class="button-container">
+        <button type="button" class="btn btn-save" (click)="saveSetup(setupFormComponent.setupForm.value)" *ngIf="showsetupForm">
+          <mat-icon>save</mat-icon> SAVE
+        </button>
+        <button class="btn btn-besoin" (click)="deleteSetupConfirmation(selectedSetup.id)" *ngIf="showsetupForm && !setupFormComponent.isEditing && selectedSetup">
+          <mat-icon>delete</mat-icon> DELETE
+        </button>
+        <button class="btn btn-besoin" type="button" (click)="editSetup()" *ngIf="showsetupForm && !setupFormComponent.isEditing && selectedSetup">
+          <mat-icon>edit</mat-icon> EDIT
+        </button>
+        <button class="btn btn-besoin" (click)="cancelCreation()" *ngIf="showsetupForm">
+          <mat-icon>block</mat-icon> CANCEL
+        </button>
+        <button class="btn btn-besoin"   (click)="addSetup()" >
+          <mat-icon>add</mat-icon>  NOUVEAU
+        </button>
+      </div>
+      <br>
+      <div style="margin-left: 40px;">
+        <h1 *ngIf="showsetupForm && !selectedSetup">Add New Setup</h1>
+        <h1 *ngIf="showsetupForm && selectedSetup">Setup Information</h1>
+     
+        <app-setup-form [setup]="selectedSetup" [showForm]="showsetupForm" (saveSetup)="saveSetup($event)"></app-setup-form>
+     
+
+     
+     
+      </div>
+    </div>
+  </div>
+</div>

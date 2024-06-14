@@ -8,10 +8,45 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './unified-search.component.html',
   styleUrl: './unified-search.component.scss'
 })
-
-export class UnifiedSearchComponent implements OnInit {
+export class UnifiedSearchComponent implements OnInit { 
+   selectedProductName: string = '';
+   selectedSerialNumber: string = '';
   
-searchResults: any;
+
+
+  static searchData = [
+    {
+      actiaCustomerID: '12345',
+      companyName: 'Company A',
+      address: '123 Main St',
+      contactName: 'John Doe',
+      phoneNumber: '555-1234',
+      faxNumber: '555-5678',
+      status: 'Active'
+    },
+    {
+      actiaCustomerID: '67890',
+      companyName: 'Company B',
+      address: '456 Elm St',
+      contactName: 'Jane Smith',
+      phoneNumber: '555-9012',
+      faxNumber: '555-1111',
+      status: 'Inactive'
+    },
+    {
+      actiaCustomerID: '34567',
+      companyName: 'Company C',
+      address: '789 Oak St',
+      contactName: 'Bob Johnson',
+      phoneNumber: '555-1111',
+      faxNumber: '555-2222',
+      status: 'Active'
+    }
+  ];
+
+  
+
+  searchResults = UnifiedSearchComponent.searchData;
 navigateToForm(_t54: any) {
 throw new Error('Method not implemented.');
 }
@@ -80,7 +115,11 @@ isSelectDisabled: any;
   ngOnInit(): void {
     // Initialize data sources
   }
-
+  handleClick(event: MouseEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.style.borderLeft = '5px solid green';
+  
+  }
   // Toggle search fields
   toggleField(field: string) {
     switch (field) {
@@ -134,7 +173,7 @@ isSelectDisabled: any;
         break;
     }
   }
-  
+
   resetOtherFields(selectedField: string) {
     const fields = [
       'iscustomerIDSelected',

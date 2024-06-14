@@ -1,6 +1,5 @@
+import { Profil } from "./Profil";
 import { Agence } from "./Agence";
-import { SsProfil } from "./SsProfil";
-
 
 export interface User {
     id? : number ;
@@ -8,6 +7,6 @@ export interface User {
       prenom?: string;
       login?: string;
       email?: string;
-      ssProfil?: SsProfil;
+      profil?: Profil;
       agence?:Agence
     }
