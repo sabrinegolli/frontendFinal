@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<h1 class="customer-search">Customer Search</h1>
+<div class="container list-container">
+  <!-- Search options and input fields -->
+  <div class="option-row">
+    <div class="option-item">
+      <input type="radio" name="option" id="zipCode" [(ngModel)]="searchOption" value="zipCode">
+      <label for="zipCode" class="code-label">by zip code:</label>
+      <input type="text" [(ngModel)]="zipCode">
+    </div>
+    <div class="option-item">
+      <input type="radio" name="option" id="customerID" [(ngModel)]="searchOption" value="customerID">
+      <label for="customerID" class="code-label">by customer id:</label>
+      <input type="text" [(ngModel)]="customerID">
+    </div>
+  </div>
+
+  <!-- Additional search option rows -->
+  <div class="option-row">
+    <div class="option-item">
+      <input type="radio" name="option" id="phoneNumber" [(ngModel)]="searchOption" value="phoneNumber">
+      <label for="phoneNumber" class="code-label">by phone number:</label>
+      <input type="text" [(ngModel)]="phoneNumber">
+    </div>
+    <div class="option-item">
+      <input type="radio" name="option" id="companyName" [(ngModel)]="searchOption" value="companyName">
+      <label for="companyName" class="code-label">by company name:</label>
+      <input type="text" [(ngModel)]="companyName">
+    </div>
+  </div>
+
+  <div class="option-row">
+    <div class="option-item">
+      <input type="radio" name="option" id="agentCustomerID" [(ngModel)]="searchOption" value="agentCustomerID">
+      <label for="agentCustomerID" class="code-label">by agent customer id:</label>
+      <input type="text" [(ngModel)]="agentCustomerID">
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="button-container">
+    <button class="btn btn-save" type="button" (click)="search()">
+      <mat-icon class="mat-icon">search</mat-icon> SEARCH
+    </button>
+    <button class="btn btn-cancel" type="button" (click)="openConfirmation()">
+      <mat-icon class="mat-icon">cancel</mat-icon> CLOSE
+    </button>
+  </div>
+</div>
+
+<!-- Table section with *ngIf directive to show/hide based on showTable -->
+<div class="container table-container" *ngIf="showTable">
+  <div class="table-responsive">
+    <table class="table striped-table">
+      <thead>
+        <tr class="first-line-background">
+          <th>Actia Customer ID</th>
+          <th>Company Name</th>
+          <th>Address</th>
+          <th>Contact Name</th>
+          <th>Phone Number</th>
+          <th>Fax Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{ customer.actiaCustomerID }}</td>
+          <td>{{ customer.companyName }}</td>
+          <td>{{ customer.address }}</td>
+          <td>{{ customer.contactName }}</td>
+          <td>{{ customer.phoneNumber }}</td>
+          <td>{{ customer.faxNumber }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div *ngIf="showConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to close?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelClose()">No</button>
+    </div>
+  </div>
+</div>

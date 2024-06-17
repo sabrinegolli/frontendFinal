@@ -1,30 +1,24 @@
-$font-family-base: "Open Sans", "Arial";
-.Search-serial-number-doubles {
-    color: #686A6D;
-    font-weight: normal;
-    font-size: 1.4rem;
-    margin-right: 470px;
-    margin-bottom: -10px;
-    position: relative;
-  }
-  
-  .line {
-    height: 1px;
-    width: 50%;
-    background-color: #686A6D;
-    margin-top: 5px;
+$primary-color: #686A6D;
+
+.validate-sales {
+  color: $primary-color;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin-right: 470px;
+  margin-bottom: -10px;
+  position: relative;
+  padding-bottom: 5px; // Adds some space between the text and the underline
+
+  &::after {
+    content: '';
     display: block;
-  }
-  
-  .Search-serial-number-doubles::after {
-    content: "";
-    height: 2px;
-    width: 50%;
-    background-color: #686A6D;
+    width: 50%; // Adjust the width as needed to make the line shorter
+    border-bottom: 2px solid $primary-color;
     position: absolute;
-    bottom: -5px;
-    left: 0;
+    bottom: 0;
   }
+}
+
 .container {
   max-width: 1525px;
   margin: 30px auto;
@@ -122,6 +116,7 @@ $font-family-base: "Open Sans", "Arial";
     font-size: 18px;
     margin-right: 5px;
   }
+  
   .confirm-modal {
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -166,4 +161,4 @@ $font-family-base: "Open Sans", "Arial";
   
   
   
-  
+

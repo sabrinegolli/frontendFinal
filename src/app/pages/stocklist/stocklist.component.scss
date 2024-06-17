@@ -1,20 +1,25 @@
 $font-family-base: "Open Sans", "Arial";
-.Search-serial-number-doubles {
+.Stock-list {
     color: #686A6D;
     font-weight: normal;
     font-size: 1.4rem;
     margin-right: 470px;
     margin-bottom: -10px;
     position: relative;
+    display: inline-block; /* Ensures underline spans the text width */
   }
   
-  .line {
-    height: 1px;
-    width: 50%;
+  .Stock-list::after {
+    content: "";
+    height: 2px;
+    width: 800%;
     background-color: #686A6D;
-    margin-top: 5px;
-    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
   }
+  
+
   
   .Search-serial-number-doubles::after {
     content: "";

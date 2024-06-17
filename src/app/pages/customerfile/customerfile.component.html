@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container mt-4">
   <form>
+    <!-- Form content -->
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="actiaCustomerId">Actia Customer ID</label>
@@ -112,92 +113,88 @@
       </button>
     </div>
   </form>
-</div>
-<div class="container mt-4">
-  <div class="container mt-4">
-    <div class="table-container">
-      <!-- Products Table -->
-      <table class="custom-table">
-        <thead>
-          <tr>
-            <th class="text-center">
-              <div class="btn-label">
-                <button class="btn btn-icon" (click)="toggleRow('products')">{{ productsVisible ? '-' : '+' }}</button>
-                <span>Product name</span>
-              </div>
-            </th>
-            <th class="text-center">Serial number</th>
-            <th class="text-center">Date code</th>
-            <th class="text-center">VCI serial number</th>
-            <th class="text-center">Under warranty</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of displayedProducts" [hidden]="!product.showRow">
-            <td class="text-center">{{ product.productName }}</td>
-            <td class="text-center">{{ product.serialNumber }}</td>
-            <td class="text-center">{{ product.dateCode }}</td>
-            <td class="text-center">{{ product.vciSerialNumber }}</td>
-            <td class="text-center">{{ product.underWarranty }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <!-- Continuation du fichier customerfile.component.html -->
+  <!-- Products Table -->
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th class="text-center">
+          <div class="btn-label">
+            <button class="btn btn-icon" (click)="toggleRow('products')">{{ productsVisible ? '-' : '+' }}</button>
+            <span>Product name</span>
+          </div>
+        </th>
+        <th class="text-center">Serial number</th>
+        <th class="text-center">Date code</th>
+        <th class="text-center">VCI serial number</th>
+        <th class="text-center">Under warranty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of displayedProducts" [hidden]="!product.showRow">
+        <td class="text-center">{{ product.productName }}</td>
+        <td class="text-center">{{ product.serialNumber }}</td>
+        <td class="text-center">{{ product.dateCode }}</td>
+        <td class="text-center">{{ product.vciSerialNumber }}</td>
+        <td class="text-center">{{ product.underWarranty }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Continuation du fichier customerfile.component.html -->
 
 <!-- Materials Table -->
 <table class="custom-table" [hidden]="!materialsVisible">
-  <thead>
-    <tr>
-      <th class="text-center">
-        <div class="btn-label">
-          <button class="btn btn-icon" (click)="toggleRow('materials')">{{ materialsVisible ? '-' : '+' }}</button>
-          <span>Material Component</span>
-        </div>
-      </th>
-      <th class="text-center">Product name</th>
-      <th class="text-center">Serial number</th>
-      <th class="text-center"></th>
-      <th class="text-center">Date code</th>
-      <th class="text-center">Warranty end date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let material of displayedMaterials" [hidden]="!material.showRow">
-      <td class="text-center">{{ material.materialComponent }}</td>
-      <td class="text-center">{{ material.productName }}</td>
-      <td class="text-center">{{ material.serialNumber }}</td>
-      <td class="text-center"></td>
-      <td class="text-center">{{ material.dateCode }}</td>
-      <td class="text-center">{{ material.warrantyEndDate }}</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+  <th class="text-center">
+    <div class="btn-label">
+      <button class="btn btn-icon" (click)="toggleRow('materials')">{{ materialsVisible ? '-' : '+' }}</button>
+      <span>Material Component</span>
+    </div>
+  </th>
+  <th class="text-center">Product name</th>
+  <th class="text-center">Serial number</th>
+  <th class="text-center"></th>
+  <th class="text-center">Date code</th>
+  <th class="text-center">Warranty end date</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let material of displayedMaterials" [hidden]="!material.showRow">
+  <td class="text-center">{{ material.materialComponent }}</td>
+  <td class="text-center">{{ material.productName }}</td>
+  <td class="text-center">{{ material.serialNumber }}</td>
+  <td class="text-center"></td>
+  <td class="text-center">{{ material.dateCode }}</td>
+  <td class="text-center">{{ material.warrantyEndDate }}</td>
+</tr>
+</tbody>
 </table>
 
 <!-- Licences Table -->
 <table class="custom-table" [hidden]="!licencesVisible">
-  <thead>
-    <tr>
-      <th class="text-center">
-        <div class="btn-label">
-          <button class="btn btn-icon" (click)="toggleRow('licences')">{{ licencesVisible ? '-' : '+' }}</button>
-          <span>Licence</span>
-        </div>
-      </th>
-      <th class="text-center">Product name</th>
-      <th class="text-center">Invoice ID</th>
-      <th class="text-center">Activated [MANUAL]</th>
-      <th class="text-center">Subscription Duration End date</th>
-      <th class="text-center">Major Version</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let licence of displayedLicences" [hidden]="!licence.showRow">
-      <td class="text-center">{{ licence.licence }}</td>
-      <td class="text-center">{{ licence.productName }}</td>
-      <td class="text-center">{{ licence.invoiceID }}</td>
-      <td class="text-center">{{ licence.activatedManual }}</td>
-      <td class="text-center">{{ licence.subscriptionEndDate }}</td>
-      <td class="text-center">{{ licence.majorVersion }}</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+  <th class="text-center">
+    <div class="btn-label">
+      <button class="btn btn-icon" (click)="toggleRow('licences')">{{ licencesVisible ? '-' : '+' }}</button>
+      <span>Licence</span>
+    </div>
+  </th>
+  <th class="text-center">Product name</th>
+  <th class="text-center">Invoice ID</th>
+  <th class="text-center">Activated [MANUAL]</th>
+  <th class="text-center">Subscription Duration End date</th>
+  <th class="text-center">Major Version</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let licence of displayedLicences" [hidden]="!licence.showRow">
+  <td class="text-center">{{ licence.licence }}</td>
+  <td class="text-center">{{ licence.productName }}</td>
+  <td class="text-center">{{ licence.invoiceID }}</td>
+  <td class="text-center">{{ licence.activatedManual }}</td>
+  <td class="text-center">{{ licence.subscriptionEndDate }}</td>
+  <td class="text-center">{{ licence.majorVersion }}</td>
+</tr>
+</tbody>
 </table>

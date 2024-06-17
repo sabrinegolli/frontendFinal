@@ -1,33 +1,34 @@
 <app-navbar></app-navbar>
-<h1 class="Search-serial-number-doubles">Search serial number doubles</h1>
+
+<h1 class="Tool-search">Tool search</h1>
 
 <div class="container list-container">
   <div class="list1">
-    <label for="agency">Agency:</label>
-    <select id="agency">
-      <option default>All elements</option>
-      <option>Agency A</option>
-      <option>Agency B</option>
-      <option>Agency C</option>
-    </select>
-    <label for="productName">Product Name:</label>
-    <select id="productName">
-      <option default>All elements</option>
-      <option>Product Name 1</option>
-      <option>Product Name 2</option>
-      <option>Product Name 3</option>
-    </select>
+    <div class="option-row">
+      <label for="productName">Product Name:</label>
+      <div class="option-item">
+        <select id="productName">
+          <option value="">All elements</option>
+          <option value="Product Name 1">Product Name 1</option>
+          <option value="Product Name 2">Product Name 2</option>
+          <option value="Product Name 3">Product Name 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="option-row">
+      <label for="productNumber">Product Number:</label>
+      <div class="option-item">
+        <input type="text" id="productNumber" name="productNumber">
+      </div>
+    </div>
     <div class="button-container">
       <button class="btn btn-save" type="button" (click)="search()">
         <mat-icon>search</mat-icon> SEARCH
       </button>
-      <button class="btn btn-cancel" type="button" (click)="openConfirmation()">
+      <button class="btn btn-cancel" type="button" (click)="confirmClose()">
         <mat-icon>cancel</mat-icon> CLOSE
       </button>
     </div>
-  </div>
-  <div class="total">
-    Total: <span id="total">0</span>
   </div>
 </div>
 
@@ -76,3 +77,4 @@
     </div>
   </div>
 </div>
+
