@@ -25,6 +25,11 @@ import { RepairstocklistComponent } from './pages/repairstocklist/repairstocklis
 import { CustomerUnifiedHomeComponent } from './pages/customer-unified-search/customer-unified-home/customer-unified-home.component';
 import { ToolUnifiedHomeComponent } from './pages/tool-unified-search/tool-unified-home/tool-unified-home.component';
 import { IncidentUnifiedHomeComponent } from './pages/incident-unified-search/incident-unified-home/incident-unified-home.component';
+import { AddCustomerComponent } from './pages/addcustomer/addcustomer.component';
+import { SearchcustomerComponent } from './pages/searchcustomer/searchcustomer.component';
+import { StocklistComponent } from './pages/stocklist/stocklist.component';
+import { ToolsearchComponent } from './pages/toolsearch/toolsearch.component';
+import { ValidatesalesComponent } from './pages/validatesales/validatesales.component';
 
 
 
@@ -136,6 +141,11 @@ component:ToolhistoryComponent,
   component:RepairstocklistComponent ,
 
 },
+{ path: 'validatesales', component: ValidatesalesComponent },
+{ path: 'addcustomer', component: AddCustomerComponent },
+{ path: 'searchcustomer', component: SearchcustomerComponent },
+{ path: 'stocklist', component: StocklistComponent },
+{ path: 'toolsearch', component: ToolsearchComponent },
 { path: 'customerunifiedsearch', component:CustomerUnifiedHomeComponent },
   { path: 'toolunifiedsearch',component:ToolUnifiedHomeComponent },
   { path: 'incidentunifiedsearch', component:IncidentUnifiedHomeComponent },

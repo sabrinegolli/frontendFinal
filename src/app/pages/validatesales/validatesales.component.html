@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<h1 class="validate-sales">Validate sales</h1>
+<div class="container list-container">
+  <div class="list1">
+    <label for="agency">Agency:</label>
+    <select id="agency">
+      <option default>All elements</option>
+      <option>Agency A</option>
+      <option>Agency B</option>
+      <option>Agency C</option>
+    </select>
+    <div class="button-container">
+      <button class="btn btn-save" type="button" (click)="search()">
+        <mat-icon>search</mat-icon> SEARCH
+      </button>
+      <button class="btn btn-cancel" type="button" (click)="openConfirmation()">
+        <mat-icon>cancel</mat-icon> CLOSE
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container table-container" *ngIf="showTable">
+  <div class="table-responsive">
+    <table class="table striped-table">
+      <thead>
+        <tr class="first-line-background">
+          <th>Actia Customer ID</th>
+          <th>Company Name</th>
+          <th>Address</th>
+          <th>Contact Name</th>
+          <th>Phone Number</th>
+          <th>Fax Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1234567890</td>
+          <td>ABC Corp</td>
+          <td>123 Main St, Cityville</td>
+          <td>John Doe</td>
+          <td>(123) 456-7890</td>
+          <td>(123) 456-7891</td>
+        </tr>
+        <tr>
+          <td>0987654321</td>
+          <td>XYZ Ltd</td>
+          <td>456 Oak Ave, Townsville</td>
+          <td>Jane Smith</td>
+          <td>(987) 654-3210</td>
+          <td>(987) 654-3211</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div *ngIf="showConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to close?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelClose()">No</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+
+<h1 class="Tool-search">Tool search</h1>
+
+<div class="container list-container">
+  <div class="list1">
+    <div class="option-row">
+      <label for="productName">Product Name:</label>
+      <div class="option-item">
+        <select id="productName">
+          <option value="">All elements</option>
+          <option value="Product Name 1">Product Name 1</option>
+          <option value="Product Name 2">Product Name 2</option>
+          <option value="Product Name 3">Product Name 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="option-row">
+      <label for="productNumber">Product Number:</label>
+      <div class="option-item">
+        <input type="text" id="productNumber" name="productNumber">
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="btn btn-save" type="button" (click)="search()">
+        <mat-icon>search</mat-icon> SEARCH
+      </button>
+      <button class="btn btn-cancel" type="button" (click)="confirmClose()">
+        <mat-icon>cancel</mat-icon> CLOSE
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container table-container" *ngIf="showTable">
+  <div class="table-responsive">
+    <table class="table striped-table">
+      <thead>
+        <tr class="first-line-background">
+          <th>Product name</th>
+          <th>Serial number</th>
+          <th>Date code</th>
+          <th>VCI serial number</th>
+          <th>Setup date</th>
+          <th>Under warranty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Product 1</td>
+          <td>1234567890</td>
+          <td>2022-01-01</td>
+          <td>ABCDEFGHIJ</td>
+          <td>2022-01-02</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Product 2</td>
+          <td>0987654321</td>
+          <td>2022-02-01</td>
+          <td>JKLmnopqrst</td>
+          <td>2022-02-03</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div *ngIf="showConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to close?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelClose()">No</button>
+    </div>
+  </div>
+</div>
+

@@ -72,9 +72,11 @@ import { IncidentUnifiedSearchComponent } from './pages/incident-unified-search/
 import { ToolUnifiedHomeComponent } from './pages/tool-unified-search/tool-unified-home/tool-unified-home.component';
 import { ToolUnifiedSearchComponent } from './pages/tool-unified-search/tool-unified-search/tool-unified-search.component';
 import { ToolUnifiedFormComponent } from './pages/tool-unified-search/tool-unified-form/tool-unified-form.component';
-
-
-
+import { ToolsearchComponent } from './pages/toolsearch/toolsearch.component';
+import { StocklistComponent } from './pages/stocklist/stocklist.component';
+import { SearchcustomerComponent } from './pages/searchcustomer/searchcustomer.component';
+import { AddCustomerComponent } from './pages/addcustomer/addcustomer.component';
+import { ValidatesalesComponent } from './pages/validatesales/validatesales.component'; 
 
 
 @NgModule({
@@ -124,7 +126,12 @@ import { ToolUnifiedFormComponent } from './pages/tool-unified-search/tool-unifi
     IncidentUnifiedSearchComponent,
     ToolUnifiedHomeComponent,
     ToolUnifiedSearchComponent,
-    ToolUnifiedFormComponent
+    ToolUnifiedFormComponent,
+    SearchcustomerComponent,
+    ToolsearchComponent,
+    StocklistComponent,
+    SearchDoublesComponent, AddCustomerComponent,    ValidatesalesComponent,
+
 
     
 
