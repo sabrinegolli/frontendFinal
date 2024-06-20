@@ -1,66 +1,137 @@
+<app-navbar></app-navbar>
+<h1 class="customer-search">Material Component file</h1>
+
+<div class="empty-container">
+  <div class="card">
+    <div class="card-body">
+      <button class="btn btn-action" routerLink="/newpack"><mat-icon>keyboard_arrow_up</mat-icon> View associated pack</button>
+      <button class="btn btn-action" routerLink="/existingcompack"><mat-icon>supervisor_account</mat-icon>Client history</button>
+      <button class="btn btn-action"><mat-icon>add_box</mat-icon>move to stock</button>
+      <button class="btn btn-action"><mat-icon>find_in_page</mat-icon>Search a tool </button>
+    </div>
+  </div>
+</div>
+
+<div class="empty-container">
+  <div class="option-item">
+    <label for="customerName">Customer Name:</label>
+    <input type="text" id="customerName" name="customerName">
+    <label for="productName">Product Name:</label>
+    <select id="productName">
+      <option value="">All elements</option>
+      <option value="Product Name 1">Product Name 1</option>
+      <option value="Product Name 2">Product Name 2</option>
+      <option value="Product Name 3">Product Name 3</option>
+    </select>
+  </div>
+</div>
+
+
 <div id="form1Ajout" class="form1-container">
-    <form>
-      <div class="form-group">
-        <label for="ProductName">Product name:</label>
-        <input type="text" id="ProductName" name="ProductName">
-      </div>
-  
+  <form>
+    <div class="form-row">
       <div class="form-group">
         <label for="SerialNumber">Serial number *:</label>
         <input type="text" id="SerialNumber">
       </div>
-  
+
       <div class="form-group">
         <label for="DateCode">Date code *:</label>
         <input type="date" id="DateCode" name="DateCode">
       </div>
-  
+
       <div class="form-group">
         <label for="DockingStationSerialNumber">Docking station serial number:</label>
         <input type="text" id="DockingStationSerialNumber" name="DockingStationSerialNumber">
       </div>
-  
+    </div>
+
+    <div class="form-row">
       <div class="form-group">
         <label for="SetupDate">Setup date:</label>
         <input type="text" id="SetupDate">
       </div>
-  
+
       <div class="form-group">
         <label for="City">City *:</label>
         <input type="text" id="City" name="City">
       </div>
-  
+
       <div class="form-group">
         <label for="ToolNotUnderWarranty">Tool Not Under Warranty:</label>
         <input type="date" id="ToolNotUnderWarranty" name="ToolNotUnderWarranty">
       </div>
-  
+    </div>
+
+    <div class="form-row">
       <div class="form-group">
         <label><input type="checkbox" name="InRepair" value="example"> In repair</label>
       </div>
-  
+
       <div class="form-group">
         <label><input type="checkbox" name="LoanTool" value="example"> Loan tool</label>
       </div>
-  
+
       <div class="form-group">
         <label><input type="checkbox" name="SerialNumberDouble" value="example"> Serial number double</label>
       </div>
-  
+    </div>
+
+    <div class="form-row">
       <div class="form-group">
         <label for="note">Note:</label>
         <br>
         <textarea id="note" name="note" rows="4" cols="80"></textarea>
       </div>
-  
+
       <div class="form-group">
         <label for="ToolCode">Tool code:</label>
         <input type="date" id="ToolCode" name="ToolCode">
       </div>
-  
-      <div class="button-container">
-        <button class="btn btn-primary" type="button">Modifier</button>
-        <button class="btn btn-primary" type="button">Enregistrer</button>
-      </div>
-    </form>
+    </div>
+    <div class="button-container">
+      <button class="btn btn-save" type="button" >
+        <mat-icon>search</mat-icon> SEARCH
+      </button>
+      <button class="btn btn-cancel" type="button" >
+        <mat-icon>cancel</mat-icon> CLOSE
+      </button>
+    </div>
+  </form>
+</div>
+<div class="empty-container">
+  <div class="container table-container" *ngIf="showTable">
+    <div class="table-responsive">
+      <table class="table striped-table">
+        <thead>
+          <tr class="first-line-background">
+            <th>Product name</th>
+            <th>Serial number</th>
+            <th>Date code</th>
+            <th>VCI serial number</th>
+            <th>Setup date</th>
+            <th>Under warranty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product 1</td>
+            <td>1234567890</td>
+            <td>2022-01-01</td>
+            <td>ABCDEFGHIJ</td>
+            <td>2022-01-02</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Product 2</td>
+            <td>0987654321</td>
+            <td>2022-02-01</td>
+            <td>JKLmnopqrst</td>
+            <td>2022-02-03</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+</div>

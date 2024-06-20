@@ -38,4 +38,9 @@ export class AddCustomerComponent {
     console.log('Save close canceled');
     this.showSaveConfirmation = false;
   }
+
+  handleClick(event: MouseEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.style.borderLeft = '5px solid green';
+  }
 }

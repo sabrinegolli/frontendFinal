@@ -1,14 +1,24 @@
-
 $primary-color: #686A6D;
+$accent-color: #A5EBEE; // Define an accent color for the blue border
+
 .incident-file {
-  color: #686A6D;
+  color: $primary-color;
   font-weight: normal;
   font-size: 1.4rem;
-  margin-right: 470px;
-  margin-bottom: -10px;
+  margin-bottom: 10px; /* Ensure margin bottom to separate the line */
 }
+
+.line {
+  height: 1px;
+  width: 50%; /* Ensure the line stretches the full width of the container */
+  background-color: $primary-color;
+  margin-top: 5px; /* Adjust margin-top for spacing */
+  margin-bottom: 10px; /* Ensure there's space between the line and the next element */
+ margin-left: 0px;
+
+}
+
 .container {
-  
   display: flex;
   max-width: 1800px;
   padding: 15px;
@@ -16,6 +26,10 @@ $primary-color: #686A6D;
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+  .left-container {
+    flex: 1;
+    padding-right: 20px; /* Added padding for spacing */
+  }
 
   .right-container {
     flex: 1;
@@ -26,7 +40,6 @@ $primary-color: #686A6D;
     font-weight: bold;
     font-size: 0.9rem;
     flex-basis: 20%;
-  
   }
 
   input[type="text"],
@@ -39,6 +52,7 @@ $primary-color: #686A6D;
     border-radius: 5px;
     font-size: 0.9rem;
     color: $primary-color;
+    transition: border-color 0.3s; /* Added transition for smooth effect */
   }
 
   input::placeholder {
@@ -47,7 +61,8 @@ $primary-color: #686A6D;
 
   input:focus,
   select:focus {
-    border-color: #A5EBEE;
+    border-color: $accent-color; /* Updated border color on focus */
+    outline: none; /* Remove default focus outline */
   }
 
   .form-check-input {
@@ -83,7 +98,7 @@ $primary-color: #686A6D;
     height: 100px;
     resize: none;
     color: $primary-color;
-    margin-top:10px ;
+    margin-top: 10px;
   }
 
   .btn-primary {
@@ -107,7 +122,6 @@ $primary-color: #686A6D;
   .btn-danger {
     background-color: #F8D7DA;
   }
-  
 
   .alert,
   .alert-error {
@@ -119,7 +133,7 @@ $primary-color: #686A6D;
 
   .alert {
     background-color: #D1ECF1;
-    color: #686A6D;
+    color: $primary-color;
   }
 
   .alert-error {
@@ -127,69 +141,7 @@ $primary-color: #686A6D;
     color: #721C24;
   }
 }
-.tool-list {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  padding: 15px;
-  background-color: #FFFFFF;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 900px;
 
-  .tool-item {
-    margin-bottom: 20px;
-  }
-
-  label {
-    color: $primary-color;
-    font-weight: bold;
-    font-size: 0.9rem;
-    flex-basis: 20%;
-    margin-right: 10px;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  select {
-    flex-grow: 2;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    color: $primary-color;
-  }
-
-  input::placeholder {
-    color: #aaa;
-  }
-
-  input:focus,
-  select:focus {
-    border-color: #A5EBEE;
-  }
-
-  .form-check-input {
-    margin-top: 0.3rem;
-    margin-right: 0.5rem;
-    cursor: pointer;
-  }
-
-  .form-check-label {
-    cursor: pointer;
-  }
-
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    height: 100px;
-    resize: none;
-    color: $primary-color;
-  }
-}
 .tool-list {
   display: flex;
   flex-direction: column;
@@ -227,7 +179,7 @@ $primary-color: #686A6D;
           font-weight: bold;
           font-size: 0.9rem;
           flex-basis: 20%;
-          margin-right: 50px;
+          margin-right: 50px; /* Adjusted margin if needed */
         }
 
         select,
@@ -238,18 +190,15 @@ $primary-color: #686A6D;
           border-radius: 5px;
           font-size: 0.9rem;
           color: $primary-color;
+          transition: border-color 0.3s; /* Added transition for smooth effect */
         }
 
         input[type="text"] {
-          width: 100px; /* adjusted width */
+          width: 100px; /* Adjusted width */
         }
-        input:focus,
-  select:focus {
-    border-color: #A5EBEE;
-  }
 
         select {
-          width: 20px; /* adjusted width */
+          width: 20px; /* Adjusted width */
         }
 
         .form-checkbox {
@@ -269,30 +218,97 @@ $primary-color: #686A6D;
     }
   }
 }
-.container {
-  display: flex;
 
-
-  .form-group {
-    flex: 1 1 20%;
-    margin-bottom: 1rem;
-  }
-
-  label {
-    
-    margin-bottom: 0.5rem;
-  }
-
-  input[type="text"] {
-    width: 100%;
-  }
-}
 .form-group {
   display: flex;
-
 
   label {
     flex: 0 0 auto;
     margin-right: 1rem;
     white-space: nowrap;
-  }}
+  }
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  gap: 10px;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Icons Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.btn {
+  color: white;
+  font-size: 13px;
+  padding: 10px 18px; // Adjust padding as needed
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  background-color: #DFD3D3;
+}
+
+.btn-save {
+  background-color: #BDD248;
+}
+
+.btn-cancel {
+  background-color: #546472;
+}
+
+
+
+
+.mat-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+.confirm-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.confirm-modal-content p {
+  margin-bottom: 10px;
+}
+
+.confirm-modal-content .button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.confirm-modal-content button {
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-modal-content button:hover {
+  background-color: #DFD3D3;
+}

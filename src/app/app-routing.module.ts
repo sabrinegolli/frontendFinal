@@ -30,6 +30,8 @@ import { SearchcustomerComponent } from './pages/searchcustomer/searchcustomer.c
 import { StocklistComponent } from './pages/stocklist/stocklist.component';
 import { ToolsearchComponent } from './pages/toolsearch/toolsearch.component';
 import { ValidatesalesComponent } from './pages/validatesales/validatesales.component';
+import { NewpackComponent } from './newpack/newpack.component';
+import { ExistingcompackComponent } from './existingcompack/existingcompack.component';
 
 
 
@@ -150,6 +152,10 @@ component:ToolhistoryComponent,
   { path: 'toolunifiedsearch',component:ToolUnifiedHomeComponent },
   { path: 'incidentunifiedsearch', component:IncidentUnifiedHomeComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'newcommercialpack' ,component:NewcommpackComponent},
+  { path: 'newpack' , component:NewpackComponent},
+  { path: 'existingcompack' , component:ExistingcompackComponent},
+  { path: 'materialcomfile' , component:MaterialcomponentfileComponent},
 ];
 
 

@@ -1,3 +1,5 @@
+<!-- repairstocklist.component.html -->
+
 <app-navbar></app-navbar>
 <h1 class="Search-serial-number-doubles">Repair Stock List</h1>
 
@@ -18,20 +20,20 @@
       <option>Product Name 3</option>
     </select>
     <div class="button-container">
-      <button class="btn btn-save" type="button" >
+      <button class="btn btn-save" type="button" (click)="showTableOnClick()">
         <mat-icon>search</mat-icon> SEARCH
       </button>
-      <button class="btn btn-cancel" type="button">
+      <button class="btn btn-cancel" type="button" (click)="showConfirmationModal()">
         <mat-icon>cancel</mat-icon> CLOSE
       </button>
     </div>
-
   </div>
   <div class="total">
     Total: <span id="total">5</span>
   </div>
 </div>
-<div class="container table-container">
+
+<div class="container table-container" *ngIf="showTable">
   <div class="table-responsive">
     <table class="table striped-table">
       <thead>
@@ -78,15 +80,6 @@
           <td>Yes</td>
         </tr>
         <tr>
-          <tr>
-            <td>Product 1</td>
-            <td>1234567890</td>
-            <td>2022-01-01</td>
-            <td>ABCDEFGHIJ</td>
-            <td>2022-01-02</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
           <td>Product 1</td>
           <td>1234567890</td>
           <td>2022-01-01</td>
@@ -94,14 +87,34 @@
           <td>2022-01-02</td>
           <td>Yes</td>
         </tr>
+        <tr>
+          <td>Product 1</td>
+          <td>1234567890</td>
+          <td>2022-01-01</td>
+          <td>ABCDEFGHIJ</td>
+          <td>2022-01-02</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
           <td>Product 2</td>
           <td>0987654321</td>
           <td>2022-02-01</td>
           <td>JKLmnopqrst</td>
           <td>2022-02-03</td>
           <td>No</td>
-       
+        </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div *ngIf="showCancelConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to cancel?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeCancelConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelCancelClose()">No</button>
+    </div>
   </div>
 </div>

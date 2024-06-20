@@ -1,33 +1,74 @@
+$primary-color: #686A6D;
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Example font family */
+    margin: 0;
+    padding: 0;
 }
 
-.customer-file, .material-component, .licence-component {
-    color: #686A6D;
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch; /* Adjusted to stretch items to full width */
+}
+
+.container:not(:last-of-type) {
+    margin-bottom: 20px; /* Add gap between containers */
+}
+
+.licence-file {
+    color: $primary-color;
     font-weight: normal;
     font-size: 1.4rem;
     margin-bottom: 10px;
     position: relative;
+    padding-bottom: 5px;
 }
 
-.customer-file h1 {
-    font-size: 2rem;
-    color: #333;
+.licence-file::after {
+    content: '';
+    display: block;
+    width: 50%;
+    border-bottom: 2px solid $primary-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .form-row {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
-.form-control {
+.col-md-4 {
+    flex: 1 1 calc(50% - 20px); /* Adjusted to fit two items per row with gap */
+}
+
+label {
+    color: $primary-color;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+select,
+textarea {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: $primary-color;
+    transition: border-color 0.3s, border-width 0.3s;
 }
 
 .subscription-duration {
@@ -36,29 +77,30 @@ body {
 }
 
 .subscription-duration-input {
-    width: 80px;
-    margin-right: 10px;
+    width: calc(20% - 25px); /* Adjusted width for smaller size */
+    padding: 8px; /* Adjusted padding for smaller size */
 }
 
-.form-group {
-    margin-bottom: 15px;
+.subscription-duration span {
+    margin-left: 5px;
 }
 
 .button-container {
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
     margin-top: 20px;
 }
 
-button {
-    margin-left: 10px;
+.btn {
     color: white;
     font-size: 13px;
-    padding: 6px 12px;
+    padding: 10px 18px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -71,4 +113,48 @@ button {
 
 .btn-cancel {
     background-color: #546472;
+}
+
+.mat-icon {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.confirm-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.confirm-modal-content p {
+    margin-bottom: 10px;
+}
+
+.confirm-modal-content .button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.confirm-modal-content button {
+    padding: 6px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-modal-content button:hover {
+    background-color: #DFD3D3;
 }

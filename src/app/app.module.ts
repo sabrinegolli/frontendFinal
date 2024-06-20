@@ -76,7 +76,12 @@ import { ToolsearchComponent } from './pages/toolsearch/toolsearch.component';
 import { StocklistComponent } from './pages/stocklist/stocklist.component';
 import { SearchcustomerComponent } from './pages/searchcustomer/searchcustomer.component';
 import { AddCustomerComponent } from './pages/addcustomer/addcustomer.component';
-import { ValidatesalesComponent } from './pages/validatesales/validatesales.component'; 
+import { ValidatesalesComponent } from './pages/validatesales/validatesales.component';
+import { NewpackComponent } from './newpack/newpack.component';
+import { ExistingcompackComponent } from './existingcompack/existingcompack.component';
+import { MaterialcomfileComponent } from './materialcomfile/materialcomfile.component';
+
+
 
 
 @NgModule({
@@ -130,7 +135,7 @@ import { ValidatesalesComponent } from './pages/validatesales/validatesales.comp
     SearchcustomerComponent,
     ToolsearchComponent,
     StocklistComponent,
-    SearchDoublesComponent, AddCustomerComponent,    ValidatesalesComponent,
+    SearchDoublesComponent, AddCustomerComponent,    ValidatesalesComponent, NewpackComponent, ExistingcompackComponent, MaterialcomfileComponent, 
 
 
     

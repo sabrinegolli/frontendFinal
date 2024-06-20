@@ -1,60 +1,93 @@
 <app-navbar></app-navbar>
 
-<div class="container customer-file">
-    <h1 class="customer-file">Licence</h1>
-
+<h1 class="licence-file">Licence</h1>
+<div class="line"></div>
+<div class="container">
     <div class="form-row">
         <div class="col-md-4">
-            <label for="customerName">Customer Name:</label>   
-            <input type="text" id="customerName" class="form-control">
+            <label for="contractId">Customer name</label>
+            <input type="text" id="contractId" class="form-control" (click)="handleClick($event)">
         </div>
         <div class="col-md-4">
-            <label for="tool">Choose an existing tool *</label>
-            <select id="tool" class="form-control">
+            <label for="agency">Choose an existing tool:</label>
+            <select id="agency" class="form-control">
+                <option default>All elements</option>
+                <option>Agency A</option>
+                <option>Agency B</option>
+                <option>Agency C</option>
             </select>
         </div>
+    </div>
+    <div class="col-md-4">
+        <label for="agentCustomerId">Product name</label>
+        <input type="text" id="agentCustomerId" class="form-control" (click)="handleClick($event)">
+    </div>
+</div>
+
+<div class="container">
+    <div class="form-row">
         <div class="col-md-4">
-            <label for="productName">Product Name:</label>
-            <select id="productName" class="form-control">
-            </select>
+            <label for="salesDate">Sales date (YYYY-MM-DD)</label>
+            <input type="text" id="salesDate" value="2024-05-30" readonly class="form-control" (click)="handleClick($event)">
+        </div>
+        <div class="col-md-4">
+            <label for="contractId">Contract ID</label>
+            <input type="text" id="contractId" class="form-control" (click)="handleClick($event)">
+        </div>
+        <div class="col-md-4">
+            <label for="agentCustomerId">Invoice ID</label>
+            <input type="text" id="agentCustomerId" class="form-control" (click)="handleClick($event)">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4">
+            <label for="majorversion">Major version/user KPI level</label>
+            <input type="text" id="majorversion" class="form-control" (click)="handleClick($event)">
+        </div>
+        <div class="col-md-4">
+            <label for="agentCustomerId">Agent customer ID</label>
+            <input type="text" id="agentCustomerId" class="form-control" (click)="handleClick($event)">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4">
+            <label for="note">Note</label>
+            <textarea id="note" class="form-control" (click)="handleClick($event)"></textarea>
+        </div>
+        <div class="col-md-4">
+            <label for="subscriptionDuration">Subscription Duration</label>
+            <div class="subscription-duration">
+                <input type="number" id="subscriptionDuration" value="12" class="form-control subscription-duration-input" (click)="handleClick($event)">
+                <span>Months</span>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="btn btn-save" type="button" (click)="onSaveClick()">
+            <mat-icon>save</mat-icon> SAVE
+        </button>
+        <button class="btn btn-cancel" type="button" (click)="onCancelClick()">
+            <mat-icon>cancel</mat-icon> CLOSE
+        </button>
+    </div>
+</div>
+
+<div *ngIf="showSaveConfirmation" class="confirm-modal">
+    <div class="confirm-modal-content">
+        <p>Are you sure you want to save?</p>
+        <div class="button-container">
+            <button class="btn btn-save" (click)="closeSaveConfirmed()">Yes</button>
+            <button class="btn btn-cancel" (click)="cancelSaveClose()">No</button>
         </div>
     </div>
 </div>
 
-<div class="container licence-component">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <label for="salesDate">Sales date (YYYY-MM-DD)</label>
-                <input type="text" id="salesDate" value="2024-05-30" readonly class="form-control">
-        
-                <label for="contractId">Contract ID</label>
-                <input type="text" id="contractId" class="form-control">
-        
-                
-        
-                <label for="agentCustomerId">Agent Customer ID</label>
-                <input type="text" id="agentCustomerId" class="form-control">
-        
-                <label for="note">Note</label>
-                <textarea id="note" class="form-control"></textarea>
-            </div>
-            <div class="col-md-6">
-                <label for="subscriptionDuration">Subscription Duration</label>
-                <div class="subscription-duration">
-                    <input type="number" id="subscriptionDuration" value="12" class="form-control subscription-duration-input">
-                    <span>Months</span>
-                </div>
-            </div>
+<div *ngIf="showCancelConfirmation" class="confirm-modal">
+    <div class="confirm-modal-content">
+        <p>Are you sure you want to cancel?</p>
+        <div class="button-container">
+            <button class="btn btn-save" (click)="closeCancelConfirmed()">Yes</button>
+            <button class="btn btn-cancel" (click)="cancelCancelClose()">No</button>
         </div>
-    </div>
-
-    <div class="button-container">
-        <button class="btn btn-save" type="button">
-            <mat-icon>save</mat-icon> SAVE
-        </button>
-        <button class="btn btn-cancel" type="button">
-            <mat-icon>cancel</mat-icon> CLOSE
-        </button>
     </div>
 </div>

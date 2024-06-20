@@ -1,16 +1,26 @@
-$primary-color: #686a6d;
-$secondary-color: #0c5460;
-$background-color: #d1ecf1;
-$border-color: #ccc;
-$font-size: 12px;
-$small-font-size: 10px;
+$form-container-width: 80%; // Adjust as needed
 
-.material-File {
-  color: $primary-color;
+$form-primary-color: #686a6d;
+$form-border-color: #ccc;
+$form-focus-color: #a5ebee;
+
+.customer-search {
+  color: $form-primary-color;
   font-weight: normal;
   font-size: 1.4rem;
   margin-right: 470px;
   margin-bottom: -10px;
+  position: relative;
+  padding-bottom: 5px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 50%;
+    border-bottom: 2px solid $form-primary-color;
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 .form1-container {
@@ -20,81 +30,254 @@ $small-font-size: 10px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  width: $form-container-width;
 
   form {
-    .form-group {
-      position: relative;
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       margin-bottom: 1rem;
 
-      label {
-        display: inline-block;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-        color: $primary-color;
-        width: 30%;
-        text-align: left;
-        vertical-align: top;
+      .form-group {
+        width: calc(33.33% - 10px); // Adjust spacing between elements
+        margin-bottom: 10px; // Adjust vertical spacing between rows
 
-        & sup {
-          color: red;
-          font-size: 0.8rem;
-          vertical-align: super;
-        }
-      }
+        label {
+          font-weight: bold;
+          color: $form-primary-color;
+          width: 100%;
+          text-align: left;
+          display: block; // Ensures labels are displayed as block elements
 
-      input[type="text"],
-      input[type="date"],
-      select {
-        display: inline-block;
-        width: 65%;
-        padding: 0.5rem;
-        font-size: $font-size;
-        line-height: 1.5;
-        color: #4a4a4a;
-        background-color: #fff;
-        border: 1px solid $border-color;
-        border-radius: 0.25rem;
-
-        &:focus {
-          border-color: #A5EBEE;
-          box-shadow: 0 0 0 0.2rem rgba(165, 235, 238, 0.25);
+          & sup {
+            color: red;
+            font-size: 0.8rem;
+            vertical-align: super;
+          }
         }
 
-        &.invalid {
-          border-color: red;
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+          width: 70%; // Ensures inputs take full width within their container
+          padding: 0.5rem;
+          font-size: 12px;
+          line-height: 1.5;
+          color: #4a4a4a;
+          background-color: #fff;
+          border: 1px solid $form-border-color;
+          border-radius: 0.25rem;
+
+          &:focus {
+            border-color: $form-focus-color;
+            box-shadow: 0 0 0 0.2rem rgba(165, 235, 238, 0.25);
+          }
+
+          &.invalid {
+            border-color: red;
+          }
+
+          &.empty {
+            border-color: rgb(6, 100, 6);
+          }
         }
 
-        &.empty {
-          border-color: rgb(6, 100, 6);
-        }
-      }
-
-      textarea {
-        width: 100%;
-        padding: 0.5rem;
-        font-size: $font-size;
-        line-height: 1.5;
-        color: #4a4a4a;
-        background-color: #fff;
-        border: 1px solid $border-color;
-        border-radius: 0.25rem;
-
-        &:focus {
-          border-color: #A5EBEE;
-          box-shadow: 0 0 0 0.2rem rgba(165, 235, 238, 0.25);
+        textarea {
+          height: 100px; // Example height for textarea
         }
       }
     }
 
-    .button-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+   
+  }
+}
 
-      button {
-        margin-top: 1rem;
+.empty-container {
+  max-width: 1800px;
+  margin: 10px auto;
+  padding: 20px 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: $form-container-width;
+
+  .option-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    label {
+      font-weight: bold;
+      color: $form-primary-color;
+      width: 150px; // Adjust label width as needed
+      text-align: left;
+      display: block;
+    }
+
+    input[type="text"],
+    select {
+      width: 70%; // Adjust input width as needed
+      padding: 0.5rem;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #4a4a4a;
+      background-color: #fff;
+      border: 1px solid $form-border-color;
+      border-radius: 0.25rem;
+
+      &:focus {
+        border-color: $form-focus-color;
+        box-shadow: 0 0 0 0.2rem rgba(165, 235, 238, 0.25);
       }
     }
   }
+}
+.empty-container {
+  /* Existing styles */
+
+  .option-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    label {
+      font-weight: bold;
+      color: $form-primary-color;
+      width: 150px; // Adjust label width as needed
+      text-align: left;
+      display: inline-block; // Ensure labels behave as inline-block to align correctly
+    }
+
+    input[type="text"] {
+      width: 30%; // Adjust the width of the input for Customer Name
+      padding: 0.5rem;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #4a4a4a;
+      background-color: #fff;
+      border: 1px solid $form-border-color;
+      border-radius: 0.25rem;
+      margin-right: 30px; // Add margin to create space between inputs
+
+      &:focus {
+        border-color: $form-focus-color;
+        box-shadow: 0 0 0 0.2rem rgba(165, 235, 238, 0.25);
+      }
+    }
+
+    select {
+      width: 30%; // Adjust the width of the select for Product Name
+      padding: 0.5rem;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #4a4a4a;
+      background-color: #fff;
+      border: 1px solid $form-border-color;
+      border-radius: 0.25rem;
+
+      &:focus {
+        border-color: $form-focus-color;
+        box-shadow: 0 0 0 0.2rem rgba(165, 235, 238, 0.25);
+      }
+    }
+  }
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: auto;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: #546472;
+  color: white;
+  font-size: 10px;
+  padding: 6px 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #DFD3D3;
+  }
+}
+
+.btn-save {
+  background-color: #BDD248;
+}
+
+.btn-cancel {
+  background-color: #546472;
+}
+
+.mat-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+.empty-container {
+  max-width: 1800px; // Adjust max-width as needed
+  margin: 10px auto;
+  
+  .card {
+   
+  
+    
+    .card-body {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .btn {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        color: #686a6d;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+          background-color: #eff4f9;
+        }
+        
+        mat-icon {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+.table-responsive {
+  max-height: 370px;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #F2F2F2;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #F2F2F2;
+  text-align: left;
+  color: #686a6d;
 }

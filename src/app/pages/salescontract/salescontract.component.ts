@@ -1,6 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { icon } from '@fortawesome/fontawesome-svg-core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-salescontract',
@@ -9,32 +7,40 @@ import { icon } from '@fortawesome/fontawesome-svg-core';
 })
 export class SalescontractComponent {
 
-items:any[] = [
-  {label: 'New pack', route: '/newcommpack' }, 
-  { label: 'Add element', route: '/addelement' }, 
-  { label: 'Upgrade pack', route: '/upgrading' } ,
-  { label: 'Renew licence ', route: '/licence' },
-  ,
-];
-cancelContract() {
-throw new Error('Method not implemented.');
-}
-validateContract() {
-throw new Error('Method not implemented.');
-}
-  isEditable: any;
-  formData: any;
-  errorMessage: any;
-  successMessage: any;
-contract: any;
-handleClick(event: MouseEvent) {
-  const inputElement = event.target as HTMLInputElement;
-  inputElement.style.borderLeft = '5px solid green';}
-  addUser() {
-    throw new Error('Method not implemented.');
+  items: any[] = [
+    { label: 'New pack', route: '/newcommpack' }, 
+    { label: 'Add element', route: '/addelement' }, 
+    { label: 'Upgrade pack', route: '/upgrading' }, 
+    { label: 'Renew licence', route: '/licence' }
+  ];
+
+  showCancelConfirmation = false;
+  showSaveConfirmation = false;
+
+  validateContract() {
+    this.showSaveConfirmation = true;
   }
 
-  cancelCreation() {
-    throw new Error('Method not implemented.');
+  cancelCancelClose() {
+    this.showCancelConfirmation = false;
+  }
+
+  closeCancelConfirmed() {
+    // Handle cancel logic here
+    this.showCancelConfirmation = false;
+  }
+
+  cancelSaveClose() {
+    this.showSaveConfirmation = false;
+  }
+
+  closeSaveConfirmed() {
+    // Handle save logic here
+    this.showSaveConfirmation = false;
+  }
+
+  handleClick(event: MouseEvent) {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.style.borderLeft = '5px solid green';
   }
 }

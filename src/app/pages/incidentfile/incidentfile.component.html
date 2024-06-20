@@ -1,5 +1,7 @@
 <app-navbar></app-navbar>
-<h1>Incident File</h1>
+<h1 class="incident-file">Incident File</h1>
+<hr class="line">
+
 <div class="container">
   <div class="left-container">
    
@@ -9,11 +11,11 @@
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="actiaCustomerId">Actia Customer ID</label>
-            <input type="text" class="form-control" id="actiaCustomerId" placeholder="MFRA18850" value="12345">
+            <input type="text" class="form-control" id="actiaCustomerId" placeholder="MFRA18850" value="12345" (click)="handleClick($event)">
           </div>
           <div class="col-md-4 mb-3">
             <label for="agentCustomerId">Agent Customer ID</label>
-            <input type="text" class="form-control" id="agentCustomerId" placeholder="AD COSAC" value="67890">
+            <input type="text" class="form-control" id="agentCustomerId" placeholder="AD COSAC" value="67890" (click)="handleClick($event)">
           </div>
           <div class="col-md-4 mb-3">
             <label for="customerStatus">Customer status</label>
@@ -26,7 +28,7 @@
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="agency">Agency</label>
-            <input type="text" class="form-control" id="agency" placeholder="ACTIA hotline" value="XYZ Agency">
+            <input type="text" class="form-control" id="agency" placeholder="ACTIA hotline" value="XYZ Agency" (click)="handleClick($event)">
           </div>
           <div class="col-md-4 mb-3">
             <label for="distributorCategory">Distributor Category</label>
@@ -46,21 +48,21 @@
         <div class="form-row">
           <div class="col-md-6">
             <label for="companyName">Company name *</label>
-            <input type="text" class="form-control" id="companyName" required value="Example Company">
+            <input type="text" class="form-control" id="companyName" required value="Example Company" (click)="handleClick($event)">
           </div>
           <div class="col-md-6">
             <label for="address">Address *</label>
-            <input type="text" class="form-control" id="address" required value="123 Example St">
+            <input type="text" class="form-control" id="address" required value="123 Example St" (click)="handleClick($event)">
           </div>
         </div>
         <div class="form-row">
           <div class="col-md-3">
             <label for="zipCode">Zip code *</label>
-            <input type="text" class="form-control" id="zipCode" required value="12345">
+            <input type="text" class="form-control" id="zipCode" required value="12345" (click)="handleClick($event)">
           </div>
           <div class="col-md-3">
             <label for="city">City *</label>
-            <input type="text" class="form-control" id="city" required value="Cityville">
+            <input type="text" class="form-control" id="city" required value="Cityville" (click)="handleClick($event)">
           </div>
           <div class="col-md-3">
             <label for="country">Country *</label>
@@ -80,25 +82,25 @@
         <div class="form-row">
           <div class="col-md-3">
             <label for="email">E-mail *</label>
-            <input type="email" class="form-control" id="email" required value="example@example.com">
+            <input type="email" class="form-control" id="email" required value="example@example.com" (click)="handleClick($event)">
           </div>
           <div class="col-md-3">
             <label for="contactName">Contact name *</label>
-            <input type="text" class="form-control" id="contactName" required value="John Doe">
+            <input type="text" class="form-control" id="contactName" required value="John Doe" (click)="handleClick($event)">
           </div>
           <div class="col-md-3">
             <label for="phoneNumber">Phone number *</label>
-            <input type="tel" class="form-control" id="phoneNumber" required value="123-456-7890">
+            <input type="tel" class="form-control" id="phoneNumber" required value="123-456-7890" (click)="handleClick($event)">
           </div>
           <div class="col-md-3">
             <label for="mobileNumber">Mobile number</label>
-            <input type="tel" class="form-control" id="mobileNumber" value="987-654-3210">
+            <input type="tel" class="form-control" id="mobileNumber" value="987-654-3210" (click)="handleClick($event)">
           </div>
         </div>
         <div class="form-row">
           <div class="col-md-3">
             <label for="faxNumber">Fax number *</label>
-            <input type="text" class="form-control" id="faxNumber" required value="555-555-5555">
+            <input type="text" class="form-control" id="faxNumber" required value="555-555-5555" (click)="handleClick($event)">
           </div>
           <div class="col-md-3 align-self-center">
             <div class="form-check">
@@ -120,27 +122,27 @@
       <form>
         <div class="form-group">
           <label>File id</label>
-          <input type="text" placeholder="NOT SAVED" value="1">
+          <input type="text" placeholder="NOT SAVED" value="1" (click)="handleClick($event)">
         </div>
         <div class="form-group">
           <label>Call date *</label>
-          <input type="text" placeholder="YYYY-MM-DD hh:mm" value="2024-06-11 14:30">
+          <input type="text" placeholder="YYYY-MM-DD hh:mm" value="2024-06-11 14:30" (click)="handleClick($event)">
         </div>
         <div class="form-group">
           <label>Customer reference</label>
-          <input type="text" value="Customer123">
+          <input type="text" value="Customer123" (click)="handleClick($event)">
         </div>
         <div class="form-group">
           <label>Creation date</label>
-          <input type="text" placeholder="YYYY-MM-DD / hh:mm" value="2024-06-10 09:45">
+          <input type="text" placeholder="YYYY-MM-DD / hh:mm" value="2024-06-10 09:45" (click)="handleClick($event)">
         </div>
         <div class="form-group">
           <label>Hotliner</label>
-          <input type="text" placeholder="Test Test" value="John Doe">
+          <input type="text" placeholder="Test Test" value="John Doe" (click)="handleClick($event)">
         </div>
         <div class="form-group">
           <label>Follow-up</label>
-          <input type="text" value="Follow-up data">
+          <input type="text" value="Follow-up data" (click)="handleClick($event)">
         </div>
       </form>
     </div>
@@ -170,24 +172,7 @@
     </div>
     <div class="tool-item">
       <fieldset class="section">
-        <legend>ECU</legend>
-        <div class="form-row">
-          <label>ECU Family</label>
-          <select>
-            <option value="">Select an element</option>
-            <option value="ecu1" selected>ECU 1</option>
-            <option value="ecu2">ECU 2</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label>ECU Name</label>
-          <input type="text" value="ECU Name">
-        </div>
-      </fieldset>
-    </div>
-    <div class="tool-item">
-      <fieldset class="section">
-        <legend>Vehicle</legend>
+        <legend>Vehicule</legend>
         <div class="form-row">
           <input type="checkbox" class="form-checkbox" checked>
           <label>Brand</label>
@@ -245,7 +230,38 @@
         <div class="bottom-container">
           <textarea placeholder="Enter notes...">These are vehicle notes.</textarea>
         </div>
+        <div class="button-container">
+          <button class="btn btn-save" type="button" (click)="openSaveConfirmation()" style="background-color: #BDD248;">
+            <mat-icon>save</mat-icon> SAVE
+          </button>
+          <button class="btn btn-cancel" type="button" (click)="openCancelConfirmation()">
+            <mat-icon>cancel</mat-icon> CANCEL
+          </button>
+        </div>
+        
       </fieldset>
     </div>
   </div>
 </div>
+
+<!-- Confirmation Modals -->
+<div *ngIf="showCancelConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to cancel?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeCancelConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelCancelClose()">No</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showSaveConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to save?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeSaveConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelSaveClose()">No</button>
+    </div>
+  </div>
+</div>
+

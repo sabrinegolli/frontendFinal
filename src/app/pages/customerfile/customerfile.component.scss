@@ -1,3 +1,65 @@
+$primary-color: #686A6D;
+
+.customer-file {
+  color: $primary-color;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin-right: 470px;
+  margin-bottom: -10px;
+  position: relative;
+  padding-bottom: 5px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 50%; // Adjust the width as needed to make the line shorter
+    border-bottom: 2px solid $primary-color;
+    position: absolute;
+    bottom: 0;
+  }
+}
+.confirm-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.confirm-modal-content p {
+  margin-bottom: 10px;
+}
+
+.confirm-modal-content .button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.confirm-modal-content button {
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-modal-content button:hover {
+  background-color: #DFD3D3;
+}
+
+
+
+
 .container {
     max-width: 1525px;
     margin: 20px auto;
@@ -62,7 +124,7 @@
       padding: 6px 12px;
       font-size: 0.9rem;
       border-radius: 5px;
-      background-color: #595F66;
+     
       color: #fff;
       border: none;
       margin-right: 10px;
@@ -170,52 +232,13 @@
       }
     }
   }
-  .alert {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    &-error {
-      background-color: #F8D7DA;
-      color: #721C24;
-    }
-    &-success {
-      background-color: #D1ECF1;
-      color: #0C5460;
-    }
+
+  .btn.btn-renew-licence{  
+    background-color: white; /* Change to desired background color */
+    color:#686A6D;
+
   }
-  .table-container {
-    max-width: 1525px;
-    max-height: 300px;
-    overflow: scroll;
-    position: relative;
-    margin: 20px auto;
-    .custom-table {
-      width: 100%;
-      min-width: 700px;
-      border-collapse: collapse;
-      th, td {
-        padding: 8px;
-        border: 1px solid #ddd;
-        white-space: nowrap;
-      }
-      thead {
-        position: sticky;
-        top: 0;
-        background: hsl(0, 0%, 100%);
-        z-index: 2;
-      }
-      th, td {
-        &:nth-child(1) { width: 20%; } /* Product name, Material Component, Licence */
-        &:nth-child(2) { width: 10%; } /* Empty column */
-        &:nth-child(3) { width: 20%; } /* Serial number, Product name, Invoice ID */
-        &:nth-child(4) { width: 10%; } /* Empty column, Serial number, Activated [MANUAL] */
-        &:nth-child(5) { width: 15%; } /* Date code, [Subscription Duration] End date */
-        &:nth-child(6) { width: 15%; } /* VCI serial number, Warranty end date, Major Version */
-        &:nth-child(7) { width: 10%; } /* Under warranty, Major Version */
-      }
-    }
-  }
+  
   .table {
     font-size: 14px;
     border-color: #FFFCFC;
@@ -269,13 +292,7 @@
   .btn-new {
     background-color: #546472;
   }
-  
-  
-  
-  
-  
-  
-  
+
   .container {
     max-width: 1525px;
     margin: 20px auto;
@@ -285,53 +302,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .table-container {
-    max-width: 1525px;
-    max-height: 300px;
-    overflow: auto;
-    margin: 20px auto;
-  }
   
-  .custom-table {
-    width: 100%;
-    min-width: 700px;
-    border-collapse: collapse;
-  }
-  
-  .custom-table th, .custom-table td {
-    padding: 8px;
-    border: 1px solid #ddd;
-    white-space: nowrap;
-  }
-  
-  .custom-table thead {
-    position: sticky;
-    top: 0;
-    background: hsl(0, 0%, 100%);
-    z-index: 2;
-  }
-  
-  .custom-table th:nth-child(1) {
-    width: 5%;
-  }
-  .custom-table th:nth-child(2) {
-    width: 25%;
-  }
-  .custom-table th:nth-child(3) {
-    width: 15%;
-  }
-  .custom-table th:nth-child(4) {
-    width: 15%;
-  }
-  .custom-table th:nth-child(5) {
-    width: 15%;
-  }
-  .custom-table th:nth-child(6) {
-    width: 15%;
-  }
-  .custom-table th:nth-child(7) {
-    width: 10%;
-  }
   
   .btn-label {
     display: flex;
@@ -352,4 +323,121 @@
   }
   
   
+  $font-family-base: "Open Sans", "Arial";
+.Stock-list {
+    color: #686A6D;
+    font-weight: normal;
+    font-size: 1.4rem;
+    margin-right: 470px;
+    margin-bottom: -10px;
+    position: relative;
+    display: inline-block; /* Ensures underline spans the text width */
+  }
   
+  .Stock-list::after {
+    content: "";
+    height: 2px;
+    width: 800%;
+    background-color: #686A6D;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  .toggle-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    .toggle-icon {
+      font-size: 1.2rem;
+      margin-right: 5px;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    gap: 0px;
+  }
+ 
+  
+  .button-container1 {
+    display: flex;
+  
+    align-items: flex-start;
+  }
+  
+  .btn1 {
+    background-color: white;
+  
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 10px; /* Increased gap between buttons */
+    margin-left: 70px ;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s; /* Optional: smooth background color transition */
+  }
+  
+  .btn1:hover {
+    background-color: #f1f1f1; /* Optional: add a hover effect */
+  }
+  
+  .btn1:focus {
+    outline: none;
+  }
+  
+  .mat-icon {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .icon-newpack, .icon-add-elements, .icon-upgrade-pack, .icon-renew-licence {
+    color: #686A6D ;
+  }
+  
+  .label-newpack, .label-add-elements, .label-upgrade-pack, .label-renew-licence {
+    color: #686A6D;
+  }
+  .confirm-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .confirm-modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .confirm-modal-content p {
+    margin-bottom: 10px;
+  }
+  
+  .confirm-modal-content .button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .confirm-modal-content button {
+    padding: 6px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .confirm-modal-content button:hover {
+    background-color: #DFD3D3;
+  }

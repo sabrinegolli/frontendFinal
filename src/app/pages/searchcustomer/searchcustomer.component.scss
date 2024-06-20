@@ -1,4 +1,6 @@
 $primary-color: #686A6D;
+$accent-color: #BDD248;
+$focus-border-color: #A5EBEE;
 
 .customer-search {
   color: $primary-color;
@@ -54,11 +56,33 @@ $primary-color: #686A6D;
 
 .option-item label {
   font-size: 1rem;
-  color: $primary-color;
+  color: $primary-color; // Use primary color for labels
   min-width: 150px; /* Set a consistent width for all labels */
 }
 
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 200px; /* Set a fixed width for all input fields */
+  padding: 5px; /* Reduce padding to make input fields smaller */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.8rem; /* Smaller font size */
+  color: $primary-color; // Use primary color for text input
+  transition: border-color 0.3s, border-width 0.3s; /* Added transition for smooth effect */
+}
 
+input::placeholder {
+  color: #aaa;
+}
+
+input:focus,
+select:focus {
+  border-color: $focus-border-color; /* Updated border color on focus */
+  border-width: 5px; /* Thicker border on focus */
+  outline: none; /* Remove default focus outline */
+}
 
 .button-container {
   display: flex;
@@ -87,7 +111,7 @@ $primary-color: #686A6D;
 }
 
 .btn-save {
-  background-color: #BDD248;
+  background-color: $accent-color;
 }
 
 .btn-cancel {
@@ -132,8 +156,6 @@ $primary-color: #686A6D;
   margin-bottom: 20px;
 }
 
-
-
 .form-container form button {
   padding: 6px 10px;
   background-color: #8a8a8a;
@@ -146,8 +168,6 @@ $primary-color: #686A6D;
 .form-container form button:hover {
   background-color: #7f7f7f;
 }
-
-
 
 .custom-select {
   position: relative;
@@ -196,59 +216,65 @@ $primary-color: #686A6D;
   width: 0;
   height: 0;
 }
+
 .table-responsive {
-    max-height: 370px;
-    overflow-y: auto;
-  }
-  .table {
-    width: 100%;
-    table-layout: auto;
-    border-collapse: collapse;
-  }
-  .table th, .table td {
-    border: 1px solid #F2F2F2;
-    padding: 8px;
-  }
-  .table th {
-    background-color: #F2F2F2;
-    text-align: left;
-    color: #686A6D; /* Sets the header text color */
-  }
-  .confirm-modal {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .confirm-modal-content {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    position: relative;
-  }
-  
-  .confirm-modal-content p {
-    margin-bottom: 10px;
-  }
-  
-  .confirm-modal-content .button-container {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-  }
-  
-  .confirm-modal-content button {
-    padding: 6px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .confirm-modal-content button:hover {
-    background-color: #DFD3D3;
-  }
+  max-height: 370px;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #F2F2F2;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #F2F2F2;
+  text-align: left;
+  color: $primary-color; /* Sets the header text color */
+}
+
+.confirm-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.confirm-modal-content p {
+  margin-bottom: 10px;
+}
+
+.confirm-modal-content .button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.confirm-modal-content button {
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-modal-content button:hover {
+  background-color: #DFD3D3;
+}

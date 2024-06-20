@@ -1,3 +1,5 @@
+<!-- search-doubles.component.html -->
+
 <app-navbar></app-navbar>
 <h1 class="Search-serial-number-doubles">Search serial number doubles</h1>
 
@@ -18,10 +20,10 @@
       <option>Product Name 3</option>
     </select>
     <div class="button-container">
-      <button class="btn btn-save" type="button" >
+      <button class="btn btn-save" type="button" (click)="showTableOnClick()">
         <mat-icon>search</mat-icon> SEARCH
       </button>
-      <button class="btn btn-cancel" type="button">
+      <button class="btn btn-cancel" type="button" (click)="showConfirmationModal()">
         <mat-icon>cancel</mat-icon> CLOSE
       </button>
     </div>
@@ -31,7 +33,8 @@
     Total: <span id="total">0</span>
   </div>
 </div>
-<div class="container table-container">
+
+<div class="container table-container" *ngIf="showTable">
   <div class="table-responsive">
     <table class="table striped-table">
       <thead>
@@ -63,5 +66,16 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div *ngIf="showCancelConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to cancel?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeCancelConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelCancelClose()">No</button>
+    </div>
   </div>
 </div>

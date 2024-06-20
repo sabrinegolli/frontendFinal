@@ -1,7 +1,9 @@
 <app-navbar></app-navbar>
+
 <div class="container">
+  <h3 class="sales-contract">Sale's Contract</h3>
+  <div class="line"></div>
   <div class="contract-container">
-    <h3 class="sales-contract">Sale's Contract</h3>
     <div class="card mb-3">
       <div class="card-body">
         <div class="row align-items-end mb-3">
@@ -14,14 +16,14 @@
           <div class="col">
             <div class="label-input-container">
               <label for="username">Username:</label>
-              <input (click)="handleClick($event)" type="text" id="username" class="form-control" >
+              <input (click)="handleClick($event)" type="text" id="username" class="form-control">
             </div>
           </div>
-          <div class="col-auto buttons">
+          <div>
             <button class="btn btn-save" (click)="validateContract()">
               <mat-icon>done</mat-icon> VALIDATE
             </button>
-            <button class="btn btn-cancel" type="button">
+            <button class="btn btn-cancel" (click)="showCancelConfirmation = true">
               <mat-icon>cancel</mat-icon> CLOSE
             </button>
           </div>
@@ -29,55 +31,67 @@
       </div>
     </div>
   </div>
+  
   <div class="customer-info-container">
     <h3 class="sales-contract">Customer information:</h3>
-    <section>
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="label-input-container">
-                <label for="companyName">Company name:</label>
-                <input (click)="handleClick($event)" type="text" id="companyName" class="form-control">
-              </div>
-            </div>
-            <div class="col">
-              <div class="label-input-container">
-                <label for="contactName">Contact name:</label>
-                <input (click)="handleClick($event)" type="text" id="contactName" class="form-control">
-              </div>
-            </div>
-            <div class="col">
-              <div class="label-input-container">
-                <label for="zipCode">Zip code:</label>
-                <input (click)="handleClick($event)"  id="zipCode" class="form-control">
-              </div>
+    <div class="line"></div>
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <div class="label-input-container">
+              <label for="companyName">Company name:</label>
+              <input (click)="handleClick($event)" type="text" id="companyName" class="form-control">
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <div class="label-input-container">
-                <label for="phone">Phone number:</label>
-                <input (click)="handleClick($event)" type="tel" id="phone" class="form-control">
-              </div>
+          <div class="col">
+            <div class="label-input-container">
+              <label for="contactName">Contact name:</label>
+              <input (click)="handleClick($event)" type="text" id="contactName" class="form-control">
             </div>
-            <div class="col">
-              <div class="label-input-container">
-                <label for="country">Country:</label>
-                <input (click)="handleClick($event)" type="text" id="country" class="form-control">
-              </div>
+          </div>
+          <div class="col">
+            <div class="label-input-container">
+              <label for="zipCode">Zip code:</label>
+              <input (click)="handleClick($event)" id="zipCode" class="form-control">
             </div>
-            <div class="col">
-              <div class="label-input-container">
-                <label for="email">E-mail:</label>
-                <input (click)="handleClick($event)" type="email" id="email" class="form-control">
-              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="label-input-container">
+              <label for="phone">Phone number:</label>
+              <input (click)="handleClick($event)" type="tel" id="phone" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="label-input-container">
+              <label for="country">Country:</label>
+              <input (click)="handleClick($event)" type="text" id="country" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="label-input-container">
+              <label for="email">E-mail:</label>
+              <input (click)="handleClick($event)" type="email" id="email" class="form-control">
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
+
+  <div class="empty-container">
+    <div class="card">
+      <div class="card-body">
+        <button class="btn btn-action" routerLink="/newpack"><mat-icon>note_add</mat-icon> New Pack</button>
+        <button class="btn btn-action" routerLink="/existingcompack"><mat-icon>add_circle_outline</mat-icon>Add Elements</button>
+        <button class="btn btn-action"><mat-icon>trending_up</mat-icon>Upgrade Pack</button>
+        <button class="btn btn-action"><mat-icon>loop</mat-icon>Renew Licence</button>
+      </div>
+    </div>
+  </div>
+  
   <div class="tabs-container">
     <p-tabMenu [model]="items">
       <ng-template pTemplate="item" let-item>
@@ -88,36 +102,62 @@
       </ng-template>
     </p-tabMenu>
   </div>
+
   <div class="table-container">
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th colspan="2">Product Details</th>
-            <th colspan="1">Serial number</th>
-            <th colspan="1"></th>
-            <th colspan="1">Date code</th>
-            <th colspan="1">VCI serial number</th>
-            <th colspan="1">Under warranty</th>
-          </tr>
-          <tr>
-            <th colspan="2">Material Component</th>
-            <th colspan="1">Product name</th>
-            <th colspan="1">Serial number</th>
-            <th colspan="1"></th>
-            <th colspan="1">Date code</th>
-            <th colspan="1">Warranty end date</th>
-          </tr>
-          <tr>
-            <th colspan="2">Licence</th>
-            <th colspan="1">Product name</th>
-            <th colspan="1">Invoice ID</th>
-            <th colspan="1">Activated [MANUAL]</th>
-            <th colspan="1">[Subscription Duration] End date</th>
-            <th colspan="1">Major Version</th>
-          </tr>
-        </thead>
-      </table>
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th colspan="2">Product Details</th>
+                <th colspan="1">Serial number</th>
+                <th colspan="1"></th>
+                <th colspan="1">Date code</th>
+                <th colspan="1">VCI serial number</th>
+                <th colspan="1">Under warranty</th>
+              </tr>
+              <tr>
+                <th colspan="2">Material Component</th>
+                <th colspan="1">Product name</th>
+                <th colspan="1">Serial number</th>
+                <th colspan="1"></th>
+                <th colspan="1">Date code</th>
+                <th colspan="1">Warranty end date</th>
+              </tr>
+              <tr>
+                <th colspan="2">Licence</th>
+                <th colspan="1">Product name</th>
+                <th colspan="1">Invoice ID</th>
+                <th colspan="1">Activated [MANUAL]</th>
+                <th colspan="1">[Subscription Duration] End date</th>
+                <th colspan="1">Major Version</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modals -->
+<div *ngIf="showCancelConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to cancel?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeCancelConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelCancelClose()">No</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showSaveConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to save?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeSaveConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelSaveClose()">No</button>
     </div>
   </div>
 </div>

@@ -1,4 +1,40 @@
 <app-navbar></app-navbar>
+<h1 class="customer-file">Customer File</h1>
+<div class="container mt-4">
+  <div class="card1">
+    <div class="card-body button-container1">
+      <button class="btn1 btn-newpack" routerLink="/salescontract">
+        <mat-icon class="icon-newpack">note_add</mat-icon>
+        <span class="label-newpack">make a new sale</span>
+      </button>
+      <button class="btn1 btn-add-elements" (click)="openMovePackModal()">
+        <mat-icon class="icon-add-elements">publish</mat-icon>
+        <span class="label-add-elements">move pack here</span>
+      </button>
+      <button class="btn1 btn-upgrade-pack"(click)="openTrashPackModal()">
+        <mat-icon class="icon-upgrade-pack">delete_sweep</mat-icon>
+        <span class="label-upgrade-pack">Trash pack</span>
+      </button>
+      <button class="btn1 btn-renew-licence" (click)="openPackFusionModal()">
+        <mat-icon class="icon-renew-licence">dns</mat-icon>
+        <span class="label-renew-licence">pack fusion</span>
+      </button>
+      <button class="btn1 btn-renew-licence" routerLink="/toolhistory">
+        <mat-icon class="icon-renew-licence" >history</mat-icon>
+        <span class="label-renew-licence">Tool history</span>
+      </button>
+      <button class="btn1 btn-renew-licence" routerLink="/incidentfile">
+        <mat-icon class="icon-renew-licence">report_problem</mat-icon>
+        <span class="label-renew-licence">Add a new incident</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <div class="container mt-4">
   <form>
     <div class="form-row">
@@ -35,21 +71,43 @@
         </select>
       </div>
     </div>
+
+    <!-- Toggle button for showing/hiding company details -->
+    <div class="toggle-button" (click)="toggleCompanyDetails()">
+      <span class="toggle-icon">{{ showCompanyDetails ? '-' : '+' }}</span>
+    </div>
+
+    <!-- Company details form fields -->
     <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="companyName">Company name *</label>
+      <div class="col-md-4 mb-3" [hidden]="!showCompanyDetails">
+        <label for="companyName" class="form-label">
+          <span>Company name *</span>
+          <div class="toggle-label">
+            
+          </div>
+        </label>
         <input type="text" class="form-control" id="companyName" required>
       </div>
-      <div class="col-md-4 mb-3">
-        <label for="address">Address *</label>
+      <div class="col-md-4 mb-3" [hidden]="!showCompanyDetails">
+        <label for="address" class="form-label">
+          <span>Address *</span>
+          <div class="toggle-label">
+           
+          </div>
+        </label>
         <input type="text" class="form-control" id="address" required>
       </div>
-      <div class="col-md-4 mb-3">
-        <label for="zipCode">Zip code *</label>
+      <div class="col-md-4 mb-3" [hidden]="!showCompanyDetails">
+        <label for="zipCode" class="form-label">
+          <span>Zip code *</span>
+          <div class="toggle-label">
+      
+          </div>
+        </label>
         <input type="text" class="form-control" id="zipCode" required>
       </div>
     </div>
-    <div class="form-row">
+    <div class="form-row" [hidden]="!showCompanyDetails">
       <div class="col-md-4 mb-3">
         <label for="city">City *</label>
         <input type="text" class="form-control" id="city" required>
@@ -67,7 +125,7 @@
         </select>
       </div>
     </div>
-    <div class="form-row">
+    <div class="form-row" [hidden]="!showCompanyDetails">
       <div class="col-md-4 mb-3">
         <label for="email">E-mail *</label>
         <input type="email" class="form-control" id="email" required>
@@ -81,7 +139,7 @@
         <input type="tel" class="form-control" id="phoneNumber" required>
       </div>
     </div>
-    <div class="form-row">
+    <div class="form-row" [hidden]="!showCompanyDetails">
       <div class="col-md-4 mb-3">
         <label for="mobileNumber">Mobile number</label>
         <input type="tel" class="form-control" id="mobileNumber">
@@ -98,106 +156,89 @@
       </div>
     </div>
     <div class="form-row">
-      <div class="col-md-12 mb-3">
-        <label for="note">Note</label>
+      <div class="col-md-12 mb-3" [hidden]="!showCompanyDetails">
+        <label for="note" class="form-label">
+          <span>Note</span>
+          <div class="toggle-label">
+           
+          </div>
+        </label>
         <textarea id="note" class="form-control"></textarea>
       </div>
     </div>
     <div class="button-container">
-      <button class="btn btn-save" type="button">
-        <mat-icon>save</mat-icon> SAVE
+      <button class="btn btn-save" type="button" style="background-color: #BDD248; color: white;" (click)="openSaveConfirmation()">
+        <mat-icon style="color: white;">save</mat-icon> SAVE
       </button>
-      <button class="btn btn-cancel" type="button" (click)="cancelForm()">
-        <mat-icon>cancel</mat-icon> CLOSE
+      <button class="btn btn-cancel" type="button"  (click)="openCancelConfirmation()">
+        <mat-icon style="color: white;">cancel</mat-icon> CLOSE
       </button>
     </div>
   </form>
 </div>
 <div class="container mt-4">
-  <div class="container mt-4">
-    <div class="table-container">
-      <!-- Products Table -->
-      <table class="custom-table">
-        <thead>
-          <tr>
-            <th class="text-center">
-              <div class="btn-label">
-                <button class="btn btn-icon" (click)="toggleRow('products')">{{ productsVisible ? '-' : '+' }}</button>
-                <span>Product name</span>
-              </div>
-            </th>
-            <th class="text-center">Serial number</th>
-            <th class="text-center">Date code</th>
-            <th class="text-center">VCI serial number</th>
-            <th class="text-center">Under warranty</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of displayedProducts" [hidden]="!product.showRow">
-            <td class="text-center">{{ product.productName }}</td>
-            <td class="text-center">{{ product.serialNumber }}</td>
-            <td class="text-center">{{ product.dateCode }}</td>
-            <td class="text-center">{{ product.vciSerialNumber }}</td>
-            <td class="text-center">{{ product.underWarranty }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <!-- Continuation du fichier customerfile.component.html -->
+  <div class="table-container">
+     
 
-<!-- Materials Table -->
-<table class="custom-table" [hidden]="!materialsVisible">
-  <thead>
-    <tr>
-      <th class="text-center">
-        <div class="btn-label">
-          <button class="btn btn-icon" (click)="toggleRow('materials')">{{ materialsVisible ? '-' : '+' }}</button>
-          <span>Material Component</span>
-        </div>
-      </th>
-      <th class="text-center">Product name</th>
-      <th class="text-center">Serial number</th>
-      <th class="text-center"></th>
-      <th class="text-center">Date code</th>
-      <th class="text-center">Warranty end date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let material of displayedMaterials" [hidden]="!material.showRow">
-      <td class="text-center">{{ material.materialComponent }}</td>
-      <td class="text-center">{{ material.productName }}</td>
-      <td class="text-center">{{ material.serialNumber }}</td>
-      <td class="text-center"></td>
-      <td class="text-center">{{ material.dateCode }}</td>
-      <td class="text-center">{{ material.warrantyEndDate }}</td>
-    </tr>
-  </tbody>
-</table>
+<!-- Confirmation Modals -->
+<div *ngIf="showCancelConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to cancel?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeCancelConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelCancelClose()">No</button>
+    </div>
+  </div>
+</div>
 
-<!-- Licences Table -->
-<table class="custom-table" [hidden]="!licencesVisible">
-  <thead>
-    <tr>
-      <th class="text-center">
-        <div class="btn-label">
-          <button class="btn btn-icon" (click)="toggleRow('licences')">{{ licencesVisible ? '-' : '+' }}</button>
-          <span>Licence</span>
-        </div>
-      </th>
-      <th class="text-center">Product name</th>
-      <th class="text-center">Invoice ID</th>
-      <th class="text-center">Activated [MANUAL]</th>
-      <th class="text-center">Subscription Duration End date</th>
-      <th class="text-center">Major Version</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let licence of displayedLicences" [hidden]="!licence.showRow">
-      <td class="text-center">{{ licence.licence }}</td>
-      <td class="text-center">{{ licence.productName }}</td>
-      <td class="text-center">{{ licence.invoiceID }}</td>
-      <td class="text-center">{{ licence.activatedManual }}</td>
-      <td class="text-center">{{ licence.subscriptionEndDate }}</td>
-      <td class="text-center">{{ licence.majorVersion }}</td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="showSaveConfirmation" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Are you sure you want to save?</p>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="closeSaveConfirmed()">Yes</button>
+      <button class="btn btn-cancel" (click)="cancelSaveClose()">No</button>
+    </div>
+  </div>
+</div>
+
+<!-- Move Pack Confirmation Modal -->
+<div *ngIf="showMovePackModal" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Enter the pack name to move:</p>
+    <input type="text" [(ngModel)]="packName" class="form-control" placeholder="Pack Name">
+    <div class="button-container">
+      <button class="btn btn-save" (click)="confirmMovePack()">Confirm</button>
+      <button class="btn btn-cancel" (click)="closeMovePackModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+<!-- Trash Pack Confirmation Modal -->
+<div *ngIf="showTrashPackModal" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Enter the pack name to trash:</p>
+    <input type="text" [(ngModel)]="packName" class="form-control" placeholder="Pack Name">
+    <div class="button-container">
+      <button class="btn btn-save" (click)="confirmTrashPack()">Yes</button>
+      <button class="btn btn-cancel" (click)="closeTrashPackModal()">No</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pack Fusion Confirmation Modal -->
+<div *ngIf="showPackFusionModal" class="confirm-modal">
+  <div class="confirm-modal-content">
+    <p>Enter the names of the two packs to fuse:</p>
+    <div class="form-group">
+      <label for="packName1">Pack 1 Name:</label>
+      <input type="text" class="form-control" id="packName1" [(ngModel)]="packName1">
+    </div>
+    <div class="form-group">
+      <label for="packName2">Pack 2 Name:</label>
+      <input type="text" class="form-control" id="packName2" [(ngModel)]="packName2">
+    </div>
+    <div class="button-container">
+      <button class="btn btn-save" (click)="confirmPackFusion()">Fuse Packs</button>
+      <button class="btn btn-cancel" (click)="closePackFusionModal()">Cancel</button>
+    </div>
+  </div>
+</div>
