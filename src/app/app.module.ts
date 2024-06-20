@@ -80,6 +80,7 @@ import { ValidatesalesComponent } from './pages/validatesales/validatesales.comp
 import { NewpackComponent } from './newpack/newpack.component';
 import { ExistingcompackComponent } from './existingcompack/existingcompack.component';
 import { MaterialcomfileComponent } from './materialcomfile/materialcomfile.component';
+import { UpgradeComponent } from './upgrade/upgrade.component';
 
 
 
@@ -135,7 +136,7 @@ import { MaterialcomfileComponent } from './materialcomfile/materialcomfile.comp
     SearchcustomerComponent,
     ToolsearchComponent,
     StocklistComponent,
-    SearchDoublesComponent, AddCustomerComponent,    ValidatesalesComponent, NewpackComponent, ExistingcompackComponent, MaterialcomfileComponent, 
+    SearchDoublesComponent, AddCustomerComponent,    ValidatesalesComponent, NewpackComponent, ExistingcompackComponent, MaterialcomfileComponent, UpgradeComponent, 
 
 
     

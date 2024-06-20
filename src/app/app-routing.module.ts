@@ -32,6 +32,7 @@ import { ToolsearchComponent } from './pages/toolsearch/toolsearch.component';
 import { ValidatesalesComponent } from './pages/validatesales/validatesales.component';
 import { NewpackComponent } from './newpack/newpack.component';
 import { ExistingcompackComponent } from './existingcompack/existingcompack.component';
+import { UpgradeComponent } from './upgrade/upgrade.component';
 
 
 
@@ -156,6 +157,7 @@ component:ToolhistoryComponent,
   { path: 'newpack' , component:NewpackComponent},
   { path: 'existingcompack' , component:ExistingcompackComponent},
   { path: 'materialcomfile' , component:MaterialcomponentfileComponent},
+  { path: 'upgrade' , component:UpgradeComponent},
 ];
 
 

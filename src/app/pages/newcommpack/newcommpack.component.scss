@@ -1,3 +1,28 @@
+$primary-color: #686A6D;
+$accent-color: #BDD248;
+$focus-border-color: #A5EBEE;
+
+.Tool-search {
+  color: $primary-color;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin-right: 470px;
+  margin-bottom: -10px;
+  position: relative;
+  padding-bottom: 5px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 50%;
+    border-bottom: 2px solid $primary-color;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+
+
 .customer-file,.material-component,.licence-component {
     color: #686A6D;
     font-weight: normal;
