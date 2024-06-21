@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./salescontract.component.scss']
 })
 export class SalescontractComponent {
-
   items: any[] = [
     { label: 'New pack', route: '/newcommpack' }, 
     { label: 'Add element', route: '/addelement' }, 
@@ -25,6 +24,7 @@ export class SalescontractComponent {
     this.buttonStates = {
       'material1': false,
       'material2': false,
+      'material3': false,
       'licence1': false,
       'licence2': false,
       'licence3': false,

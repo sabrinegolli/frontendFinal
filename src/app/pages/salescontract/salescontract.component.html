@@ -132,7 +132,7 @@
                 <th colspan="1">Warranty end date</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="buttonStates['material2']">
               <tr>
                 <th colspan="1"></th>
                 <td colspan="1"></td>
@@ -167,7 +167,7 @@
                 <th colspan="1">Major Version</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="buttonStates['licence1']">
               <tr>
                 <th colspan="1"></th>
                 <td colspan="1">
@@ -201,7 +201,7 @@
                 <td colspan="1"></td>
               </tr>
             </tbody>
-            <tbody>
+            <tbody >
               <tr>
                 <td colspan="2"> <button (click)="toggleButtonState('licence2')">
                   {{ buttonStates['licence2'] ? '-' : '+' }}
@@ -217,8 +217,8 @@
             <thead>
               <tr>
                 <th colspan="1"></th>
-                <th colspan="1">  <button (click)="toggleButtonState('licence3')">
-                  {{ buttonStates['licence3'] ? '-' : '+' }}
+                <th colspan="1">  <button (click)="toggleButtonState('material3')">
+                  {{ buttonStates['material3'] ? '-' : '+' }}
                 </button>Material Component</th>
                 <th colspan="1">Product name</th>
                 <th colspan="1">Serial number</th>
@@ -227,7 +227,7 @@
                 <th colspan="1">Warranty end date</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="buttonStates['material3']">
               <tr>
                 <th colspan="1"></th>
                 <td colspan="1">
@@ -254,9 +254,11 @@
             <thead>
               <tr>
                 <th colspan="1"></th>
-                <th colspan="1">  <button (click)="toggleButtonState('licence4')">
-                  {{ buttonStates['licence4'] ? '-' : '+' }}
-                </button>Licence</th>
+                <th colspan="1">
+                  <button (click)="toggleButtonState('licence3')">
+                    {{ buttonStates['licence3'] ? '-' : '+' }}
+                  </button> Licence
+                </th>
                 <th colspan="1">Product name</th>
                 <th colspan="1">Invoice ID</th>
                 <th colspan="1">Activated [MANUAL]</th>
@@ -264,12 +266,10 @@
                 <th colspan="1">Major Version</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="buttonStates['licence3']">
               <tr>
                 <th colspan="1"></th>
-                <td colspan="1">
-                 
-                </td>
+                <td colspan="1"></td>
                 <td colspan="1">HaynesPro License - Business [SUSP]</td>
                 <td colspan="1">+ABR</td>
                 <td colspan="1">Yes</td>
@@ -278,9 +278,7 @@
               </tr>
               <tr>
                 <th colspan="1"></th>
-                <td colspan="1">
-                 
-                </td>
+                <td colspan="1"></td>
                 <td colspan="1">MD Cars License [MD360]</td>
                 <td colspan="1"></td>
                 <td colspan="1">yes</td>
@@ -289,9 +287,7 @@
               </tr>
               <tr>
                 <th colspan="1"></th>
-                <td colspan="1">
-                 
-                </td>
+                <td colspan="1"></td>
                 <td colspan="1">SOFTWARE ASSISTANCE - PRO</td>
                 <td colspan="1"></td>
                 <td colspan="1">yes</td>
@@ -304,27 +300,3 @@
       </div>
     </div>
   </div>
-  
-
-
-  
-<!-- Confirmation Modals -->
-<div *ngIf="showCancelConfirmation" class="confirm-modal">
-  <div class="confirm-modal-content">
-    <p>Are you sure you want to cancel?</p>
-    <div class="button-container">
-      <button class="btn btn-save" (click)="closeCancelConfirmed()">Yes</button>
-      <button class="btn btn-cancel" (click)="cancelCancelClose()">No</button>
-    </div>
-  </div>
-</div>
-
-<div *ngIf="showSaveConfirmation" class="confirm-modal">
-  <div class="confirm-modal-content">
-    <p>Are you sure you want to save?</p>
-    <div class="button-container">
-      <button class="btn btn-save" (click)="closeSaveConfirmed()">Yes</button>
-      <button class="btn btn-cancel" (click)="cancelSaveClose()">No</button>
-    </div>
-  </div>
-</div>
