@@ -3,76 +3,149 @@
 
 <h1 class="Tool-search">Upgrade Existing Commercial pack</h1>
 <div class="container customer-file">
-  
-    <div class="form-row">
+  <div class="form-row">
       <div class="col-md-4">
-        <label for="agency">Agency:</label>
+          <label for="agency">Agency:</label>
+          <input type="text" id="agency" value="Global Sales Inc." />
       </div>
       <div class="col-md-4">
-        <label for="customerName">Customer Name:</label>   
+          <label for="customerName">Customer Name:</label>
+          <input type="text" id="customerName" value="Jane Smith" />
       </div>
       <div class="col-md-4">
-        <label for="productName">Product Name:</label>
-        <select id="productName" >
-        </select>
+          <label for="productName">Product Name:</label>
+          <select id="productName">
+              <option value="md cars master 12/privilege 12/356">md cars master 12/privilege 12/356</option>
+              <option value="battery master 12">battery master 12</option>
+          </select>
       </div>
-    </div>
   </div>
-  <div class="container material-component">
-    <h2 class="material-component">Commercial pack </h2>
-    <table class="table">
+</div>
+
+<div class="container material-component">
+  <h2 class="material-component">Commercial pack</h2>
+  <table class="table">
       <thead>
-        <tr>
-          <th>Product name</th>
-          <th>Replaced by</th>
-       
-         
-        </tr>
+          <tr>
+              <th>Product name</th>
+              <th>Replaced by</th>
+          </tr>
       </thead>
-      <!-- table body content here -->
-    </table>
-  </div>
-  
-  
-  <div class="container material-component">
-    <h2 class="material-component">Material Component</h2>
-    <table class="table">
+      <tbody>
+          <tr>
+              <td>md cars master 12/privilege 12/356</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>battery master 12</td>
+              <td></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+<div class="container material-component">
+  <h2 class="material-component">Material Component</h2>
+  <table class="table">
       <thead>
-        <tr>
-          <th>Product name</th>
-          <th>Serial number</th>
-          <th>Doublon</th>
-          <th>Date code</th>
-          <th>Associated licences</th>
-         
-        </tr>
+          <tr>
+              <th>Product name</th>
+              <th>Serial number</th>
+              <th>Doublon</th>
+              <th>Date code</th>
+              <th>Associated licences</th>
+          </tr>
       </thead>
-      <!-- table body content here -->
-    </table>
-  </div>
-  
-  <div class="container licence-component">
-    <h3 class="licence-component">Licence</h3>
-    <table class="table">
+      <tbody>
+          <tr>
+              <td>md cars master 12/privilege 12/356</td>
+              <td>SN1001</td>
+              <td></td>
+              <td>2023-01-15</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>battery master 12</td>
+              <td>SN1002</td>
+              <td></td>
+              <td>2023-02-20</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>md cars master 12/privilege 12/357</td>
+              <td>SN1003</td>
+              <td></td>
+              <td>2023-03-10</td>
+              <td></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+<div class="container licence-component">
+  <h3 class="licence-component">Licence</h3>
+  <table class="table">
       <thead>
-        <tr>
-          <th>Product name</th>
-          <th>Invoice ID</th>
-          <th>Subscription Duration</th>
-          <th>End date</th>
-          <th>Major Version</th>
-          
-        </tr>
+          <tr>
+              <th>Product name</th>
+              <th>Invoice ID</th>
+              <th>Subscription Duration</th>
+              <th>End date</th>
+              <th>Major Version</th>
+          </tr>
       </thead>
-      <!-- table body content here -->
-    </table>
-    <div class="button-container">
-        <button class="btn btn-save" type="button">
+      <tbody>
+          <tr>
+              <td>md cars master 12/privilege 12/356</td>
+              <td>INV101</td>
+              <td>1 year</td>
+              <td>2024-01-15</td>
+              <td>1.1</td>
+          </tr>
+          <tr>
+              <td></td>
+              <td>INV102</td>
+              <td>6 months</td>
+              <td>2023-08-20</td>
+              <td>1.2</td>
+          </tr>
+          <tr>
+              <td></td>
+              <td>INV103</td>
+              <td>2 years</td>
+              <td>2025-03-10</td>
+              <td>2.0</td>
+          </tr>
+      </tbody>
+  </table>
+  <div class="button-container">
+      <button class="btn btn-save" type="button" (click)="onSaveClick()">
           <mat-icon>save</mat-icon> SAVE
-        </button>
-        <button class="btn btn-cancel" type="button">
+      </button>
+      <button class="btn btn-cancel" type="button" (click)="onCloseClick()">
           <mat-icon>cancel</mat-icon> CLOSE
-        </button>
+      </button>
+  </div>
+
+  <!-- Confirmation Modals -->
+  <div *ngIf="showCancelConfirmation" class="confirm-modal">
+      <div class="confirm-modal-content">
+          <p>Are you sure you want to cancel?</p>
+          <div class="button-container">
+              <button class="btn btn-save" (click)="closeCancelConfirmed()">Yes</button>
+              <button class="btn btn-cancel" (click)="cancelCancelClose()">No</button>
+          </div>
       </div>
- 
+  </div>
+
+  <div *ngIf="showSaveConfirmation" class="confirm-modal">
+      <div class="confirm-modal-content">
+          <p>Are you sure you want to save?</p>
+          <div class="button-container">
+              <button class="btn btn-save" (click)="closeSaveConfirmed()">Yes</button>
+              <button class="btn btn-cancel" (click)="cancelSaveClose()">No</button>
+          </div>
+      </div>
+  </div>
+</div>
 

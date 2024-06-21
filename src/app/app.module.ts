@@ -45,7 +45,7 @@ import { ChangerMotpasseComponent } from './pages/profil/changer-motpasse/change
 import { CustomerfileComponent } from './pages/customerfile/customerfile.component';
 import { IncidentfileComponent } from './pages/incidentfile/incidentfile.component';
 import { PackactionComponent } from './pages/packaction/packaction.component';
-import { SalescontractComponent } from './pages/salescontract/salescontract.component';
+
 import { MaterialcomponentfileComponent } from './pages/unified-search folder/materialcomponentfile/materialcomponentfile.component';
 import { UnifiedFormComponent } from './pages/unified-search folder/unified-form/unified-form.component';
 import { UnifiedHomeComponent } from './pages/unified-search folder/unified-home/unified-home.component';
@@ -81,12 +81,15 @@ import { NewpackComponent } from './newpack/newpack.component';
 import { ExistingcompackComponent } from './existingcompack/existingcompack.component';
 import { MaterialcomfileComponent } from './materialcomfile/materialcomfile.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { TreeTableModule } from 'primeng/treetable';
+import { SalescontractComponent } from './pages/salescontract/salescontract.component';
 
 
 
 
 @NgModule({
   declarations: [
+   
     AppComponent,
     AuthenticationComponent,
     DashboardComponent,
@@ -108,7 +111,7 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
     CustomerfileComponent,
     IncidentfileComponent,
     PackactionComponent,
-    SalescontractComponent,
+   
     MaterialcomponentfileComponent,
     UnifiedFormComponent,
     UnifiedHomeComponent,
@@ -136,6 +139,7 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
     SearchcustomerComponent,
     ToolsearchComponent,
     StocklistComponent,
+    SalescontractComponent,
     SearchDoublesComponent, AddCustomerComponent,    ValidatesalesComponent, NewpackComponent, ExistingcompackComponent, MaterialcomfileComponent, UpgradeComponent, 
 
 
@@ -170,6 +174,8 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
     MatTabsModule,
     PaginatorModule,
     PasswordModule,
+    TreeTableModule,
+
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
 
     HttpClientXsrfModule.withOptions({

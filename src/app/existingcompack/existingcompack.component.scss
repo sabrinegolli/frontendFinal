@@ -21,96 +21,91 @@ $focus-border-color: #A5EBEE;
   }
 }
 
+.customer-file, .material-component, .licence-component {
+  color: #686A6D;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  position: relative;
+}
 
+.customer-file {
+  color: #686A6D;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 
-.customer-file,.material-component,.licence-component {
-    color: #686A6D;
-    font-weight: normal;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    position: relative;
+  label {
+    font-size: 1rem;
   }
-  
-  .customer-file {
-    color: #686A6D;
-    font-weight: normal;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  
-    label {
-      font-size: 1rem;
-    }
-  
-    hr {
-      border: 0;
-      height: 1px;
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-      margin: 10px 0;
-    }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 10px 0;
   }
-  
-  .container {
-    max-width: 1525px;
-    margin: 20px auto;
-    padding: 15px;
-    background-color: #FFFFFF;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
-   .form-row {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-  
-    &.material-component {
-      background-color: #fff;
-    }
-  
-    &.licence-component {
-      background-color: #fff;
-    }
-  
-   .table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-  
-   .table th,.table td {
-      padding: 8px;
-      text-align: left;
-      border: 1px solid #ccc;
+
+  input, select {
+    font-size: 0.8rem;
+    color: #686A6D;
+  }
+}
+
+.container {
+  max-width: 1525px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &.material-component {
+    background-color: #fff;
+  }
+
+  &.licence-component {
+    background-color: #fff;
+  }
+
+  .table {
+    th, td {
       font-size: 0.8rem;
-      font-style: #686A6D;
+      vertical-align: middle;
+      padding: 0.5rem;
+      text-align: left;
     }
-  
-   .table th{
-      background-color: #fffbfb;
+
+    th {
+      font-weight: bold;
+      color: black; /* Changed to black for the first line of each table */
     }
-  
-  
-    label {
-      color: #686A6D;
-      margin-bottom: 5px;
+
+    td {
+      color: $primary-color; /* General table text color */
     }
   }
-  button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-  
-    color: #fff;
-    cursor: pointer;
-  }
-
-
-  
 
   label {
     color: #686A6D;
     margin-bottom: 5px;
   }
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
 
 .btn {
   color: white;
@@ -121,15 +116,19 @@ $focus-border-color: #A5EBEE;
   justify-content: center;
   align-items: center;
 }
+
 .btn:hover {
   background-color: #DFD3D3;
 }
+
 .btn-save {
   background-color: #BDD248;
 }
+
 .btn-cancel {
   background-color: #546472;
 }
+
 .button-container {
   display: flex;
   justify-content: flex-end;
@@ -138,4 +137,43 @@ $focus-border-color: #A5EBEE;
 
 .btn {
   margin-left: 10px;
+}
+
+.confirm-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.confirm-modal-content p {
+  margin-bottom: 10px;
+}
+
+.confirm-modal-content .button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.confirm-modal-content button {
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-modal-content button:hover {
+  background-color: #DFD3D3;
 }
